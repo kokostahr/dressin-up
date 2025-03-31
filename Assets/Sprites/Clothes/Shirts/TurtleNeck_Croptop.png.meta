@@ -63,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 70
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -247,7 +247,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      TurtleNeck_Croptop_0: -5119636653553434548
+      TurtleNeck_Croptop_1: 7615489336185285909
+      TurtleNeck_Croptop_2: 7508384380423062876
+      TurtleNeck_Croptop_3: -5066372717672861003
+      TurtleNeck_Croptop_4: 6704218967790804325
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
