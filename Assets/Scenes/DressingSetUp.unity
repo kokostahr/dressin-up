@@ -255,7 +255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &18950541
 Transform:
   m_ObjectHideFlags: 0
@@ -2843,7 +2843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &798592573
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2995,7 +2995,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 827691362}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
+        m_MethodName: SetShoe
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &827691362
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3582,7 +3594,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1096969858
 Transform:
   m_ObjectHideFlags: 0
@@ -5366,7 +5378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1646965660
 Transform:
   m_ObjectHideFlags: 0
@@ -5518,7 +5530,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1659340715}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
+        m_MethodName: SetShoe
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1659340715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6117,7 +6141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1742467995
 Transform:
   m_ObjectHideFlags: 0
@@ -6269,7 +6293,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1747494006}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
+        m_MethodName: SetShoe
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1747494006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6389,7 +6425,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797277180}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
+        m_MethodName: SetShoe
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1797277180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6509,7 +6557,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1801326744}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
+        m_MethodName: SetShoe
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1801326744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6716,7 +6776,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1867612637}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
+        m_MethodName: SetShoe
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1867612637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6956,7 +7028,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1955655016}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
+        m_MethodName: SetShoe
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1955655016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7011,7 +7095,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1986247518
 Transform:
   m_ObjectHideFlags: 0
