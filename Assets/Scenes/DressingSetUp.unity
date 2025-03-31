@@ -468,6 +468,15 @@ MonoBehaviour:
   - {fileID: 18950540}
   - {fileID: 1646965659}
   - {fileID: 798592572}
+  shoeDisplay: {fileID: 500672381}
+  shoeSprites:
+  - {fileID: 7902364575885455685, guid: 22a71571415f8394b8cef724ea2d7285, type: 3}
+  - {fileID: 6667722196501494047, guid: 1a58e4000ab8cdd48b6fab9f2f74b9ee, type: 3}
+  - {fileID: 4952420816528754558, guid: 2d9f510d6f6b39841a319f41105741b3, type: 3}
+  - {fileID: -8461923687830504554, guid: 470889f4b4f78214a9c443de2997c4c1, type: 3}
+  - {fileID: 639586946530251843, guid: 10d9df3a70a95e94c93acfc4e59d7167, type: 3}
+  - {fileID: 2132590338773069140, guid: 13c82ea149caf87488d78373503696b4, type: 3}
+  - {fileID: -1123359309615499758, guid: 1d51375157eceae41afc38049a65a01f, type: 3}
 --- !u!114 &51772524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2527,7 +2536,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &675684765
 RectTransform:
   m_ObjectHideFlags: 0

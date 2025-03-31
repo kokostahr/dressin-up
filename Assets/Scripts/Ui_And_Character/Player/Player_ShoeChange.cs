@@ -59,7 +59,11 @@ public class Player_ShoeChange : MonoBehaviour
     public GameObject shoePanel;
     //Array of all the shoe game objects
     public GameObject[] shoes;
-   
+
+    //The shoe display image that displayes the currently worn shoe
+    public Image shoeDisplay;
+    //An array to store spirtes that correspond to each shoe
+    public Sprite[] shoeSprites;
 
     void Start()
     {
@@ -96,6 +100,12 @@ public class Player_ShoeChange : MonoBehaviour
         {
             //Show the relevant shoe
             shoes[shoeIndex].SetActive(true);
+
+            //Update the shoe display image
+            if (shoeSprites != null && shoeIndex < shoeSprites.Length)
+            {
+                shoeDisplay.sprite = shoeSprites[shoeIndex];
+            }
         }
     }
 
