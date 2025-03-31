@@ -2,15 +2,33 @@ using UnityEngine;
 
 public class Player_ShoeChange : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public GameObject shoePanel;
+
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
+
+    //fUNCTION that will open the panel when the button is pressed
+    public void OpenShoePanel()
+    {
+        shoePanel.SetActive(true);
+        //Panel will be visible
+
+    }
+
+    public void CloseShoePanel()
+    {
+        shoePanel.SetActive(false);
+        //Panel will not be visible
+    }
+
 }

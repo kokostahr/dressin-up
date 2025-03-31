@@ -1,16 +1,35 @@
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 
 public class Player_PantsChange : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public GameObject pantPanel;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
     }
+
+
+    //fUNCTION that will open the panel when the button is pressed
+    public void OpenPantsPanel()
+    {
+        pantPanel.SetActive(true);
+        //Panel will be visible
+
+    }
+
+    public void ClosePantsPanel()
+    {
+        pantPanel.SetActive(false);
+        //Panel will not be visible
+    }
+
 }
