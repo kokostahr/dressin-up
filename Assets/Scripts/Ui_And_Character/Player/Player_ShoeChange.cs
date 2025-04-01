@@ -43,16 +43,16 @@ public class Player_ShoeChange : MonoBehaviour
 
 
     //Need code that puts all the items in an index, and constantly updates to check which item in the array has been pressed
-    void Update()
-    {
-        //need a line of code that sets the display of the shoeDisplayImage to the current displayed image
-        //some pseudo code cuz idk if this is right
-        //if (whatShoe == 1) 
-        //{
-        // Set it to the relevant game object that will be displayed.
-        //}
+    //void Update()
+    //{
+    //    //need a line of code that sets the display of the shoeDisplayImage to the current displayed image
+    //    //some pseudo code cuz idk if this is right
+    //    //if (whatShoe == 1) 
+    //    //{
+    //    // Set it to the relevant game object that will be displayed.
+    //    //}
         
-    }
+    //}
     #endregion
     #region Second Attempt
 
