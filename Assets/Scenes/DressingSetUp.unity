@@ -201,9 +201,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -547,7 +547,14 @@ MonoBehaviour:
   - {fileID: -8681556639226851738, guid: 6c2c7b5398500714c95b2142d3f248e8, type: 3}
   - {fileID: 4462423443229009173, guid: e72a88efd7474944581184a7ea898e11, type: 3}
   - {fileID: -7877059519184255145, guid: 4477c8215b2739b41a30e63cb47417df, type: 3}
-  shoeSprites: []
+  shoeSprites:
+  - {fileID: 7902364575885455685, guid: 22a71571415f8394b8cef724ea2d7285, type: 3}
+  - {fileID: 6667722196501494047, guid: 1a58e4000ab8cdd48b6fab9f2f74b9ee, type: 3}
+  - {fileID: 4952420816528754558, guid: 2d9f510d6f6b39841a319f41105741b3, type: 3}
+  - {fileID: -8461923687830504554, guid: 470889f4b4f78214a9c443de2997c4c1, type: 3}
+  - {fileID: 639586946530251843, guid: 10d9df3a70a95e94c93acfc4e59d7167, type: 3}
+  - {fileID: 2132590338773069140, guid: 13c82ea149caf87488d78373503696b4, type: 3}
+  - {fileID: -1123359309615499758, guid: 1d51375157eceae41afc38049a65a01f, type: 3}
 --- !u!1 &89748981
 GameObject:
   m_ObjectHideFlags: 0
@@ -664,8 +671,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -883,8 +890,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: CloseShoePanel
         m_Mode: 1
         m_Arguments:
@@ -1015,8 +1022,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -1147,9 +1154,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1279,8 +1286,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -1411,9 +1418,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1630,9 +1637,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1762,8 +1769,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -1894,8 +1901,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -2569,7 +2576,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.43028116, g: 0.8415094, b: 0.4982344, a: 1}
-    m_PressedColor: {r: 0.16363825, g: 0.5320754, b: 0.29549995, a: 1}
+    m_PressedColor: {r: 0.15133491, g: 0.4113207, b: 0.24260649, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2590,8 +2597,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: OpenShoePanel
         m_Mode: 1
         m_Arguments:
@@ -3474,9 +3481,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3606,8 +3613,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -4024,9 +4031,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4243,9 +4250,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4549,9 +4556,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
-        m_MethodName: SetShoe
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetShoes
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4681,8 +4688,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -4829,8 +4836,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.43137255, g: 0.84313726, b: 0.49803922, a: 1}
+    m_PressedColor: {r: 0.15294118, g: 0.4117647, b: 0.24313726, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -4851,8 +4858,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: OpenShirtPanel
         m_Mode: 1
         m_Arguments:
@@ -5280,8 +5287,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: ClosePantsPanel
         m_Mode: 1
         m_Arguments:
@@ -5499,8 +5506,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -5609,8 +5616,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.43137255, g: 0.84313726, b: 0.49803922, a: 1}
+    m_PressedColor: {r: 0.15294118, g: 0.4117647, b: 0.24313726, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -5631,8 +5638,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: OpenPantsPanel
         m_Mode: 1
         m_Arguments:
@@ -5883,9 +5890,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6053,9 +6060,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6185,8 +6192,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -6317,8 +6324,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -6536,8 +6543,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -6961,8 +6968,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: CloseShirtPanel
         m_Mode: 1
         m_Arguments:
@@ -7295,8 +7302,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -7563,8 +7570,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -7695,9 +7702,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7914,9 +7921,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
-        m_MethodName: SetShoe
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetShoes
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8261,8 +8268,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -8393,9 +8400,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8876,9 +8883,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
-        m_MethodName: SetShoe
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetShoes
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9095,9 +9102,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9227,9 +9234,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
-        m_MethodName: SetShoe
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetShoes
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9359,9 +9366,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
-        m_MethodName: SetShoe
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetShoes
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9491,9 +9498,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
-        m_MethodName: SetShoe
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetShoes
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9710,8 +9717,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -10016,9 +10023,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShoeChange, Assembly-CSharp
-        m_MethodName: SetShoe
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetShoes
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10235,8 +10242,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -10367,8 +10374,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_ShirtChange, Assembly-CSharp
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
         m_MethodName: SetShirt
         m_Mode: 3
         m_Arguments:
@@ -10586,9 +10593,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player_PantsChange, Assembly-CSharp
-        m_MethodName: SetPant
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetPants
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
