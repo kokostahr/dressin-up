@@ -546,7 +546,7 @@ MonoBehaviour:
   - {fileID: 3544437381750979523, guid: b272b7c9bddcc8d4bba7b4208e2e5caa, type: 3}
   - {fileID: -8681556639226851738, guid: 6c2c7b5398500714c95b2142d3f248e8, type: 3}
   - {fileID: 4462423443229009173, guid: e72a88efd7474944581184a7ea898e11, type: 3}
-  - {fileID: -7877059519184255145, guid: 4477c8215b2739b41a30e63cb47417df, type: 3}
+  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
   shoeSprites:
   - {fileID: 7902364575885455685, guid: 22a71571415f8394b8cef724ea2d7285, type: 3}
   - {fileID: 6667722196501494047, guid: 1a58e4000ab8cdd48b6fab9f2f74b9ee, type: 3}
@@ -6092,7 +6092,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7877059519184255145, guid: 4477c8215b2739b41a30e63cb47417df, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
