@@ -26,7 +26,7 @@ public class ClothingManager : MonoBehaviour
 
     void ShowPointsPopup(int points)
     {
-        pointsPopupText.text = "+" + points.ToString() + "points";
+        pointsPopupText.text = "+" + points.ToString() + " points";
         pointsPopupText.gameObject.SetActive(true);
         StartCoroutine(HidePointsPopup());
     }
