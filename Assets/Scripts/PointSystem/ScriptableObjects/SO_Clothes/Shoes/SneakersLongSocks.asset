@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e90f4fa097ef54ab66a1134ba3cb3f, type: 3}
+  m_Name: SneakersLongSocks
+  m_EditorClassIdentifier: 
+  itemName: Sneakers LongSocks
+  itemIcon: {fileID: 2132590338773069140, guid: 13c82ea149caf87488d78373503696b4, type: 3}
+  winterPoints: 3
