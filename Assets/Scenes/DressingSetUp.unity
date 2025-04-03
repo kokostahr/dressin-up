@@ -2346,7 +2346,7 @@ GameObject:
   - component: {fileID: 241443051}
   - component: {fileID: 241443050}
   m_Layer: 5
-  m_Name: 'PantsDisplayImage '
+  m_Name: 'AIPantsDisplayImage '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3484,7 +3484,7 @@ GameObject:
   - component: {fileID: 323075548}
   - component: {fileID: 323075547}
   m_Layer: 5
-  m_Name: ShoesPanel
+  m_Name: AIShoesPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4565,7 +4565,7 @@ GameObject:
   - component: {fileID: 450004454}
   - component: {fileID: 450004453}
   m_Layer: 5
-  m_Name: ShirtText
+  m_Name: AIShirtText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9724,7 +9724,7 @@ GameObject:
   - component: {fileID: 983878442}
   - component: {fileID: 983878441}
   m_Layer: 5
-  m_Name: PantsText
+  m_Name: AIPantsText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12124,7 +12124,7 @@ GameObject:
   - component: {fileID: 1232161699}
   - component: {fileID: 1232161698}
   m_Layer: 5
-  m_Name: ShirtPanel
+  m_Name: AIShirtPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14717,7 +14717,7 @@ GameObject:
   - component: {fileID: 1588358571}
   - component: {fileID: 1588358570}
   m_Layer: 5
-  m_Name: ShirtDisplayImage
+  m_Name: AIShirtDisplayImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15763,7 +15763,7 @@ GameObject:
   - component: {fileID: 1672015539}
   - component: {fileID: 1672015538}
   m_Layer: 5
-  m_Name: ShoesText
+  m_Name: AIShoesText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19006,7 +19006,7 @@ GameObject:
   - component: {fileID: 1966537462}
   - component: {fileID: 1966537461}
   m_Layer: 5
-  m_Name: ShoesDisplayImage
+  m_Name: AIShoesDisplayImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19926,7 +19926,7 @@ GameObject:
   - component: {fileID: 2022071368}
   - component: {fileID: 2022071367}
   m_Layer: 5
-  m_Name: PantsPanel
+  m_Name: AIPantsPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
