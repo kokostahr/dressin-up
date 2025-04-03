@@ -213,6 +213,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 60c184ea23568bf43b94c74c2768ea4b, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &237256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1083,6 +1095,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 7
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: ee58a12de659ca94eb09f3f5411361ed, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2095,6 +2119,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 806e889f831ffe547abff150c59a585c, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &190133098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2442,6 +2478,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: f07522626aff4ee47b9bda481649ca72, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2970,6 +3018,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 49da2586bf9497947bcbcfc6cdd9e224, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &269370458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3234,6 +3294,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 3bc7ed226b7993643a654ef724d964ce, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &279566054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3453,6 +3525,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 6a7a709ca4fca624fbceab43d768f5b1, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &292084726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3580,6 +3664,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: e4dd51e12a6ed2a428298a3e43349edd, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3970,6 +4066,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: c33b7416962da7149832de9dda69c4a9, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -6778,6 +6886,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 761e8639df42aea4bb9a0e1c12fc9f8a, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &638204256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7257,6 +7377,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 13
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 197185c7aa9d47949ac09029dd76ced5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8215,7 +8347,7 @@ GameObject:
   - component: {fileID: 774640221}
   - component: {fileID: 774640220}
   m_Layer: 5
-  m_Name: HighwaistShorts
+  m_Name: HighwaistCargoShorts
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8292,6 +8424,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 27be1e9e8d7aef949ab80de346935b69, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8547,6 +8691,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 23ad2aadad3d8e94cb11cbc49cad775e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -8997,6 +9153,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 11
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: eea1cd59395fca043991ab4364b7aafa, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -10659,6 +10827,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 58b35e06f80e14e47a0cced6847a20c9, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1099959663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11314,6 +11494,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: f43c796f490000b44ba49ba9eb87208d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1156922960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11703,6 +11895,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 004dad2be79385d4b93d9d32c5d62cc8, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1175224466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11922,6 +12126,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 9df8de14e31efe042a666ae522778423, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1181238632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12050,6 +12266,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 603ac016646ebd643afda731ec759a4e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -12478,6 +12706,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 021977f9f0a2e9d4d85f6f1efd2cdda1, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -14778,6 +15018,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 049dd18963250cf4d8a96e48ccb249fe, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1567851440
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15265,6 +15517,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 35977a194485a8641994c8e94c9f4336, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1609552147
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15393,6 +15657,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 5
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 496f48f4204754440936bf11f9b73c28, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -16417,6 +16693,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 03acac824b1c1954bb7dec8d1e3e920e, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1723163407
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16632,6 +16920,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 8
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: afe3dc141d1977348bb7e24b4a00b3b9, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -17739,6 +18039,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 8e397a26c12234c4f9f02a7624f3bb2b, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1796405087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18734,6 +19046,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 10eb5c409b345ba41b558ceabab39e1d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -19796,6 +20120,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: ada206bb1ce15f34db26bdad5a8bfdf7, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2007241159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19924,6 +20260,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 6
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 2269e800a9193fe469af60f83935328d, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -20143,6 +20491,18 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 4
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 27851fb772743014abe50f598f241890, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
