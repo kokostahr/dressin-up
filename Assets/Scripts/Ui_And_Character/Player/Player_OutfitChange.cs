@@ -9,6 +9,11 @@ public class Player_OutfitChange : MonoBehaviour
     public GameObject[] pants;
     public GameObject[] shoes;
 
+    //Variables to track the current worn item
+    [HideInInspector] public GameObject currentShirt;
+    [HideInInspector] public GameObject currentPants;
+    [HideInInspector] public GameObject currentShoes;
+
     // Panel for each category
     [Header("UI PANELS")]
     public GameObject shirtPanel, pantsPanel, shoePanel;
@@ -45,6 +50,7 @@ public class Player_OutfitChange : MonoBehaviour
         if (index >= 0 && index < shirts.Length)
         {
             shirts[index].SetActive(true);
+            currentShirt = shirts[index];
             if (index < shirtSprites.Length)
                 shirtDisplay.sprite = shirtSprites[index];
         }
@@ -56,6 +62,7 @@ public class Player_OutfitChange : MonoBehaviour
         if (index >= 0 && index < pants.Length)
         {
             pants[index].SetActive(true);
+            currentPants = pants[index];
             if (index < pantsSprites.Length)
                 pantsDisplay.sprite = pantsSprites[index];
         }
@@ -67,6 +74,7 @@ public class Player_OutfitChange : MonoBehaviour
         if (index >= 0 && index < shoes.Length)
         {
             shoes[index].SetActive(true);
+            currentShoes = shoes[index];
             if (index < shoeSprites.Length)
                 shoeDisplay.sprite = shoeSprites[index];
         }

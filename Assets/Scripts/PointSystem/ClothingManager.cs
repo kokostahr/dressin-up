@@ -10,7 +10,8 @@ public class ClothingManager : MonoBehaviour
     //Text to show point popup when clothes are selected
     public TextMeshProUGUI pointsPopupText;
     //Int to track player's score
-    public int totalWinterPoints = 0; 
+    public int totalWinterPoints = 0;
+    public Player_OutfitChange playerOutfitChanger;
 
     public void SelectClothingItem(ClothingItemData selectedItem)
     {
@@ -37,4 +38,36 @@ public class ClothingManager : MonoBehaviour
         pointsPopupText.gameObject.SetActive(false);
     }
 
+    //Need a method that will calculate the points of the current clothing worn
+    public int CalculateOutfitScore()
+    {
+        int score = 0;
+
+        //Let's try and get ClothingItemData from each equipped piece
+        if (playerOutfitChanger.currentShirt != null)
+        {
+            var data = playerOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();   
+            if (data != null)
+            {
+                score += data.clothingItemData.winterPoints;
+            }
+        }
+
+        if (playerOutfitChanger.currentPants != null)
+        {
+            var data = playerOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
+            if (data != null) score += data.clothingItemData.winterPoints;
+        }
+
+        if (playerOutfitChanger.currentShoes != null)
+        {
+            var data = playerOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
+            if (data != null) score += data.clothingItemData.winterPoints;
+        }
+
+        return score;
+    }
+
 }
+
+
