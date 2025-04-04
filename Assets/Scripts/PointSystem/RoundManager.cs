@@ -26,6 +26,8 @@ public class RoundManager : MonoBehaviour
     public ClothingManager clothingManager;
     //text that will display what the next theme is
     public TextMeshProUGUI themeText;
+    //calling the player outfit change just to make the panels inactive
+    public Player_OutfitChange player_OutfitChange;
 
 
     void Start()
@@ -100,8 +102,14 @@ public class RoundManager : MonoBehaviour
     void ResetRound()
     {
         scorePanel.SetActive (false); //Hiding the scorepanel again
+        //hide the clothing panels
+        player_OutfitChange.shirtPanel.SetActive (false);
+        player_OutfitChange.pantsPanel.SetActive (false);
+        player_OutfitChange.shoePanel.SetActive (false);
         //Reset the timer and clear any other UI i might make
+        roundActive = true;
         timeLeft = roundDuration;
+        StartCoroutine (RoundCountdown());
     }
 
     //method to end the game
@@ -110,6 +118,7 @@ public class RoundManager : MonoBehaviour
         timerText.text = "Game Over \U0001F910"; //please don't be surprised future me. These are emojis in 'unicode' form
         scorePanel.SetActive(true);
         playerFinalScoreText.text = "Close the game. It's finished \U0001F928";
+        themeText.gameObject.SetActive (false);
     }
 
 }
