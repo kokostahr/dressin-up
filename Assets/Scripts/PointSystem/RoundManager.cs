@@ -21,15 +21,21 @@ public class RoundManager : MonoBehaviour
     public GameObject scorePanel;
     //Text that will display the final/total score
     public TextMeshProUGUI playerFinalScoreText;
-    //public TextMeshProUGUI robotFinalScoreText;
+    public TextMeshProUGUI aiFinalScoreText;
     //Referencing the clothing manager to count the points
     public ClothingManager clothingManager;
     //text that will display what the next theme is
     public TextMeshProUGUI themeText;
+    public TextMeshProUGUI themePopupText;
     //calling the player outfit change just to make the panels inactive
     public Player_OutfitChange player_OutfitChange;
+    //Need text showing who won the round
+    public TextMeshProUGUI roundResultText;
 
+    //AI related logic for when I make an AI manager...just a place holder for now
+    public int aiFinalScore = 0;
 
+    
     void Start()
     {
         //When the game starts the first round should begin as well..duh
@@ -69,12 +75,34 @@ public class RoundManager : MonoBehaviour
         //need to calculate the proper points of the final items on screen when round ends
         int playerFinalScore = clothingManager.CalculateOutfitScore();
 
-        //Show the score panel
+        //Show the score panel that will display AI and Player scores
         scorePanel.SetActive (true);
-        playerFinalScoreText.text = "Total Score: " + playerFinalScore + " points";
+        themeText.gameObject.SetActive (false);
+        playerFinalScoreText.text = "Player Score: " + playerFinalScore + " points";
+        aiFinalScoreText.text = "AI Score: " + aiFinalScore + " points";
+
+        //Then compare scores to determine the winner of the round.
+        CompareScores(playerFinalScore, aiFinalScore);
 
         //Wait the start next round or end game
         StartCoroutine(WaitAndStartNextRound());
+    }
+
+    void CompareScores(int playerFinalScore, int aiFinalScore)
+    {
+        if (playerFinalScore > aiFinalScore)
+        {
+            roundResultText.text = "Congrats, you won this round O.o!?";
+        }
+        else if (playerFinalScore < aiFinalScore)
+        {
+            roundResultText.text = "Damn, the AI won this round <<!";
+        }
+        else
+        {
+            roundResultText.text = "Oh! It's a tie... -_-??";
+        }
+        StartNextRound();
     }
 
     public void StartNextRound()
@@ -95,7 +123,7 @@ public class RoundManager : MonoBehaviour
     IEnumerator WaitAndStartNextRound()
     {
         yield return new WaitForSeconds(4f);
-        themeText.gameObject.SetActive (true);
+        themePopupText.gameObject.SetActive (true);
         StartNextRound();
     }
 
@@ -106,7 +134,11 @@ public class RoundManager : MonoBehaviour
         player_OutfitChange.shirtPanel.SetActive (false);
         player_OutfitChange.pantsPanel.SetActive (false);
         player_OutfitChange.shoePanel.SetActive (false);
-        //Reset the timer and clear any other UI i might make
+        //hide the theme popup again
+        themePopupText.gameObject.SetActive(false);
+        //bring the theme text back
+        themeText.gameObject.SetActive(true);
+        //Reset the timer and clear 
         roundActive = true;
         timeLeft = roundDuration;
         StartCoroutine (RoundCountdown());
