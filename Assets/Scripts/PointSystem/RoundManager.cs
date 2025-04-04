@@ -92,17 +92,19 @@ public class RoundManager : MonoBehaviour
     {
         if (playerFinalScore > aiFinalScore)
         {
+            roundResultText.gameObject.SetActive (true);
             roundResultText.text = "Congrats, you won this round O.o!?";
         }
         else if (playerFinalScore < aiFinalScore)
         {
+            roundResultText.gameObject.SetActive(true);
             roundResultText.text = "Damn, the AI won this round <<!";
         }
         else
         {
+            roundResultText.gameObject.SetActive(true);
             roundResultText.text = "Oh! It's a tie... -_-??";
         }
-        StartNextRound();
     }
 
     public void StartNextRound()
@@ -123,7 +125,7 @@ public class RoundManager : MonoBehaviour
     IEnumerator WaitAndStartNextRound()
     {
         yield return new WaitForSeconds(4f);
-        themePopupText.gameObject.SetActive (true);
+        themePopupText.gameObject.SetActive(true);
         StartNextRound();
     }
 
@@ -138,6 +140,8 @@ public class RoundManager : MonoBehaviour
         themePopupText.gameObject.SetActive(false);
         //bring the theme text back
         themeText.gameObject.SetActive(true);
+        //turn off the round result text
+        roundResultText.gameObject.SetActive(false);
         //Reset the timer and clear 
         roundActive = true;
         timeLeft = roundDuration;
@@ -151,6 +155,7 @@ public class RoundManager : MonoBehaviour
         scorePanel.SetActive(true);
         playerFinalScoreText.text = "Close the game. It's finished \U0001F928";
         themeText.gameObject.SetActive (false);
+        themePopupText.gameObject .SetActive (false);
     }
 
 }
