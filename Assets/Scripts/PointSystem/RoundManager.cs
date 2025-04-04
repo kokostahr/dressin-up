@@ -10,6 +10,9 @@ public class RoundManager : MonoBehaviour
     public float roundDuration = 10f;
     private float timeLeft;
     private bool roundActive = false;
+    //variables that enable there to be multiple rounds. 
+    public int totalRounds = 3;
+    private int currentRound = 1;
 
     [Header("UI SETTINGS")]
     //Text that will display the countdown
@@ -21,6 +24,8 @@ public class RoundManager : MonoBehaviour
     //public TextMeshProUGUI robotFinalScoreText;
     //Referencing the clothing manager to count the points
     public ClothingManager clothingManager;
+    //text that will display what the next theme is
+    public TextMeshProUGUI themeText;
 
 
     void Start()
@@ -58,8 +63,53 @@ public class RoundManager : MonoBehaviour
     {
         roundActive = false;
         timerText.text = "Time's Up!";
+
+        //need to calculate the proper points of the final items on screen when round ends
+        int playerFinalScore = clothingManager.CalculateOutfitScore();
+
         //Show the score panel
         scorePanel.SetActive (true);
-        playerFinalScoreText.text = "Total Score: " + clothingManager.totalWinterPoints + " points";
+        playerFinalScoreText.text = "Total Score: " + playerFinalScore + " points";
+
+        //Wait the start next round or end game
+        StartCoroutine(WaitAndStartNextRound());
     }
+
+    public void StartNextRound()
+    {
+        if (currentRound < totalRounds)
+        {
+            currentRound++;
+            ResetRound();
+
+        }
+        else
+        {
+            EndGame(); 
+        }
+    }
+
+    //co-routine that will wait for a while after the round has ended to show the score and give the next theme
+    IEnumerator WaitAndStartNextRound()
+    {
+        yield return new WaitForSeconds(4f);
+        themeText.gameObject.SetActive (true);
+        StartNextRound();
+    }
+
+    void ResetRound()
+    {
+        scorePanel.SetActive (false); //Hiding the scorepanel again
+        //Reset the timer and clear any other UI i might make
+        timeLeft = roundDuration;
+    }
+
+    //method to end the game
+    void EndGame()
+    {
+        timerText.text = "Game Over \U0001F910"; //please don't be surprised future me. These are emojis in 'unicode' form
+        scorePanel.SetActive(true);
+        playerFinalScoreText.text = "Close the game. It's finished \U0001F928";
+    }
+
 }
