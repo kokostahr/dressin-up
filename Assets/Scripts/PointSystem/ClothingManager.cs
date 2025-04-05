@@ -13,6 +13,10 @@ public class ClothingManager : MonoBehaviour
     public int totalWinterPoints = 0;
     public Player_OutfitChange playerOutfitChanger;
 
+    //Int to track the ai's score
+
+    
+
     public void SelectClothingItem(ClothingItemData selectedItem)
     {
         //Update the UI display
