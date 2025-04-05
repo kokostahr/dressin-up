@@ -19,6 +19,7 @@ public class Ai_OutfitChanger : MonoBehaviour
         //HideAll(aishirts);
         //HideAll(aipants);
         //HideAll(aishoes);
+        ChooseRandomOutfit();
     }
 
     // Function to hide all items in a category
@@ -33,25 +34,36 @@ public class Ai_OutfitChanger : MonoBehaviour
     //Function that will help the AI randomly pick clothes
     public void ChooseRandomOutfit()
     {
-        currentShirt = SetRandomItem(aishirts);
-        currentPants = SetRandomItem(aipants);
-        currentShoes = SetRandomItem(aishoes);
+        currentShirt = PickRandom(aishirts);
+        currentPants = PickRandom(aipants);
+        currentShoes = PickRandom(aishoes);
     }
 
-    GameObject SetRandomItem(GameObject[] items)
+    GameObject PickRandom(GameObject[] options)
     {
-        //Hide all the items on the AI character
-        foreach (GameObject item in items)
+        if (options == null || options.Length == 0)
         {
-            item.SetActive(false);
+            Debug.LogWarning("AI Outfitchanger: One of the arrays is empty");
+            return null;
         }
 
+        //Hide all the items on the AI character first
+        foreach (var item in options)
+        {
+            if (item != null)
+            {
+                item.SetActive(false);
+            }
+        }
 
         //Pick items randomly
-        int randomIndex = Random.Range(0, items.Length);
-        GameObject selectedItem = items[randomIndex];
-        selectedItem.SetActive(true);
-        return selectedItem;
+        int randomIndex = Random.Range(0, options.Length);
+        GameObject chosen = options[randomIndex];
+        if (chosen != null)
+        {
+            chosen.SetActive(true);
+        }
+        return chosen;
     }
 
 }

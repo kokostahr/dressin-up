@@ -607,6 +607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 30848443}
   - component: {fileID: 30848444}
+  - component: {fileID: 30848445}
   m_Layer: 0
   m_Name: Fluffy_Boots_0
   m_TagString: Untagged
@@ -684,6 +685,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &30848445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30848442}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &31971849
 GameObject:
   m_ObjectHideFlags: 0
@@ -1418,6 +1432,7 @@ GameObject:
   m_Component:
   - component: {fileID: 130793598}
   - component: {fileID: 130793599}
+  - component: {fileID: 130793600}
   m_Layer: 0
   m_Name: Lowaist_Pants_0
   m_TagString: Untagged
@@ -1495,6 +1510,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &130793600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130793597}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &134465211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,6 +1665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 155077947}
   - component: {fileID: 155077948}
+  - component: {fileID: 155077949}
   m_Layer: 0
   m_Name: Tshirt_Jacket_0
   m_TagString: Untagged
@@ -1714,6 +1743,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &155077949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 155077946}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &168435761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1811,6 +1853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 178725317}
   - component: {fileID: 178725318}
+  - component: {fileID: 178725319}
   m_Layer: 0
   m_Name: Highwaist_CargoShorts_0
   m_TagString: Untagged
@@ -1888,6 +1931,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &178725319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 178725316}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &183838684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,6 +2376,7 @@ GameObject:
   m_Component:
   - component: {fileID: 197986193}
   - component: {fileID: 197986194}
+  - component: {fileID: 197986195}
   m_Layer: 0
   m_Name: Shirt_TurtleNeck_0
   m_TagString: Untagged
@@ -2397,6 +2454,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &197986195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197986192}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &202394607
 GameObject:
   m_ObjectHideFlags: 0
@@ -2732,7 +2802,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 241443048}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -2829,6 +2899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 246648671}
   - component: {fileID: 246648672}
+  - component: {fileID: 246648673}
   m_Layer: 0
   m_Name: Lowaist_Sweats_0
   m_TagString: Untagged
@@ -2906,6 +2977,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &246648673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246648670}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &248000429
 GameObject:
   m_ObjectHideFlags: 0
@@ -2916,6 +3000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248000430}
   - component: {fileID: 248000431}
+  - component: {fileID: 248000432}
   m_Layer: 0
   m_Name: PlainPants_0
   m_TagString: Untagged
@@ -2993,6 +3078,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &248000432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248000429}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &254544134
 GameObject:
   m_ObjectHideFlags: 0
@@ -4640,6 +4738,7 @@ GameObject:
   m_Component:
   - component: {fileID: 402981446}
   - component: {fileID: 402981447}
+  - component: {fileID: 402981448}
   m_Layer: 0
   m_Name: Flipflops_0
   m_TagString: Untagged
@@ -4717,6 +4816,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &402981448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 402981445}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &414066654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4727,6 +4839,7 @@ GameObject:
   m_Component:
   - component: {fileID: 414066655}
   - component: {fileID: 414066656}
+  - component: {fileID: 414066657}
   m_Layer: 0
   m_Name: Oversized_Hoodie_0
   m_TagString: Untagged
@@ -4804,6 +4917,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &414066657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 414066654}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &426426745
 GameObject:
   m_ObjectHideFlags: 0
@@ -6130,6 +6256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 511062186}
   - component: {fileID: 511062187}
+  - component: {fileID: 511062188}
   m_Layer: 0
   m_Name: No_Shirt_0
   m_TagString: Untagged
@@ -6207,6 +6334,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &511062188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511062185}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &517698870
 GameObject:
   m_ObjectHideFlags: 0
@@ -6217,6 +6357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 517698871}
   - component: {fileID: 517698872}
+  - component: {fileID: 517698873}
   m_Layer: 0
   m_Name: sneakers_0
   m_TagString: Untagged
@@ -6294,6 +6435,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &517698873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517698870}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,6 +6727,7 @@ GameObject:
   m_Component:
   - component: {fileID: 547827113}
   - component: {fileID: 547827114}
+  - component: {fileID: 547827115}
   m_Layer: 0
   m_Name: Sneakers_LongSocks_0
   m_TagString: Untagged
@@ -6650,6 +6805,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &547827115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 547827112}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &559096721
 GameObject:
   m_ObjectHideFlags: 0
@@ -6980,6 +7148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 587215805}
   - component: {fileID: 587215806}
+  - component: {fileID: 587215807}
   m_Layer: 0
   m_Name: Pullover_0
   m_TagString: Untagged
@@ -7057,6 +7226,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &587215807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 587215804}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &589147596
 GameObject:
   m_ObjectHideFlags: 0
@@ -7896,6 +8078,7 @@ GameObject:
   m_Component:
   - component: {fileID: 652399160}
   - component: {fileID: 652399161}
+  - component: {fileID: 652399162}
   m_Layer: 0
   m_Name: TuckedIn_Shirt_0
   m_TagString: Untagged
@@ -7973,6 +8156,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &652399162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 652399159}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &655356396
 GameObject:
   m_ObjectHideFlags: 0
@@ -8141,6 +8337,7 @@ GameObject:
   m_Component:
   - component: {fileID: 659547520}
   - component: {fileID: 659547521}
+  - component: {fileID: 659547522}
   m_Layer: 0
   m_Name: Sweatshirt_Dungaree_0
   m_TagString: Untagged
@@ -8218,6 +8415,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &659547522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659547519}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &659844816
 GameObject:
   m_ObjectHideFlags: 0
@@ -8444,6 +8654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 684405192}
   - component: {fileID: 684405193}
+  - component: {fileID: 684405194}
   m_Layer: 0
   m_Name: Highwaist_Shorts_0
   m_TagString: Untagged
@@ -8521,6 +8732,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &684405194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 684405191}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &685154016
 GameObject:
   m_ObjectHideFlags: 0
@@ -10515,6 +10739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 936405995}
   - component: {fileID: 936405996}
+  - component: {fileID: 936405997}
   m_Layer: 0
   m_Name: Boots_0
   m_TagString: Untagged
@@ -10592,6 +10817,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &936405997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 936405994}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &954970752
 GameObject:
   m_ObjectHideFlags: 0
@@ -10734,6 +10972,7 @@ GameObject:
   m_Component:
   - component: {fileID: 974164736}
   - component: {fileID: 974164737}
+  - component: {fileID: 974164738}
   m_Layer: 0
   m_Name: Highwaist_Pants_0
   m_TagString: Untagged
@@ -10811,6 +11050,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &974164738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974164735}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &983867173
 GameObject:
   m_ObjectHideFlags: 0
@@ -11807,6 +12059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1119110619}
   - component: {fileID: 1119110620}
+  - component: {fileID: 1119110621}
   m_Layer: 0
   m_Name: RippedJeans_0
   m_TagString: Untagged
@@ -11884,6 +12137,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1119110621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1119110618}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1127276871
 GameObject:
   m_ObjectHideFlags: 0
@@ -12540,6 +12806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1168809642}
   - component: {fileID: 1168809643}
+  - component: {fileID: 1168809644}
   m_Layer: 0
   m_Name: CargoPants_0
   m_TagString: Untagged
@@ -12617,6 +12884,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1168809644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168809641}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1170824775
 GameObject:
   m_ObjectHideFlags: 0
@@ -12917,6 +13197,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1177082481}
   - component: {fileID: 1177082482}
+  - component: {fileID: 1177082483}
   m_Layer: 0
   m_Name: NoPants_0
   m_TagString: Untagged
@@ -12994,6 +13275,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1177082483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1177082480}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1181238629
 GameObject:
   m_ObjectHideFlags: 0
@@ -13788,6 +14082,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1240246367}
   - component: {fileID: 1240246368}
+  - component: {fileID: 1240246369}
   m_Layer: 0
   m_Name: Tshirt_Dungaree_0
   m_TagString: Untagged
@@ -13865,6 +14160,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1240246369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1240246366}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1248851671
 GameObject:
   m_ObjectHideFlags: 0
@@ -14504,6 +14812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1285185799}
   - component: {fileID: 1285185800}
+  - component: {fileID: 1285185801}
   m_Layer: 0
   m_Name: Socks_Sandals_0
   m_TagString: Untagged
@@ -14581,6 +14890,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1285185801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285185798}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1291621365
 GameObject:
   m_ObjectHideFlags: 0
@@ -15392,6 +15714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1421834416}
   - component: {fileID: 1421834417}
+  - component: {fileID: 1421834418}
   m_Layer: 0
   m_Name: Sneakers_ShortSocks_0
   m_TagString: Untagged
@@ -15469,6 +15792,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1421834418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421834415}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1439129184
 GameObject:
   m_ObjectHideFlags: 0
@@ -15998,6 +16334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1550005333}
   - component: {fileID: 1550005334}
+  - component: {fileID: 1550005335}
   m_Layer: 0
   m_Name: Tanktop_0
   m_TagString: Untagged
@@ -16075,6 +16412,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1550005335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1550005332}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1567851437
 GameObject:
   m_ObjectHideFlags: 0
@@ -16243,6 +16593,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1572499438}
   - component: {fileID: 1572499439}
+  - component: {fileID: 1572499440}
   m_Layer: 0
   m_Name: TurtleNeck_Dungaree_0
   m_TagString: Untagged
@@ -16320,6 +16671,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1572499440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1572499437}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1588358568
 GameObject:
   m_ObjectHideFlags: 0
@@ -16365,7 +16729,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1588358568}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -17305,6 +17669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1661036009}
   - component: {fileID: 1661036010}
+  - component: {fileID: 1661036011}
   m_Layer: 0
   m_Name: Highwaist_FashionPants_0
   m_TagString: Untagged
@@ -17382,6 +17747,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1661036011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1661036008}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1663287416
 GameObject:
   m_ObjectHideFlags: 0
@@ -17879,6 +18257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1711569597}
   - component: {fileID: 1711569598}
+  - component: {fileID: 1711569599}
   m_Layer: 0
   m_Name: Pullover_Shirt_0
   m_TagString: Untagged
@@ -17956,6 +18335,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1711569599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1711569596}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1723163404
 GameObject:
   m_ObjectHideFlags: 0
@@ -18124,6 +18516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1725256406}
   - component: {fileID: 1725256407}
+  - component: {fileID: 1725256408}
   m_Layer: 0
   m_Name: Croptop_0
   m_TagString: Untagged
@@ -18201,6 +18594,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1725256408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725256405}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1725945508
 GameObject:
   m_ObjectHideFlags: 0
@@ -18369,6 +18775,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1731321804}
   - component: {fileID: 1731321805}
+  - component: {fileID: 1731321806}
   m_Layer: 0
   m_Name: Highwaist_Sweats_0
   m_TagString: Untagged
@@ -18446,6 +18853,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1731321806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1731321803}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1735249855
 GameObject:
   m_ObjectHideFlags: 0
@@ -20060,6 +20480,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1822433438}
   - component: {fileID: 1822433439}
+  - component: {fileID: 1822433440}
   m_Layer: 0
   m_Name: Tshirt_0
   m_TagString: Untagged
@@ -20137,6 +20558,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1822433440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822433437}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1851391648
 GameObject:
   m_ObjectHideFlags: 0
@@ -20573,6 +21007,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1873369111}
   - component: {fileID: 1873369112}
+  - component: {fileID: 1873369113}
   m_Layer: 0
   m_Name: TurtleNeck_0
   m_TagString: Untagged
@@ -20650,6 +21085,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1873369113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873369110}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &1876900583
 GameObject:
   m_ObjectHideFlags: 0
@@ -21662,7 +22110,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1966537459}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -21992,6 +22440,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1989148635}
   - component: {fileID: 1989148636}
+  - component: {fileID: 1989148637}
   m_Layer: 0
   m_Name: Shorts_0
   m_TagString: Untagged
@@ -22069,6 +22518,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1989148637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989148634}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &2007241156
 GameObject:
   m_ObjectHideFlags: 0
@@ -22731,6 +23193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2064870495}
   - component: {fileID: 2064870496}
+  - component: {fileID: 2064870497}
   m_Layer: 0
   m_Name: Highwaist_Cargo_0
   m_TagString: Untagged
@@ -22808,6 +23271,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2064870497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064870494}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &2071556539
 GameObject:
   m_ObjectHideFlags: 0
@@ -22922,6 +23398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2075938495}
   - component: {fileID: 2075938496}
+  - component: {fileID: 2075938497}
   m_Layer: 0
   m_Name: Oversized_Tee_0
   m_TagString: Untagged
@@ -22999,6 +23476,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2075938497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075938494}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &2078651595
 GameObject:
   m_ObjectHideFlags: 0
@@ -23374,6 +23864,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2120732326}
   - component: {fileID: 2120732327}
+  - component: {fileID: 2120732328}
   m_Layer: 0
   m_Name: TurtleNeck_Croptop_1
   m_TagString: Untagged
@@ -23451,6 +23942,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2120732328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2120732325}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1 &2130277504
 GameObject:
   m_ObjectHideFlags: 0
@@ -23562,6 +24066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2131049014}
   - component: {fileID: 2131049015}
+  - component: {fileID: 2131049016}
   m_Layer: 0
   m_Name: Hoodie_0
   m_TagString: Untagged
@@ -23639,6 +24144,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2131049016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2131049013}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
