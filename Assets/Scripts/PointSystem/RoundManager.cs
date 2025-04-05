@@ -178,11 +178,13 @@ public class RoundManager : MonoBehaviour
         //displaying the total wins
         if (playerWins > aiWins)
         {
+            aiFinalScoreText.text = "-_-??";
             playerFinalScoreText.text = "You got the most wins! Close the game. Its finshed.";
         }
         else if (playerWins < aiWins)
         {
             aiFinalScoreText.text = "The robot got the most wins. Close the game, It's finished.";
+            playerFinalScoreText.text = "The robot beat you.";
         }
         
         themeText.gameObject.SetActive (false);

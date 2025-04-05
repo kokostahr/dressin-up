@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Ai_OutfitChanger : MonoBehaviour
 {
@@ -14,6 +15,12 @@ public class Ai_OutfitChanger : MonoBehaviour
     [HideInInspector] public GameObject currentShirt;
     [HideInInspector] public GameObject currentPants;
     [HideInInspector] public GameObject currentShoes;
+
+    [Header("AI DISPLAY IMAGES")]
+    public Image aiShirtDisplay, aiPantsDisplay, aiShoeDisplay;
+
+    [Header("AI UI SPRITE ARRAY")]
+    public Sprite[] aiShirtSprites, aiPantsSprites, aiShoeSprites;
 
     void Start()
     {
@@ -40,18 +47,24 @@ public class Ai_OutfitChanger : MonoBehaviour
         yield return StartCoroutine(PickWithDeliberation(aishirts, (chosen) =>
         {
             currentShirt = chosen;
+            //update the UI to show the selected shirt
+            UpdateAIShirtDisplay(currentShirt);
         }));
 
         yield return new WaitForSeconds(6f);//Let AI PAUSE AGAIN
 
         yield return StartCoroutine(PickWithDeliberation(aipants, (chosen) => {
             currentPants = chosen;
+            //update the UI to show selected pants
+            UpdateAIPantsDisplay(currentPants);
         }));
 
         yield return new WaitForSeconds(10f);//LET IT PAUSE ONCE MORE
 
         yield return StartCoroutine(PickWithDeliberation(aishoes, (chosen) => {
             currentShoes = chosen;
+            //update the UI to show selected shoes
+            UpdateAIShoesDisplay(currentShoes);
         }));
     }
 
@@ -91,6 +104,37 @@ public class Ai_OutfitChanger : MonoBehaviour
 
         callback(options[finalIndex]);
     }
+
+    void UpdateAIShirtDisplay(GameObject chosenShirt)
+    {
+        //find the index of the chosen shirt
+        int index = System.Array.IndexOf(aishirts, chosenShirt);
+        if (index >= 0 && index < aiShirtSprites.Length)
+        {
+            aiShirtDisplay.sprite = aiShirtSprites[index];
+        }
+    }
+
+    void UpdateAIPantsDisplay(GameObject chosenPants)
+    {
+        //find the index of the chosen pants
+        int index = System.Array.IndexOf(aipants, chosenPants);
+        if (index >= 0 && index < aiPantsSprites.Length)
+        {
+            aiPantsDisplay.sprite = aiPantsSprites[index];
+        }
+    }
+
+    void UpdateAIShoesDisplay(GameObject chosenShoes)
+    {
+        //Find the index of the selected shoes
+        int index = System.Array.IndexOf(aishoes, chosenShoes);
+        if (index >= 0 && index < aiShoeSprites.Length)
+        {
+            aiShoeDisplay.sprite = aiShoeSprites[index];
+        }
+    }
+
 }
     
     ////Function that will help the AI randomly pick clothes. Made it a coroutine
