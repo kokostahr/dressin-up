@@ -39,6 +39,8 @@ public class RoundManager : MonoBehaviour
     public int playerWins = 0;
     public int aiWins = 0;
 
+    //Resetting the AI's clothing choices every round
+    public Ai_OutfitChanger aiOutfitChanger;
     
     void Start()
     {
@@ -159,6 +161,11 @@ public class RoundManager : MonoBehaviour
         //Reset the timer and clear 
         roundActive = true;
         timeLeft = roundDuration;
+
+        //call the AI outfitchanger coroutine to reset its clothes at the start of each round
+        StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
+
+        //Resetting the round countdown
         StartCoroutine (RoundCountdown());
     }
 

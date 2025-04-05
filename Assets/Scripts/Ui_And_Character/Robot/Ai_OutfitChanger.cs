@@ -33,11 +33,11 @@ public class Ai_OutfitChanger : MonoBehaviour
     }
 
     //Co-routine that will make the AI look like its still thinking about its choices xD
-    IEnumerator ChooseRandomOutfitDelay()
+    public IEnumerator ChooseRandomOutfitDelay()
     {
         //Wait a bit before choosing shirt
         yield return new WaitForSeconds(2f); //Let AI pause before it starts selecting
-        yield return StartCoroutine(PickWithDeliberation(aishirts, (chosen) => 
+        yield return StartCoroutine(PickWithDeliberation(aishirts, (chosen) =>
         {
             currentShirt = chosen;
         }));
@@ -55,7 +55,7 @@ public class Ai_OutfitChanger : MonoBehaviour
         }));
     }
 
-  //Coroutine that will make the AI pick multiple options before settling on one
+    //Coroutine that will make the AI pick multiple options before settling on one
     IEnumerator PickWithDeliberation(GameObject[] options, System.Action<GameObject> callback)
     {
         if (options == null || options.Length == 0)
@@ -91,7 +91,7 @@ public class Ai_OutfitChanger : MonoBehaviour
 
         callback(options[finalIndex]);
     }
-
+}
     
     ////Function that will help the AI randomly pick clothes. Made it a coroutine
     //public void ChooseRandomOutfit()
@@ -128,4 +128,4 @@ public class Ai_OutfitChanger : MonoBehaviour
     //    return chosen;
     //}
 
-}
+

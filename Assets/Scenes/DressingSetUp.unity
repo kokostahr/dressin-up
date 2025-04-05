@@ -883,7 +883,7 @@ MonoBehaviour:
   pointsPopupText: {fileID: 88156037}
   totalWinterPoints: 0
   playerOutfitChanger: {fileID: 51772523}
-  aiOutfitChanger: {fileID: 0}
+  aiOutfitChanger: {fileID: 51772526}
 --- !u!114 &51772525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -908,6 +908,9 @@ MonoBehaviour:
   player_OutfitChange: {fileID: 51772523}
   roundResultText: {fileID: 1898491040}
   aiFinalScore: 5
+  playerWins: 0
+  aiWins: 0
+  aiOutfitChanger: {fileID: 51772526}
 --- !u!114 &51772526
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19579,8 +19582,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 581866055}
-  - {fileID: 592481233}
   - {fileID: 1538094135}
+  - {fileID: 592481233}
   - {fileID: 1788195000}
   - {fileID: 1898491039}
   m_Father: {fileID: 796205896}
