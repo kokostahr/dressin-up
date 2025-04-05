@@ -35,6 +35,10 @@ public class RoundManager : MonoBehaviour
     //AI related logic for when I make an AI manager...just a place holder for now
     public int aiFinalScore = 0;
 
+    //Winner Tracking
+    public int playerWins = 0;
+    public int aiWins = 0;
+
     
     void Start()
     {
@@ -75,6 +79,9 @@ public class RoundManager : MonoBehaviour
         //need to calculate the proper points of the final items on screen when round ends
         int playerFinalScore = clothingManager.CalculateOutfitScore();
 
+        //calculate the ai's final score from the aiOutfitChanger
+        int aiFinalScore = clothingManager.CalculateAiOutfitScore();
+
         //Show the score panel that will display AI and Player scores
         scorePanel.SetActive (true);
         themeText.gameObject.SetActive (false);
@@ -94,11 +101,15 @@ public class RoundManager : MonoBehaviour
         {
             roundResultText.gameObject.SetActive (true);
             roundResultText.text = "Congrats, you won this round O.o!?";
+            //increment if player wins
+            playerWins++;
         }
         else if (playerFinalScore < aiFinalScore)
         {
             roundResultText.gameObject.SetActive(true);
             roundResultText.text = "Damn, the AI won this round <<!";
+            //increment if ai wins
+            aiWins++;
         }
         else
         {
@@ -132,7 +143,8 @@ public class RoundManager : MonoBehaviour
     void ResetRound()
     {
         //Reset AI Score for next round
-        //aiFinalScore = 0;a
+        aiFinalScore = 0;
+
         scorePanel.SetActive (false); //Hiding the scorepanel again
         //hide the clothing panels
         player_OutfitChange.shirtPanel.SetActive (false);
@@ -155,7 +167,17 @@ public class RoundManager : MonoBehaviour
     {
         timerText.text = "Game Over \U0001F910"; //please don't be surprised future me. These are emojis in 'unicode' form
         scorePanel.SetActive(true);
-        playerFinalScoreText.text = "Close the game. It's finished \U0001F928";
+
+        //displaying the total wins
+        if (playerWins > aiWins)
+        {
+            playerFinalScoreText.text = "You got the most wins! Close the game. Its finshed.";
+        }
+        else if (playerWins < aiWins)
+        {
+            aiFinalScoreText.text = "The robot got the most wins. Close the game, It's finished.";
+        }
+        
         themeText.gameObject.SetActive (false);
         themePopupText.gameObject .SetActive (false);
     }
