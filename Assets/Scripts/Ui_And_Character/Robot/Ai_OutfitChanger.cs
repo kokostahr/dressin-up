@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System.Collections;
 using UnityEngine;
 
 public class Ai_OutfitChanger : MonoBehaviour
@@ -16,10 +17,10 @@ public class Ai_OutfitChanger : MonoBehaviour
 
     void Start()
     {
-        //HideAll(aishirts);
-        //HideAll(aipants);
-        //HideAll(aishoes);
-        ChooseRandomOutfit();
+        HideAll(aishirts);
+        HideAll(aipants);
+        HideAll(aishoes);
+        StartCoroutine(ChooseRandomOutfitDelay());
     }
 
     // Function to hide all items in a category
@@ -30,14 +31,31 @@ public class Ai_OutfitChanger : MonoBehaviour
             item.SetActive(false);
         }
     }
-    
-    //Function that will help the AI randomly pick clothes
-    public void ChooseRandomOutfit()
+
+    //Co-routine that will make the AI look like its still thinking about its choices xD
+    IEnumerator ChooseRandomOutfitDelay()
     {
+        //Wait a bit before choosing shirt
+        yield return new WaitForSeconds(3f);
         currentShirt = PickRandom(aishirts);
+
+        //Wait a bit more before chosing pants
+        yield return new WaitForSeconds(9f);
         currentPants = PickRandom(aipants);
+
+        //Wait a bit more again before choosing shoes
+        yield return new WaitForSeconds(15f);
         currentShoes = PickRandom(aishoes);
     }
+  
+    
+    ////Function that will help the AI randomly pick clothes. Made it a coroutine
+    //public void ChooseRandomOutfit()
+    //{
+    //    currentShirt = PickRandom(aishirts);
+    //    currentPants = PickRandom(aipants);
+    //    currentShoes = PickRandom(aishoes);
+    //}
 
     GameObject PickRandom(GameObject[] options)
     {
