@@ -730,6 +730,7 @@ GameObject:
   - component: {fileID: 51772523}
   - component: {fileID: 51772524}
   - component: {fileID: 51772525}
+  - component: {fileID: 51772526}
   m_Layer: 0
   m_Name: DressingManager
   m_TagString: Untagged
@@ -892,6 +893,61 @@ MonoBehaviour:
   player_OutfitChange: {fileID: 51772523}
   roundResultText: {fileID: 1898491040}
   aiFinalScore: 5
+--- !u!114 &51772526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51772521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfe45a127d01937428b54a33af50b0fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aishirts:
+  - {fileID: 1725256405}
+  - {fileID: 2131049013}
+  - {fileID: 1572499437}
+  - {fileID: 414066654}
+  - {fileID: 2075938494}
+  - {fileID: 587215804}
+  - {fileID: 1711569596}
+  - {fileID: 197986192}
+  - {fileID: 659547519}
+  - {fileID: 1550005332}
+  - {fileID: 1822433437}
+  - {fileID: 1240246366}
+  - {fileID: 155077946}
+  - {fileID: 652399159}
+  - {fileID: 1873369110}
+  - {fileID: 2120732325}
+  - {fileID: 511062185}
+  aipants:
+  - {fileID: 1168809641}
+  - {fileID: 2064870494}
+  - {fileID: 178725316}
+  - {fileID: 1661036008}
+  - {fileID: 974164735}
+  - {fileID: 684405191}
+  - {fileID: 1731321803}
+  - {fileID: 130793597}
+  - {fileID: 246648670}
+  - {fileID: 248000429}
+  - {fileID: 1119110618}
+  - {fileID: 1989148634}
+  - {fileID: 1177082480}
+  aishoes:
+  - {fileID: 936405994}
+  - {fileID: 402981445}
+  - {fileID: 30848442}
+  - {fileID: 517698870}
+  - {fileID: 1421834415}
+  - {fileID: 547827112}
+  - {fileID: 1285185798}
+  currentShirt: {fileID: 0}
+  currentPants: {fileID: 0}
+  currentShoes: {fileID: 0}
 --- !u!1 &88156035
 GameObject:
   m_ObjectHideFlags: 0
