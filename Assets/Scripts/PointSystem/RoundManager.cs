@@ -131,6 +131,8 @@ public class RoundManager : MonoBehaviour
 
     void ResetRound()
     {
+        //Reset AI Score for next round
+        //aiFinalScore = 0;
         scorePanel.SetActive (false); //Hiding the scorepanel again
         //hide the clothing panels
         player_OutfitChange.shirtPanel.SetActive (false);
