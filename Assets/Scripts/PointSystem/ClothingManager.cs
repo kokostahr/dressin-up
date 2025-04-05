@@ -15,7 +15,7 @@ public class ClothingManager : MonoBehaviour
 
     //Int to track the ai's score
 
-    
+    public Ai_OutfitChanger aiOutfitChanger;
 
     public void SelectClothingItem(ClothingItemData selectedItem)
     {
@@ -69,6 +69,30 @@ public class ClothingManager : MonoBehaviour
             if (data != null) score += data.clothingItemData.winterPoints;
         }
 
+        return score;
+    }
+
+    public int CalculateAiOutfitScore()
+    {
+        int score = 0;
+
+        if (aiOutfitChanger.currentShirt != null)
+        {
+            var data = aiOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();
+            if (data != null) score += data.clothingItemData.winterPoints;
+        }
+
+        if (aiOutfitChanger.currentPants !=null)
+        {
+            var data = aiOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
+            if (data != null) score += data.clothingItemData.winterPoints;
+        }
+        
+        if (aiOutfitChanger.currentShoes!= null)
+        {
+            var data = aiOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
+            if (data != null) score += data.clothingItemData.winterPoints;
+        }
         return score;
     }
 

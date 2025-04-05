@@ -692,12 +692,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30848442}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 2d4176b0e1f947747bed4e6e66b4844c, type: 2}
 --- !u!1 &31971849
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,6 +883,7 @@ MonoBehaviour:
   pointsPopupText: {fileID: 88156037}
   totalWinterPoints: 0
   playerOutfitChanger: {fileID: 51772523}
+  aiOutfitChanger: {fileID: 0}
 --- !u!114 &51772525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1517,12 +1518,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 130793597}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 6a7a709ca4fca624fbceab43d768f5b1, type: 2}
 --- !u!1 &134465211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1750,12 +1751,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155077946}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 03acac824b1c1954bb7dec8d1e3e920e, type: 2}
 --- !u!1 &168435761
 GameObject:
   m_ObjectHideFlags: 0
@@ -1938,12 +1939,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178725316}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 27be1e9e8d7aef949ab80de346935b69, type: 2}
 --- !u!1 &183838684
 GameObject:
   m_ObjectHideFlags: 0
@@ -2461,12 +2462,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 197986192}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: ee58a12de659ca94eb09f3f5411361ed, type: 2}
 --- !u!1 &202394607
 GameObject:
   m_ObjectHideFlags: 0
@@ -2984,12 +2985,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246648670}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: afe3dc141d1977348bb7e24b4a00b3b9, type: 2}
 --- !u!1 &248000429
 GameObject:
   m_ObjectHideFlags: 0
@@ -3085,12 +3086,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248000429}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: f43c796f490000b44ba49ba9eb87208d, type: 2}
 --- !u!1 &254544134
 GameObject:
   m_ObjectHideFlags: 0
@@ -4823,12 +4824,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402981445}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 8bafc204a6489874da218038195aa10a, type: 2}
 --- !u!1 &414066654
 GameObject:
   m_ObjectHideFlags: 0
@@ -4924,12 +4925,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 414066654}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 049dd18963250cf4d8a96e48ccb249fe, type: 2}
 --- !u!1 &426426745
 GameObject:
   m_ObjectHideFlags: 0
@@ -6341,12 +6342,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511062185}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 9df8de14e31efe042a666ae522778423, type: 2}
 --- !u!1 &517698870
 GameObject:
   m_ObjectHideFlags: 0
@@ -6442,12 +6443,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 517698870}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: f8378b8cdeb5ec540a9cc9b0bc541ad9, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -6812,12 +6813,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 547827112}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 21743cc732ece814b936d1b6056f0968, type: 2}
 --- !u!1 &559096721
 GameObject:
   m_ObjectHideFlags: 0
@@ -7233,12 +7234,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 587215804}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: c33b7416962da7149832de9dda69c4a9, type: 2}
 --- !u!1 &589147596
 GameObject:
   m_ObjectHideFlags: 0
@@ -8163,12 +8164,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 652399159}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 197185c7aa9d47949ac09029dd76ced5, type: 2}
 --- !u!1 &655356396
 GameObject:
   m_ObjectHideFlags: 0
@@ -8422,12 +8423,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 659547519}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 603ac016646ebd643afda731ec759a4e, type: 2}
 --- !u!1 &659844816
 GameObject:
   m_ObjectHideFlags: 0
@@ -8739,12 +8740,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 684405191}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 496f48f4204754440936bf11f9b73c28, type: 2}
 --- !u!1 &685154016
 GameObject:
   m_ObjectHideFlags: 0
@@ -10824,12 +10825,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936405994}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: c9ad4c5d807ecb844879ea99ada49535, type: 2}
 --- !u!1 &954970752
 GameObject:
   m_ObjectHideFlags: 0
@@ -11057,12 +11058,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974164735}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 27851fb772743014abe50f598f241890, type: 2}
 --- !u!1 &983867173
 GameObject:
   m_ObjectHideFlags: 0
@@ -12144,12 +12145,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119110618}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 60c184ea23568bf43b94c74c2768ea4b, type: 2}
 --- !u!1 &1127276871
 GameObject:
   m_ObjectHideFlags: 0
@@ -12891,12 +12892,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168809641}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 3bc7ed226b7993643a654ef724d964ce, type: 2}
 --- !u!1 &1170824775
 GameObject:
   m_ObjectHideFlags: 0
@@ -13282,12 +13283,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177082480}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 004dad2be79385d4b93d9d32c5d62cc8, type: 2}
 --- !u!1 &1181238629
 GameObject:
   m_ObjectHideFlags: 0
@@ -14167,12 +14168,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240246366}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: eea1cd59395fca043991ab4364b7aafa, type: 2}
 --- !u!1 &1248851671
 GameObject:
   m_ObjectHideFlags: 0
@@ -14897,12 +14898,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1285185798}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 5acd096589f482d40bb5b8b1d799716f, type: 2}
 --- !u!1 &1291621365
 GameObject:
   m_ObjectHideFlags: 0
@@ -15799,12 +15800,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1421834415}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 968a87d0d57bc0f44943596f321c3d70, type: 2}
 --- !u!1 &1439129184
 GameObject:
   m_ObjectHideFlags: 0
@@ -16419,12 +16420,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1550005332}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 49da2586bf9497947bcbcfc6cdd9e224, type: 2}
 --- !u!1 &1567851437
 GameObject:
   m_ObjectHideFlags: 0
@@ -16678,12 +16679,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572499437}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 58b35e06f80e14e47a0cced6847a20c9, type: 2}
 --- !u!1 &1588358568
 GameObject:
   m_ObjectHideFlags: 0
@@ -17754,12 +17755,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661036008}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 23ad2aadad3d8e94cb11cbc49cad775e, type: 2}
 --- !u!1 &1663287416
 GameObject:
   m_ObjectHideFlags: 0
@@ -18342,12 +18343,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1711569596}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 2269e800a9193fe469af60f83935328d, type: 2}
 --- !u!1 &1723163404
 GameObject:
   m_ObjectHideFlags: 0
@@ -18601,12 +18602,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1725256405}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: e4dd51e12a6ed2a428298a3e43349edd, type: 2}
 --- !u!1 &1725945508
 GameObject:
   m_ObjectHideFlags: 0
@@ -18860,12 +18861,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1731321803}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: f07522626aff4ee47b9bda481649ca72, type: 2}
 --- !u!1 &1735249855
 GameObject:
   m_ObjectHideFlags: 0
@@ -20565,12 +20566,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822433437}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 806e889f831ffe547abff150c59a585c, type: 2}
 --- !u!1 &1851391648
 GameObject:
   m_ObjectHideFlags: 0
@@ -21092,12 +21093,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1873369110}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 35977a194485a8641994c8e94c9f4336, type: 2}
 --- !u!1 &1876900583
 GameObject:
   m_ObjectHideFlags: 0
@@ -22525,12 +22526,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989148634}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 761e8639df42aea4bb9a0e1c12fc9f8a, type: 2}
 --- !u!1 &2007241156
 GameObject:
   m_ObjectHideFlags: 0
@@ -23278,12 +23279,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064870494}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 8e397a26c12234c4f9f02a7624f3bb2b, type: 2}
 --- !u!1 &2071556539
 GameObject:
   m_ObjectHideFlags: 0
@@ -23483,12 +23484,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2075938494}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 10eb5c409b345ba41b558ceabab39e1d, type: 2}
 --- !u!1 &2078651595
 GameObject:
   m_ObjectHideFlags: 0
@@ -23949,12 +23950,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120732325}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: ada206bb1ce15f34db26bdad5a8bfdf7, type: 2}
 --- !u!1 &2130277504
 GameObject:
   m_ObjectHideFlags: 0
@@ -24151,12 +24152,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2131049013}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothingItemData: {fileID: 0}
+  clothingItemData: {fileID: 11400000, guid: 021977f9f0a2e9d4d85f6f1efd2cdda1, type: 2}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
