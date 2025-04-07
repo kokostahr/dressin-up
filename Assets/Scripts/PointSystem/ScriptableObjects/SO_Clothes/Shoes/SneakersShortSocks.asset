@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Sneakers ShortSocks
   itemIcon: {fileID: 639586946530251843, guid: 10d9df3a70a95e94c93acfc4e59d7167, type: 3}
   winterPoints: 2
+  summerPoints: 3

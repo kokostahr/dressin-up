@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Tanktop
   itemIcon: {fileID: 9163242574738384893, guid: e5e1d4509f0b42041b2f6991726376ac, type: 3}
   winterPoints: 0
+  summerPoints: 3

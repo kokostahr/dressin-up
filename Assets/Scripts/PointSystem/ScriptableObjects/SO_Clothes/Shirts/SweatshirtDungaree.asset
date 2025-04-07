@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Sweatshirt Dungaree
   itemIcon: {fileID: 3983230582232383312, guid: 31f9bdd182a9a3c4cbef49b408b3ecd0, type: 3}
   winterPoints: 3
+  summerPoints: 1

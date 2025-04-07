@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Shorts
   itemIcon: {fileID: 4462423443229009173, guid: e72a88efd7474944581184a7ea898e11, type: 3}
   winterPoints: 1
+  summerPoints: 3

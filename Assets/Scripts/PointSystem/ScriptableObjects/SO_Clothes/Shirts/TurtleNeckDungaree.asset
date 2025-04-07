@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: TurtleNeck Dungaree
   itemIcon: {fileID: -2115290598728278172, guid: c7683a486072f21499a4428f92015044, type: 3}
   winterPoints: 3
+  summerPoints: 1

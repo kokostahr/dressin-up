@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Highwaist Shorts
   itemIcon: {fileID: -3540640662500924763, guid: 8db06de00ed84524786e883a090635b9, type: 3}
   winterPoints: 0
+  summerPoints: 3

@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Oversized Tee
   itemIcon: {fileID: 5990405327660008560, guid: 2cd33921e96f1fb40b38be12348f1707, type: 3}
   winterPoints: 1
+  summerPoints: 3

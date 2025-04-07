@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Lowaist Sweats
   itemIcon: {fileID: 2021414167840197939, guid: c71b7e582a8f032418c63d2441951775, type: 3}
   winterPoints: 2
+  summerPoints: 2

@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Oversized Hoodie
   itemIcon: {fileID: 3146836763502740044, guid: 97e8983290c4606419d5339440e8227b, type: 3}
   winterPoints: 3
+  summerPoints: 0

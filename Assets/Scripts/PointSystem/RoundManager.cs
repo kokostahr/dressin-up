@@ -41,6 +41,9 @@ public class RoundManager : MonoBehaviour
 
     //Resetting the AI's clothing choices every round
     public Ai_OutfitChanger aiOutfitChanger;
+
+    //This is going to track the current theme
+    private string currentTheme; 
     
     void Start()
     {
@@ -57,6 +60,9 @@ public class RoundManager : MonoBehaviour
         //need to hide the score panel at the beginning
         scorePanel.SetActive(false);
         StartCoroutine(RoundCountdown());
+
+        //Randomly set the theme for the round
+        SetRandomTheme();
     }
 
     //Need a function that will countdown the time left and display it on screen
@@ -79,10 +85,10 @@ public class RoundManager : MonoBehaviour
         timerText.text = "Time's Up!";
 
         //need to calculate the proper points of the final items on screen when round ends
-        int playerFinalScore = clothingManager.CalculateOutfitScore();
+        int playerFinalScore = clothingManager.CalculateOutfitScore(currentTheme);
 
         //calculate the ai's final score from the aiOutfitChanger
-        int aiFinalScore = clothingManager.CalculateAiOutfitScore();
+        int aiFinalScore = clothingManager.CalculateAiOutfitScore(currentTheme);
 
         //Show the score panel that will display AI and Player scores
         scorePanel.SetActive (true);
@@ -118,6 +124,13 @@ public class RoundManager : MonoBehaviour
             roundResultText.gameObject.SetActive(true);
             roundResultText.text = "Oh! It's a tie... -_-??";
         }
+    }
+
+    void SetRandomTheme()
+    {
+        //Let's set the theme randomly to summer or WINTER. this is gonna be hard LOL
+        currentTheme = Random.Range(0, 2) == 0 ? "summer" : "winter";
+        themeText.text = "Theme: " + currentTheme.ToUpper(); //The hell this mean?
     }
 
     public void StartNextRound()
@@ -164,6 +177,9 @@ public class RoundManager : MonoBehaviour
 
         //call the AI outfitchanger coroutine to reset its clothes at the start of each round
         StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
+
+        //Reset the theme
+        SetRandomTheme();
 
         //Resetting the round countdown
         StartCoroutine (RoundCountdown());

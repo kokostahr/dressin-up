@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Sneakers
   itemIcon: {fileID: -8461923687830504554, guid: 470889f4b4f78214a9c443de2997c4c1, type: 3}
   winterPoints: 1
+  summerPoints: 2

@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Pullover
   itemIcon: {fileID: 5767691062940104089, guid: 6bfd1c897e1fad145bced688e40d9169, type: 3}
   winterPoints: 0
+  summerPoints: 3

@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: TuckedIn Shirt
   itemIcon: {fileID: -4356737133192543584, guid: 85c7895c9c3a60047a4979c04d3d0786, type: 3}
   winterPoints: 1
+  summerPoints: 2

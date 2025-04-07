@@ -2,31 +2,36 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class ClothingManager : MonoBehaviour
 {
-    //May not be necessary, but lets see
-    //public Image clothingDisplay;
+   
     //Text to show point popup when clothes are selected
     public TextMeshProUGUI pointsPopupText;
     //Int to track player's score
-    public int totalWinterPoints = 0;
+    //public int totalWinterPoints = 0;
+    public int totalPoints = 0;
     public Player_OutfitChange playerOutfitChanger;
 
     //Int to track the ai's score
 
     public Ai_OutfitChanger aiOutfitChanger;
 
-    public void SelectClothingItem(ClothingItemData selectedItem)
+    public void SelectClothingItem(ClothingItemData selectedItem, string theme)
     {
-        //Update the UI display
-        //clothingDisplay.sprite = selectedItem.itemIcon;
 
-        //Update the player's score
-        totalWinterPoints += selectedItem.winterPoints;
+        ////Update the player's score
+        //totalWinterPoints += selectedItem.winterPoints;
+        ////Show the popup points
+        //ShowPointsPopup(selectedItem.winterPoints);
 
-        //Show the popup points
-        ShowPointsPopup(selectedItem.winterPoints);
+        //update the player's score (modifying for themes)
+        int points = (theme == "summer") ? selectedItem.summerPoints : selectedItem.winterPoints;
+        totalPoints += points;
+
+        //show the popup points for the player
+        ShowPointsPopup(points);
     }
 
     void ShowPointsPopup(int points)
@@ -43,7 +48,7 @@ public class ClothingManager : MonoBehaviour
     }
 
     //Need a method that will calculate the points of the current clothing worn
-    public int CalculateOutfitScore()
+    public int CalculateOutfitScore(string theme)
     {
         int score = 0;
 
@@ -53,45 +58,72 @@ public class ClothingManager : MonoBehaviour
             var data = playerOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();   
             if (data != null)
             {
-                score += data.clothingItemData.winterPoints;
+                //score += data.clothingItemData.winterPoints;
+                //modifying to handle two themes
+                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
             }
         }
 
         if (playerOutfitChanger.currentPants != null)
         {
             var data = playerOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
-            if (data != null) score += data.clothingItemData.winterPoints;
+            if (data != null) 
+            {
+                //score += data.clothingItemData.winterPoints; 
+                //modifying for two themes
+                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+            }
         }
 
         if (playerOutfitChanger.currentShoes != null)
         {
             var data = playerOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
-            if (data != null) score += data.clothingItemData.winterPoints;
+            if (data != null) 
+            {
+                //score += data.clothingItemData.winterPoints; 
+                //modifying for themes
+                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+            }
         }
 
         return score;
     }
 
-    public int CalculateAiOutfitScore()
+    public int CalculateAiOutfitScore(string theme)
     {
         int score = 0;
 
         if (aiOutfitChanger.currentShirt != null)
         {
             var data = aiOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();
-            if (data != null) score += data.clothingItemData.winterPoints;
+            if (data != null) 
+            {
+                //score += data.clothingItemData.winterPoints;
+                //modifying for two themes . another if statement that needs to be expanded
+                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+            }
         }
 
         if (aiOutfitChanger.currentPants !=null)
         {
             var data = aiOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
-            if (data != null) score += data.clothingItemData.winterPoints;
+            if (data != null)
+            {
+                //score += data.clothingItemData.winterPoints;
+                //modyifying, yeah
+                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+            }
         }
         
         if (aiOutfitChanger.currentShoes!= null)
         {
             var data = aiOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
-            if (data != null) score += data.clothingItemData.winterPoints;
+            if (data != null)
+            {
+                //score += data.clothingItemData.winterPoints;
+                //modifyin yeah yeah
+                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+            }
         }
         return score;
     }

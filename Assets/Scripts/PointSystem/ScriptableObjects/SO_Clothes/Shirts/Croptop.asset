@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Croptop
   itemIcon: {fileID: -3062035596545835068, guid: 10f82a6472adac24f832feb8ca0df8f5, type: 3}
   winterPoints: 0
+  summerPoints: 3

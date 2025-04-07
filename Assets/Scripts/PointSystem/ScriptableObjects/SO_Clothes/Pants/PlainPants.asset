@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Plain Pants
   itemIcon: {fileID: 3544437381750979523, guid: b272b7c9bddcc8d4bba7b4208e2e5caa, type: 3}
   winterPoints: 3
+  summerPoints: 2

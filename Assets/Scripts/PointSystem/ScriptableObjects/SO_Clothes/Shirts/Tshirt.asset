@@ -15,3 +15,4 @@ MonoBehaviour:
   itemName: Tshirt
   itemIcon: {fileID: -8010340093674138757, guid: dabc9cf3922f1df4e88668f93558cdc1, type: 3}
   winterPoints: 0
+  summerPoints: 3
