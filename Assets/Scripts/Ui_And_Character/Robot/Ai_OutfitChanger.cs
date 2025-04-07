@@ -24,25 +24,26 @@ public class Ai_OutfitChanger : MonoBehaviour
     public Sprite[] aiShirtSprites, aiPantsSprites, aiShoeSprites;
 
     [Header("TALK TALK LINES")]
-    public TextMeshProUGUI aiTalkTalkText;
-    string[] outfitChoiceComments =
-    {
-        "This colour suits me so well",
-        "I just know I'm gonna win this round",
-        "There's no theme that I cannot conquer",
-        "I'm stylish and practial...",
-        "My calculations predict that I will win",
-        "Don't I look impressive?",
-        "I haven't finished yet, and it's already eating",
-        "I'm a stylish icon, just look at me!",
-        "LOOK AT THIS OUTFIT!? End the game, we know who the winner is",
-        "I feel and look so pretty, wow..",
-        "Just the shoes, then I'm gonna slay this round",
-        "Wow, why is it so hard to make a choice?!",
-        "Okay, I'm feeling very unsure of my choices...",
-        "I do NOT look like I'm going to win.",
-        "Damn, why did I choose this?!"
-    };
+    public GameObject[] aiOutfitComments;
+    //string[] outfitChoiceComments =
+    //{
+    //    "This colour suits me so well",
+    //    "I just know I'm gonna win this round",
+    //    "There's no theme that I cannot conquer",
+    //    "I'm stylish and practial...",
+    //    "My calculations predict that I will win",
+    //    "Don't I look impressive?",
+    //    "I haven't finished yet, and it's already eating",
+    //    "I'm a stylish icon, just look at me!",
+    //    "LOOK AT THIS OUTFIT!? End the game, we know who the winner is",
+    //    "I feel and look so pretty, wow..",
+    //    "Just the shoes, then I'm gonna slay this round",
+    //    "Wow, why is it so hard to make a choice?!",
+    //    "Okay, I'm feeling very unsure of my choices...",
+    //    "I do NOT look like I'm going to win.",
+    //    "Damn, why did I choose this?!"
+    //};
+
 
     void Start()
     {
@@ -81,11 +82,12 @@ public class Ai_OutfitChanger : MonoBehaviour
             //update the UI to show selected pants
             UpdateAIPantsDisplay(currentPants);
             //A simple way to make the AI comment when it makes a choice
-            int outfitIndex = Random.Range(0, outfitChoiceComments.Length);
+            int randomIndex = Random.Range(0, aiOutfitComments.Length);
+            aiOutfitComments[randomIndex].SetActive(true);
         }));
 
         yield return new WaitForSeconds(7f);//LET IT PAUSE ONCE MORE
-
+       
         yield return StartCoroutine(PickWithDeliberation(aishoes, (chosen) => {
             currentShoes = chosen;
             //update the UI to show selected shoes
