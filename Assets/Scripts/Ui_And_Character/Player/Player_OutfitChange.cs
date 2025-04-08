@@ -1,3 +1,5 @@
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,6 +28,11 @@ public class Player_OutfitChange : MonoBehaviour
     [Header("UI SPRITE ARRAY")]
     public Sprite[] shirtSprites, pantsSprites, shoeSprites;
 
+    [Header("REFERENCES")]
+    //public TextMeshProUGUI playerLiveScoreText;
+    public ClothingManager clothingManager;
+    
+
     void Start()
     {
         // Hide everything at the start
@@ -42,6 +49,18 @@ public class Player_OutfitChange : MonoBehaviour
             item.SetActive(false);
         }
     }
+    
+    ////Function to update the player's score live
+    //void UpdatePlayerScore()
+    //{
+    //    //Calculate the player's current outfit score based on the selected items
+    //    int totalScore = 0;
+
+    //    if (currentShirt != null)
+    //    {
+    //        totalScore += ClothingManager.CalculateOutfitScore(currentShirt);
+    //    } 
+    //}
 
     // Functions to set specific clothes based on button click
     public void SetShirt(int index)
@@ -53,6 +72,9 @@ public class Player_OutfitChange : MonoBehaviour
             currentShirt = shirts[index];
             if (index < shirtSprites.Length)
                 shirtDisplay.sprite = shirtSprites[index];
+
+            //Update the score for the shirt
+            UpdatePlayerScore();
         }
     }
 
@@ -65,6 +87,9 @@ public class Player_OutfitChange : MonoBehaviour
             currentPants = pants[index];
             if (index < pantsSprites.Length)
                 pantsDisplay.sprite = pantsSprites[index];
+
+            //Update the score for pants
+            UpdatePlayerScore();
         }
     }
 
@@ -77,7 +102,20 @@ public class Player_OutfitChange : MonoBehaviour
             currentShoes = shoes[index];
             if (index < shoeSprites.Length)
                 shoeDisplay.sprite = shoeSprites[index];
+
+            //Update the score for shoes
+            UpdatePlayerScore();
         }
+    }
+
+    //Method to update player's score after they select a clothing piece
+    void UpdatePlayerScore()
+    {
+        string currentTheme = RoundManager.Instance.GetCurrentTheme();
+        int playerScore = clothingManager.CalculateOutfitScore(currentTheme);
+
+        //Update the ui 
+        clothingManager.UpdatePlayerScore(playerScore);
     }
 
     // Panel Open/Close Methods for each category

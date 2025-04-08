@@ -10,6 +10,7 @@ public class ClothingManager : MonoBehaviour
     //Text to show point popup when clothes are selected
     public TextMeshProUGUI pointsPopupText;
     //Int to track player's score
+    int playerScore = 0;
     //public int totalWinterPoints = 0;
     public int totalPoints = 0;
     //variale to track the player's live score
@@ -158,6 +159,22 @@ public class ClothingManager : MonoBehaviour
         if (aiLiveScoreText != null)
         {
             aiLiveScoreText.text = "AI: " + score + " pts";
+        }
+    }
+
+    public void UpdatePlayerScore(int points)
+    {
+        playerScore += points;
+
+        //update the UI
+        UpdatePlayerScoreUI();
+    }
+
+    void UpdatePlayerScoreUI()
+    {
+        if (playerLiveScoreText != null)
+        {
+            playerLiveScoreText.text = "Human: " + playerScore + "pts";
         }
     }
 }
