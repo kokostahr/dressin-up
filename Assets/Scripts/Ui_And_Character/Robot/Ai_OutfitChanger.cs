@@ -50,6 +50,11 @@ public class Ai_OutfitChanger : MonoBehaviour
         HideAll(aishirts);
         HideAll(aipants);
         HideAll(aishoes);
+        //first hide all active comments
+        foreach (GameObject comment in aiOutfitComments)
+        {
+            comment.SetActive(false);
+        }
         StartCoroutine(ChooseRandomOutfitDelay());
     }
 
@@ -82,8 +87,18 @@ public class Ai_OutfitChanger : MonoBehaviour
             //update the UI to show selected pants
             UpdateAIPantsDisplay(currentPants);
             //A simple way to make the AI comment when it makes a choice
+            //first hide all active comments
+            foreach (GameObject comment in aiOutfitComments)
+            {
+                comment.SetActive(false);
+            }
+
+            //Pick a new one to show
             int randomIndex = Random.Range(0, aiOutfitComments.Length);
             aiOutfitComments[randomIndex].SetActive(true);
+
+            //ANOTHER co routine to hide the comment after a short amount of time
+            StartCoroutine(HideCommentAfterDelay(aiOutfitComments[randomIndex], 4f));
         }));
 
         yield return new WaitForSeconds(7f);//LET IT PAUSE ONCE MORE
@@ -130,6 +145,13 @@ public class Ai_OutfitChanger : MonoBehaviour
         //send the chosen item back through callback
 
         callback(options[finalIndex]);
+    }
+
+    //Method to hide the comment after a short amount of time
+    IEnumerator HideCommentAfterDelay(GameObject commentObj, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        commentObj.SetActive(false);
     }
 
     void UpdateAIShirtDisplay(GameObject chosenShirt)
