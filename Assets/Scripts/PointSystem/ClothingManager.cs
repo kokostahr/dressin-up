@@ -174,7 +174,7 @@ public class ClothingManager : MonoBehaviour
     {
         if (playerLiveScoreText != null)
         {
-            playerLiveScoreText.text = "Human: " + playerScore + "pts";
+            playerLiveScoreText.text = "You: " + playerScore + " pts";
         }
     }
 }

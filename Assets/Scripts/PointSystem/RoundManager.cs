@@ -109,10 +109,12 @@ public class RoundManager : MonoBehaviour
         int aiFinalScore = clothingManager.CalculateAiOutfitScore(currentTheme);
 
         //Show the score panel that will display AI and Player scores
+        themeText.gameObject.SetActive(false);
         scorePanel.SetActive (true);
-        themeText.gameObject.SetActive (false);
-        playerFinalScoreText.text = "Player Score: " + playerFinalScore + " points";
-        aiFinalScoreText.text = "AI Score: " + aiFinalScore + " points";
+        //dont need to show these things anymore
+
+        //playerFinalScoreText.text = "Player Score: " + playerFinalScore + " points";
+        //aiFinalScoreText.text = "AI Score: " + aiFinalScore + " points";
 
         //Then compare scores to determine the winner of the round.
         CompareScores(playerFinalScore, aiFinalScore);
@@ -212,13 +214,15 @@ public class RoundManager : MonoBehaviour
         //displaying the total wins
         if (playerWins > aiWins)
         {
-            aiFinalScoreText.text = "-_-??";
-            playerFinalScoreText.text = "You got the most wins! Close the game. Its finshed.";
+            roundResultText.text = "Congratulations! You've outstyled the AI!";
+            //aiFinalScoreText.text = "-_-??";
+            //playerFinalScoreText.text = "You got the most wins! Close the game. Its finshed.";
         }
         else if (playerWins < aiWins)
         {
-            aiFinalScoreText.text = "The robot got the most wins. Close the game, It's finished.";
-            playerFinalScoreText.text = "The robot beat you.";
+            roundResultText.text = "Sadly you lost. The Ai outstyled you!";
+            //aiFinalScoreText.text = "The robot got the most wins. Close the game, It's finished.";
+            //playerFinalScoreText.text = "The robot beat you.";
         }
         
         themeText.gameObject.SetActive (false);
