@@ -34,6 +34,7 @@ public class RoundManager : MonoBehaviour
 
     //AI related logic for when I make an AI manager...just a place holder for now
     public int aiFinalScore = 0;
+    public int playerFinalScore = 0;
 
     //Winner Tracking
     public int playerWins = 0;
@@ -178,7 +179,9 @@ public class RoundManager : MonoBehaviour
     void ResetRound()
     {
         //Reset AI Score for next round
-        aiFinalScore = 0;
+        clothingManager.ResetAiScore();
+        //Reset Player Score for next rround
+        clothingManager.ResetPlayerScore();
 
         scorePanel.SetActive (false); //Hiding the scorepanel again
         //hide the clothing panels

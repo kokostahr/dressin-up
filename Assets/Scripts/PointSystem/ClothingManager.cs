@@ -11,6 +11,7 @@ public class ClothingManager : MonoBehaviour
     public TextMeshProUGUI pointsPopupText;
     //Int to track player's score
     int playerScore = 0;
+    int aiScore = 0;
     //public int totalWinterPoints = 0;
     public int totalPoints = 0;
     //variale to track the player's live score
@@ -36,25 +37,21 @@ public class ClothingManager : MonoBehaviour
         //ShowPointsPopup(selectedItem.winterPoints);
 
         //update the player's score (modifying for themes)
-        int points = (theme == "summer") ? selectedItem.summerPoints : selectedItem.winterPoints;
         //totalPoints += points;
+
+        int points = (theme == "summer") ? selectedItem.summerPoints : selectedItem.winterPoints;
+       
         //show the popup points for the player
         ShowPointsPopup(points);
 
         //Recalculate based on selected outfits
         int updatedScore = CalculateOutfitScore(theme);
+        int aiUpdatedScore = CalculateAiOutfitScore(theme);
         UpdatePlayerScoreUI(updatedScore);
-
+        UpdateAiScoreUI(aiUpdatedScore);
         
     }
 
-    void UpdatePlayerScoreUI(int score)
-    {
-        if (playerLiveScoreText != null)
-        {
-            playerLiveScoreText.text = "Player: " + score + " pts";
-        }
-    }
 
     void ShowPointsPopup(int points)
     {
@@ -113,7 +110,7 @@ public class ClothingManager : MonoBehaviour
 
     public int CalculateAiOutfitScore(string theme)
     {
-        int score = 0;
+        aiScore = 0;
 
         if (aiOutfitChanger.currentShirt != null)
         {
@@ -122,7 +119,7 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints;
                 //modifying for two themes . another if statement that needs to be expanded
-                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+                aiScore += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
             }
         }
 
@@ -133,7 +130,7 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints;
                 //modyifying, yeah
-                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+                aiScore += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
             }
         }
         
@@ -144,14 +141,14 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints;
                 //modifyin yeah yeah
-                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+                aiScore += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
             }
         }
 
         ////Update the AI live score
-        UpdateAiScoreUI(score); 
+        aiLiveScoreText.text = "AI: " + aiScore.ToString() + " pts";
 
-        return score;
+        return aiScore;
     }
 
     public void UpdateAiScoreUI(int score)
@@ -167,15 +164,34 @@ public class ClothingManager : MonoBehaviour
         playerScore += points;
 
         //update the UI
-        UpdatePlayerScoreUI();
+        UpdatePlayerScoreUI(points);
     }
 
-    void UpdatePlayerScoreUI()
+
+    void UpdatePlayerScoreUI(int score)
     {
         if (playerLiveScoreText != null)
         {
-            playerLiveScoreText.text = "You: " + playerScore + " pts";
+            playerLiveScoreText.text = "Player: " + score + " pts";
         }
+    }
+
+
+    public void ResetPlayerScore()
+    {
+        //reset the players score to 0 at the beninnning of each roundddd
+        totalPoints = 0;
+        playerScore = 0;
+
+        //update the ui to show the reset score
+        UpdatePlayerScoreUI(0);
+    }
+
+   public void ResetAiScore()
+    {
+        //reset the score to 0 at the beninning of each round
+        aiScore = 0;
+        UpdateAiScoreUI(0);
     }
 }
 
