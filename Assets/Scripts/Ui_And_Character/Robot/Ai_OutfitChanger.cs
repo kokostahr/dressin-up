@@ -53,6 +53,13 @@ public class Ai_OutfitChanger : MonoBehaviour
         }
     }
 
+    public void AIHideAllRoundReset()
+    {
+        HideAll(aishirts);
+        HideAll(aipants);
+        HideAll(aishoes);
+    }
+
     //Co-routine that will make the AI look like its still thinking about its choices xD
     public IEnumerator ChooseRandomOutfitDelay()
     {

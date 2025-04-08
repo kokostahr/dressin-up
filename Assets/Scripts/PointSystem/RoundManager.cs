@@ -42,6 +42,7 @@ public class RoundManager : MonoBehaviour
 
     //Resetting the AI's clothing choices every round
     public Ai_OutfitChanger aiOutfitChanger;
+    public Player_OutfitChange playerOutfitChanger;
 
     //This is going to track the current theme
     private string currentTheme;
@@ -116,6 +117,10 @@ public class RoundManager : MonoBehaviour
 
         //playerFinalScoreText.text = "Player Score: " + playerFinalScore + " points";
         //aiFinalScoreText.text = "AI Score: " + aiFinalScore + " points";
+
+        //Need to hide all the clothes again
+        aiOutfitChanger.AIHideAllRoundReset();
+        playerOutfitChanger.PlayerHideAllRoundReset();
 
         //Then compare scores to determine the winner of the round.
         CompareScores(playerFinalScore, aiFinalScore);

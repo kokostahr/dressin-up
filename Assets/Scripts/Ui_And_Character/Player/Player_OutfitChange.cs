@@ -49,6 +49,14 @@ public class Player_OutfitChange : MonoBehaviour
             item.SetActive(false);
         }
     }
+
+    //method to just hide all the stuff when the round resets
+    public void PlayerHideAllRoundReset()
+    {
+        HideAll(shirts);
+        HideAll(pants);
+        HideAll(shoes);
+    }
     
     ////Function to update the player's score live
     //void UpdatePlayerScore()
