@@ -43,8 +43,22 @@ public class RoundManager : MonoBehaviour
     public Ai_OutfitChanger aiOutfitChanger;
 
     //This is going to track the current theme
-    private string currentTheme; 
-    
+    private string currentTheme;
+
+    //idk why im adding this
+    public static RoundManager Instance;
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
+    public string GetCurrentTheme()
+    {
+        return currentTheme;
+    }
+
     void Start()
     {
         //When the game starts the first round should begin as well..duh
@@ -57,6 +71,10 @@ public class RoundManager : MonoBehaviour
     {
         timeLeft = roundDuration;
         roundActive = true;
+
+        //starting the ai's outfit choosing again
+        aiOutfitChanger.StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
+
         //need to hide the score panel at the beginning
         scorePanel.SetActive(false);
         StartCoroutine(RoundCountdown());

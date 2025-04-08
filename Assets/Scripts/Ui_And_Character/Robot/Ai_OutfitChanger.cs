@@ -23,6 +23,9 @@ public class Ai_OutfitChanger : MonoBehaviour
     [Header("AI UI SPRITE ARRAY")]
     public Sprite[] aiShirtSprites, aiPantsSprites, aiShoeSprites;
 
+    [Header("REFERENCES")]
+    public ClothingManager clothingManager;
+
     [Header("TALK TALK LINES")]
     public GameObject[] aiOutfitComments;
     //string[] outfitChoiceComments =
@@ -55,7 +58,7 @@ public class Ai_OutfitChanger : MonoBehaviour
         {
             comment.SetActive(false);
         }
-        StartCoroutine(ChooseRandomOutfitDelay());
+        //StartCoroutine(ChooseRandomOutfitDelay());
     }
 
     // Function to hide all items in a category
@@ -77,8 +80,10 @@ public class Ai_OutfitChanger : MonoBehaviour
             currentShirt = chosen;
             //update the UI to show the selected shirt
             UpdateAIShirtDisplay(currentShirt);
-            
+            clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme());
+
         }));
+
 
         yield return new WaitForSeconds(6f);//Let AI PAUSE AGAIN
 
@@ -99,15 +104,21 @@ public class Ai_OutfitChanger : MonoBehaviour
 
             //ANOTHER co routine to hide the comment after a short amount of time
             StartCoroutine(HideCommentAfterDelay(aiOutfitComments[randomIndex], 4f));
+
+            clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme());
         }));
 
-        yield return new WaitForSeconds(7f);//LET IT PAUSE ONCE MORE
+        yield return new WaitForSeconds(5f);//LET IT PAUSE ONCE MORE
        
         yield return StartCoroutine(PickWithDeliberation(aishoes, (chosen) => {
             currentShoes = chosen;
             //update the UI to show selected shoes
             UpdateAIShoesDisplay(currentShoes);
+
+            clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme());
         }));
+
+       // FinaliseOutfitAndScore(RoundManager.Instance.GetCurrentTheme());
     }
 
     //Coroutine that will make the AI pick multiple options before settling on one
@@ -182,6 +193,15 @@ public class Ai_OutfitChanger : MonoBehaviour
         {
             aiShoeDisplay.sprite = aiShoeSprites[index];
         }
+    }
+
+    public void FinaliseOutfitAndScore(string theme)
+    {
+        if (clothingManager != null)
+        {
+            clothingManager.CalculateAiOutfitScore(theme);
+        }
+
     }
 
 }

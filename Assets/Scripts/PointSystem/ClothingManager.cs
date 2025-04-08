@@ -6,17 +6,25 @@ using UnityEngine.UIElements;
 
 public class ClothingManager : MonoBehaviour
 {
-   
+    [Header("PLAYER RELATED SCORING")]
     //Text to show point popup when clothes are selected
     public TextMeshProUGUI pointsPopupText;
     //Int to track player's score
     //public int totalWinterPoints = 0;
     public int totalPoints = 0;
+    //variale to track the player's live score
+    //public int currentScore = 0;
     public Player_OutfitChange playerOutfitChanger;
 
+    [Header("AI RELATED SCORING")]
     //Int to track the ai's score
 
     public Ai_OutfitChanger aiOutfitChanger;
+
+    [Header("LIVE SCOREBOARD UI")]
+    //ui to track the live score of the player and Ai
+    public TextMeshProUGUI playerLiveScoreText;
+    public TextMeshProUGUI aiLiveScoreText;
 
     public void SelectClothingItem(ClothingItemData selectedItem, string theme)
     {
@@ -28,10 +36,23 @@ public class ClothingManager : MonoBehaviour
 
         //update the player's score (modifying for themes)
         int points = (theme == "summer") ? selectedItem.summerPoints : selectedItem.winterPoints;
-        totalPoints += points;
-
+        //totalPoints += points;
         //show the popup points for the player
         ShowPointsPopup(points);
+
+        //Recalculate based on selected outfits
+        int updatedScore = CalculateOutfitScore(theme);
+        UpdatePlayerScoreUI(updatedScore);
+
+        
+    }
+
+    void UpdatePlayerScoreUI(int score)
+    {
+        if (playerLiveScoreText != null)
+        {
+            playerLiveScoreText.text = "Player: " + score + " pts";
+        }
     }
 
     void ShowPointsPopup(int points)
@@ -125,9 +146,20 @@ public class ClothingManager : MonoBehaviour
                 score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
             }
         }
+
+        ////Update the AI live score
+        UpdateAiScoreUI(score); 
+
         return score;
     }
 
+    public void UpdateAiScoreUI(int score)
+    {
+        if (aiLiveScoreText != null)
+        {
+            aiLiveScoreText.text = "AI: " + score + " pts";
+        }
+    }
 }
 
 
