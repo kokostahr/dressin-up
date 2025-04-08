@@ -986,7 +986,7 @@ MonoBehaviour:
   - {fileID: -4356737133192543584, guid: 85c7895c9c3a60047a4979c04d3d0786, type: 3}
   - {fileID: -7750185776960917524, guid: 16ad2adc198796946beae1c37cff6221, type: 3}
   - {fileID: 7615489336185285909, guid: 818d47e91674f9f438ab79c4b08d2f0b, type: 3}
-  - {fileID: 3399055831317774537, guid: daa16591b712ccf47ac328bbfcedc775, type: 3}
+  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
   aiPantsSprites:
   - {fileID: -5981882978173692186, guid: 4f2efa322b0e3a74a8853a7326868d96, type: 3}
   - {fileID: -7759383249721531516, guid: 17f11354a430d6f4485f7fa38a816e4d, type: 3}
@@ -1000,7 +1000,7 @@ MonoBehaviour:
   - {fileID: 3544437381750979523, guid: b272b7c9bddcc8d4bba7b4208e2e5caa, type: 3}
   - {fileID: -8681556639226851738, guid: 6c2c7b5398500714c95b2142d3f248e8, type: 3}
   - {fileID: 4462423443229009173, guid: e72a88efd7474944581184a7ea898e11, type: 3}
-  - {fileID: -7877059519184255145, guid: 4477c8215b2739b41a30e63cb47417df, type: 3}
+  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
   aiShoeSprites:
   - {fileID: 7902364575885455685, guid: 22a71571415f8394b8cef724ea2d7285, type: 3}
   - {fileID: 6667722196501494047, guid: 1a58e4000ab8cdd48b6fab9f2f74b9ee, type: 3}
