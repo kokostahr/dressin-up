@@ -124,6 +124,7 @@ public class RoundManager : MonoBehaviour
                 fastAudioSource.time = 0f;
                 fastAudioSource.Play();
                 isFastMusicPlaying = true;
+                timerText.color = Color.red;
             }
 
 
@@ -138,6 +139,7 @@ public class RoundManager : MonoBehaviour
     {
         roundActive = false;
         timerText.text = "Time's Up!";
+        timerText.color = Color.white;
 
         //need to calculate the proper points of the final items on screen when round ends
         int playerFinalScore = clothingManager.CalculateOutfitScore(currentTheme);
