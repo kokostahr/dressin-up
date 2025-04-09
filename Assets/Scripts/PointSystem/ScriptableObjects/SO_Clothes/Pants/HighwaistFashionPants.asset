@@ -15,4 +15,4 @@ MonoBehaviour:
   itemName: Highwaist FashionPants
   itemIcon: {fileID: 5837270154239163223, guid: 6e223210e1973834f863dd4cf220d15a, type: 3}
   winterPoints: 3
-  summerPoints: 0
+  summerPoints: 1

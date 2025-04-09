@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Lowaist Pants
   itemIcon: {fileID: -2866437868543875834, guid: 139687b480e6d2b46bad5e3dc38cf536, type: 3}
-  winterPoints: 2
-  summerPoints: 1
+  winterPoints: 1
+  summerPoints: 2
