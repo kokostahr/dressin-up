@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject howToPlayPanel;
+
+    private void Start()
+    {
+        howToPlayPanel.SetActive(false);
+    }
+
     public void LoadScene(string sceneName) //To load the relevant scene when you click the button.
     {
         SceneManager.LoadScene(sceneName);
@@ -14,4 +21,15 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void OpenInstructionPanel()
+    {
+        howToPlayPanel.SetActive(true);
+    }
+
+    public void CloseInstructionPanel()
+    {
+        howToPlayPanel.SetActive(false);
+    }
+
 }
