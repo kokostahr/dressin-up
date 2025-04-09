@@ -910,12 +910,13 @@ MonoBehaviour:
   themePopupText: {fileID: 1788195001}
   player_OutfitChange: {fileID: 51772523}
   roundResultText: {fileID: 1898491040}
-  aiFinalScore: 5
+  aiFinalScore: 0
   playerFinalScore: 0
   playerWins: 0
   aiWins: 0
   aiOutfitChanger: {fileID: 51772526}
   playerOutfitChanger: {fileID: 51772523}
+  sceneUI: {fileID: 506680799}
   calmAudioSource: {fileID: 180600076}
   fastAudioSource: {fileID: 1599780765}
   flashPanelImg: {fileID: 1276091917}

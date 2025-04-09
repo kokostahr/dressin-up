@@ -50,6 +50,9 @@ public class RoundManager : MonoBehaviour
     //idk why im adding this
     public static RoundManager Instance;
 
+    [Header("SCENE SETTINGS")]
+    public GameObject sceneUI;
+
     [Header("MUSIC SETTINGS")]
     public AudioSource calmAudioSource;//The slow music track
     public AudioSource fastAudioSource; //Sped up version of the music track
@@ -66,6 +69,7 @@ public class RoundManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+        sceneUI.SetActive(false);
     }
 
     public string GetCurrentTheme()
@@ -307,6 +311,8 @@ public class RoundManager : MonoBehaviour
     {
         timerText.text = "Game Over \U0001F910"; //please don't be surprised future me. These are emojis in 'unicode' form
         scorePanel.SetActive(true);
+        //Set the buttons active once the game has ended
+        sceneUI.SetActive(true);
 
         //displaying the total wins
         if (playerWins > aiWins)
