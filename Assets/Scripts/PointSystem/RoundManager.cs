@@ -58,6 +58,10 @@ public class RoundManager : MonoBehaviour
     private float roundTimer; //Timer to track the round's time
     private bool isFastMusicPlaying = false;
 
+    [Header("FLASH SETTINGS")]
+    public Image flashPanelImg;
+    private bool flashingStarted = false;
+
 
     private void Awake()
     {
@@ -102,6 +106,21 @@ public class RoundManager : MonoBehaviour
         SetRandomTheme();
     }
 
+    //A couroutine that adds a flash panel to the scene
+    IEnumerator FlashCountDownWarning()
+    {
+        for (int i = 3; i> 0; i--)
+        {
+            //turn the flash on
+            flashPanelImg.color = new Color(1f, 1f, 1f, 0.6f); //semi visible white
+            yield return new WaitForSeconds(0.15f);
+
+            //turn the flash off
+            flashPanelImg.color = new Color(1f, 1f, 1f, 0f); //gone again
+            yield return new WaitForSeconds(0.85f); //does about 1s per flash
+        }
+    }
+
     //Need a function that will countdown the time left and display it on screen
     IEnumerator RoundCountdown()
     {
@@ -125,6 +144,13 @@ public class RoundManager : MonoBehaviour
                 fastAudioSource.Play();
                 isFastMusicPlaying = true;
                 timerText.color = Color.red;
+            }
+
+            //last three seconds flash must come on
+            if (Mathf.Ceil(timeLeft) == 3 && !flashingStarted)
+            {
+                StartCoroutine(FlashCountDownWarning());
+                flashingStarted = true; 
             }
 
 
@@ -227,8 +253,12 @@ public class RoundManager : MonoBehaviour
 
     void ResetRound()
     {
+        //turn off the fast music and reset the round timer
         isFastMusicPlaying = false;
         roundTimer = 0f;
+        //turn off the flash
+        flashingStarted = false;
+
         //Reset AI Score for next round
         clothingManager.ResetAiScore();
         //Reset Player Score for next rround
