@@ -50,6 +50,14 @@ public class RoundManager : MonoBehaviour
     //idk why im adding this
     public static RoundManager Instance;
 
+    [Header("MUSIC SETTINGS")]
+    public AudioSource calmAudioSource;//The slow music track
+    public AudioSource fastAudioSource; //Sped up version of the music track
+    //public AudioClip calmMusic; 
+    //public AudioClip fastMusic; 
+    private float roundTimer; //Timer to track the round's time
+    private bool isFastMusicPlaying = false;
+
 
     private void Awake()
     {
@@ -73,6 +81,15 @@ public class RoundManager : MonoBehaviour
     {
         timeLeft = roundDuration;
         roundActive = true;
+        roundTimer = 0f;
+        isFastMusicPlaying = false;
+        //Starting the calm music at the beginning of the round
+        //audioSource.clip = calmMusic;
+        //audioSource.loop = true;
+        //audioSource.Play();
+        fastAudioSource.Stop(); //Incase it was playing
+        calmAudioSource.time = 0f;
+        calmAudioSource.Play();
 
         //starting the ai's outfit choosing again
         aiOutfitChanger.StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
@@ -91,7 +108,25 @@ public class RoundManager : MonoBehaviour
         while (timeLeft > 0 &&  roundActive)
         {
             timeLeft -= Time.deltaTime;
+            roundTimer += Time.deltaTime; //track the time since the round started
             timerText.text = "Time Left: " + Mathf.Ceil(timeLeft) + "s";
+
+            //Check if the round is nearing the last 10 seconds
+            if (roundTimer >= (roundDuration - 10f) && !isFastMusicPlaying)
+            {
+                //switch to the faster music for the last 10 seconds
+                //audioSource.Stop();
+                //audioSource.clip = fastMusic;
+                //audioSource.loop = true;
+                //audioSource.time = 0f;
+                //audioSource.Play();
+                calmAudioSource.Stop();
+                fastAudioSource.time = 0f;
+                fastAudioSource.Play();
+                isFastMusicPlaying = true;
+            }
+
+
             yield return null;
         }
 
@@ -118,6 +153,11 @@ public class RoundManager : MonoBehaviour
         //playerFinalScoreText.text = "Player Score: " + playerFinalScore + " points";
         //aiFinalScoreText.text = "AI Score: " + aiFinalScore + " points";
 
+        //audiostuffff
+        calmAudioSource.Play();
+        fastAudioSource.Stop();
+        isFastMusicPlaying = false;
+
         //Need to hide all the clothes again
         aiOutfitChanger.AIHideAllRoundReset();
         playerOutfitChanger.PlayerHideAllRoundReset();
@@ -127,6 +167,8 @@ public class RoundManager : MonoBehaviour
 
         //Wait the start next round or end game
         StartCoroutine(WaitAndStartNextRound());
+
+       
     }
 
     void CompareScores(int playerFinalScore, int aiFinalScore)
@@ -183,6 +225,8 @@ public class RoundManager : MonoBehaviour
 
     void ResetRound()
     {
+        isFastMusicPlaying = false;
+        roundTimer = 0f;
         //Reset AI Score for next round
         clothingManager.ResetAiScore();
         //Reset Player Score for next rround
@@ -203,6 +247,17 @@ public class RoundManager : MonoBehaviour
         roundActive = true;
         timeLeft = roundDuration;
 
+        //Reset the music to calm for the next round
+        //audioSource.Stop(); //stop the fast music or anything else
+        //audioSource.clip = calmMusic;
+        //audioSource.loop = true;
+        //audioSource.time = 0f; //reset the music position to start
+        //audioSource.Play();
+        fastAudioSource.Stop(); //Incase it was playing
+        calmAudioSource.time = 0f;
+        calmAudioSource.Play();
+        
+
         //call the AI outfitchanger coroutine to reset its clothes at the start of each round
         StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
 
@@ -211,6 +266,8 @@ public class RoundManager : MonoBehaviour
 
         //Resetting the round countdown
         StartCoroutine (RoundCountdown());
+
+
     }
 
     //method to end the game
@@ -236,5 +293,6 @@ public class RoundManager : MonoBehaviour
         themeText.gameObject.SetActive (false);
         themePopupText.gameObject .SetActive (false);
     }
+
 
 }
