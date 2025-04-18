@@ -16,3 +16,6 @@ MonoBehaviour:
   itemIcon: {fileID: -1123359309615499758, guid: 1d51375157eceae41afc38049a65a01f, type: 3}
   winterPoints: 1
   summerPoints: 2
+  casualPoints: 0
+  cozyPoints: 0
+  itemTag: []

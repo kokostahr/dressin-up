@@ -229,7 +229,7 @@ public class RoundManager : MonoBehaviour
     void SetRandomTheme()
     {
         //Let's set the theme randomly to summer or WINTER. this is gonna be hard LOL
-        currentTheme = Random.Range(0, 2) == 0 ? "summer" : "winter";
+        currentTheme = Random.Range(0, 4) == 0 ? "summer" : "winter";
         themeText.text = "Theme: " + currentTheme.ToUpper(); //The hell this mean?
     }
 
