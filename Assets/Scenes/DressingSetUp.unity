@@ -745,6 +745,7 @@ GameObject:
   - component: {fileID: 51772524}
   - component: {fileID: 51772525}
   - component: {fileID: 51772526}
+  - component: {fileID: 51772527}
   m_Layer: 0
   m_Name: DressingManager
   m_TagString: Untagged
@@ -905,11 +906,12 @@ MonoBehaviour:
   scorePanel: {fileID: 1538094134}
   playerFinalScoreText: {fileID: 1666878569}
   aiFinalScoreText: {fileID: 1868884827}
-  clothingManager: {fileID: 51772524}
   themeText: {fileID: 581866056}
   themePopupText: {fileID: 1788195001}
   player_OutfitChange: {fileID: 51772523}
   roundResultText: {fileID: 1898491040}
+  clothingManager: {fileID: 51772524}
+  scoringManager: {fileID: 51772527}
   aiFinalScore: 0
   playerFinalScore: 0
   playerWins: 0
@@ -1035,6 +1037,24 @@ MonoBehaviour:
   - {fileID: 459607665}
   - {fileID: 1333181386}
   - {fileID: 538876734}
+--- !u!114 &51772527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51772521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ea1b11a67e86ea4d863657459fa2200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundManager: {fileID: 51772525}
+  clothingManager: {fileID: 51772524}
+  playerTotalScore: 0
+  aiTotalScore: 0
+  lastPlayerBonus: 0
+  lastAIBonus: 0
 --- !u!1 &77045470
 GameObject:
   m_ObjectHideFlags: 0

@@ -237,10 +237,10 @@ public class ScoringManager : MonoBehaviour
         }
 
         //then add the bonus score to the player's total score
-        lastPlayerBonus = bonusScore;
-        playerTotalScore += bonusScore;
+        bonusScore = lastPlayerBonus;
+        playerTotalScore += lastPlayerBonus;
 
-        return bonusScore;
+        return lastPlayerBonus;
 
         //add a text popup or sparkle here 
     }
@@ -393,10 +393,10 @@ public class ScoringManager : MonoBehaviour
         }
 
         //then add the bonus score to the player's total score
-        lastAIBonus = bonusScore;
-        aiTotalScore += bonusScore;
+        bonusScore = lastAIBonus;
+        aiTotalScore += lastAIBonus;
 
-        return bonusScore;
+        return lastAIBonus;
 
         //add a text popup or sparkle here 
     }
