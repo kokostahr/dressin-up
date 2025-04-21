@@ -178,6 +178,9 @@ public class RoundManager : MonoBehaviour
         timerText.color = Color.white;
 
         //need to calculate the proper points of the final items on screen when round ends
+        ScoringManager.Instance.UpdatePlayerScore(currentTheme);
+        ScoringManager.Instance.UpdateAIScore(currentTheme);
+
         int playerBaseScore = clothingManager.CalculateOutfitScore(currentTheme);
         int aiBaseScore = clothingManager.CalculateAiOutfitScore(currentTheme);
 

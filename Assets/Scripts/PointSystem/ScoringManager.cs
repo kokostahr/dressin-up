@@ -38,9 +38,13 @@ public class ScoringManager : MonoBehaviour
         //Checking which items are currently equiped for the player
         ClothingItemData[] equippedItems = new ClothingItemData[3];
 
-        equippedItems[0] = clothingManager.playerOutfitChanger.currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-        equippedItems[1] = clothingManager.playerOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-        equippedItems[2] = clothingManager.playerOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+        if (clothingManager.playerOutfitChanger.currentShirt != null)
+        {
+            equippedItems[0] = clothingManager.playerOutfitChanger.currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+            equippedItems[1] = clothingManager.playerOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+            equippedItems[2] = clothingManager.playerOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+
+        }
 
         //Get the bonus points
         int bonus = PlayerBonus(equippedItems, theme);
@@ -60,9 +64,13 @@ public class ScoringManager : MonoBehaviour
         //Checking which items are currently eqquiped for the AI
         ClothingItemData[] equippedItems = new ClothingItemData[3];
 
-        equippedItems[0] = clothingManager.aiOutfitChanger.currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-        equippedItems[1] = clothingManager.aiOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-        equippedItems[2] = clothingManager.aiOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+        if (clothingManager.aiOutfitChanger.currentShirt != null)
+        {
+            equippedItems[0] = clothingManager.aiOutfitChanger.currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+            equippedItems[1] = clothingManager.aiOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+            equippedItems[2] = clothingManager.aiOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+
+        }
 
         //Get the bonus points 
         int bonus = AiBonusPoints(equippedItems, theme);
@@ -237,10 +245,10 @@ public class ScoringManager : MonoBehaviour
         }
 
         //then add the bonus score to the player's total score
-        bonusScore = lastPlayerBonus;
-        playerTotalScore += lastPlayerBonus;
+        lastPlayerBonus = bonusScore;
+        playerTotalScore += bonusScore;
 
-        return lastPlayerBonus;
+        return bonusScore;
 
         //add a text popup or sparkle here 
     }
@@ -393,10 +401,10 @@ public class ScoringManager : MonoBehaviour
         }
 
         //then add the bonus score to the player's total score
-        bonusScore = lastAIBonus;
-        aiTotalScore += lastAIBonus;
+        lastAIBonus = bonusScore;
+        aiTotalScore += bonusScore;
 
-        return lastAIBonus;
+        return bonusScore;
 
         //add a text popup or sparkle here 
     }
