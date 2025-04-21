@@ -256,8 +256,8 @@ public class ScoringManager : MonoBehaviour
             //then need to check through the different tags an item will have
             foreach (string tag in item.itemTag)
             {
-                //DEFINING THE BONUS CONDITIONS BASED ON BOTH THE THEME AND TAGS
-                if (theme == "winter" && (tag == "cozy" || tag == "comfy"))
+                //WINTER
+                if (theme == "winter" && (tag == "cozy" || tag == "warm"))
                 {
                     //ADD BONUS POINTS TO THE INITIAL SCORE
                     bonusScore += 2;
@@ -269,10 +269,125 @@ public class ScoringManager : MonoBehaviour
                     bonusScore += 3;
                 }
 
+                if (theme == "winter" && (tag == "bold" || tag == "edgy"))
+                {
+                    //Add bonus points
+                    bonusScore += 1;
+                }
+
+                if (theme == "winter" && (tag == "flirty"))//Seperated them so bonus points can stack. 
+                                                           //If i added them all into one line like flirty || vibrant || etc, then its either or
+                                                           //not you can have flirty bonus points AND vibrant bonus points. 
+                {
+                    //Add bonus points
+                    bonusScore += 1;
+                }
+
+                if (theme == "winter" && (tag == "vibrant"))
+                {
+                    //Add bonus points
+                    bonusScore += 1;
+                }
+
+                //SUMMER
                 if (theme == "summer" && (tag == "vibrant"))
                 {
                     //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 3;
+                }
+
+                if (theme == "summer" && (tag == "flirty"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
                     bonusScore += 2;
+                }
+
+                if (theme == "summer" && (tag == "cozy"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                if (theme == "summer" && (tag == "bold" || tag == "edgy" || tag == "chic"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                //CASUAL DATE
+                if (theme == "casualdate" && (tag == "flirty" || tag == "chic"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 3;
+                }
+
+                if (theme == "casualdate" && (tag == "cozy"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 2;
+                }
+
+                if (theme == "casualdate" && (tag == "vibrant"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                if (theme == "casualdate" && (tag == "warm"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                //ARTSY STREET STYLE
+                if (theme == "artstreetstyle" && (tag == "edgy" || tag == "chic" || tag == "vibrant"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 3;
+                }
+
+                if (theme == "artstreetstyle" && (tag == "bold"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 2;
+                }
+
+                if (theme == "artstreetstyle" && (tag == "flirty"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                if (theme == "artstreetstyle" && (tag == "cozy"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                //TV SHOW AUDITION
+
+                if (theme == "tvshowaudition" && (tag == "bold" || tag == "chic"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 3;
+                }
+
+                if (theme == "tvshowaudition" && (tag == "edgy" || tag == "vibrant"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 2;
+                }
+
+                if (theme == "tvshowaudition" && (tag == "cozy"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                if (theme == "tvshowaudition" && (tag == "warm"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
                 }
             }
         }
