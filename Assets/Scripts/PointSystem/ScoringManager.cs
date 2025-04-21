@@ -35,8 +35,6 @@ public class ScoringManager : MonoBehaviour
     {
         int playerScore = clothingManager.CalculateOutfitScore(theme);
 
-        playerTotalScore = playerScore;
-
         //Checking which items are currently equiped for the player
         ClothingItemData[] equippedItems = new ClothingItemData[3];
 
@@ -44,8 +42,12 @@ public class ScoringManager : MonoBehaviour
         equippedItems[1] = clothingManager.playerOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
         equippedItems[2] = clothingManager.playerOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
 
-        //Giving the player her bonus points 
-        PlayerBonus(equippedItems, theme);
+        //Get the bonus points
+        int bonus = PlayerBonus(equippedItems, theme);
+
+        //combine the bonus points with the normal points
+        playerTotalScore = playerScore + bonus;
+
 
         return playerTotalScore;
     }
@@ -55,8 +57,6 @@ public class ScoringManager : MonoBehaviour
     {
         int aiScore = clothingManager.CalculateAiOutfitScore(theme);
 
-        aiTotalScore = aiScore;
-
         //Checking which items are currently eqquiped for the AI
         ClothingItemData[] equippedItems = new ClothingItemData[3];
 
@@ -64,8 +64,12 @@ public class ScoringManager : MonoBehaviour
         equippedItems[1] = clothingManager.aiOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
         equippedItems[2] = clothingManager.aiOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
 
-        //Giving the player her bonus points 
-        AiBonusPoints(equippedItems, theme);
+        //Get the bonus points 
+        int bonus = AiBonusPoints(equippedItems, theme);
+
+        //combine the bonus to the actual score
+        aiTotalScore = aiScore + bonus;
+
 
         return aiTotalScore;
 
@@ -73,7 +77,7 @@ public class ScoringManager : MonoBehaviour
 
 
     //Setting up the bonus points for the player
-    public void PlayerBonus(ClothingItemData[] equippedItems, string theme)
+    public int PlayerBonus(ClothingItemData[] equippedItems, string theme)
     {
 
         //Defining what the bonus score is so that we can ADD IT to the player's final score at the end of a round
@@ -86,25 +90,149 @@ public class ScoringManager : MonoBehaviour
             foreach (string tag in item.itemTag)
             {
                 //DEFINING THE BONUS CONDITIONS BASED ON BOTH THE THEME AND TAGS
-                if (theme == "winter" && (tag == "cozy" || tag == "comfy"))
+                //WINTER
+                if (theme == "winter" && (tag == "cozy" || tag == "warm"))
                 {
                     //ADD BONUS POINTS TO THE INITIAL SCORE
-                    bonusScore += 2; 
+                    bonusScore += 2;
+                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
-                if (theme == "winter" && (tag == "chic" && tag == "warm"))
+                if (theme == "winter" && (tag == "chic" || tag == "warm"))
                 {
                     //Add bonus points
                     bonusScore += 3;
+                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
-                if (theme == "summer" && tag == "vibrant")
+                if (theme == "winter" && (tag == "bold" || tag == "edgy"))
+                {
+                    //Add bonus points
+                    bonusScore += 1;
+                    Debug.Log("Player Bonus Score: " + bonusScore);
+                }
+
+                if (theme == "winter" && (tag == "flirty"))//Seperated them so bonus points can stack. 
+                    //If i added them all into one line like flirty || vibrant || etc, then its either or
+                    //not you can have flirty bonus points AND vibrant bonus points. 
+                {
+                    //Add bonus points
+                    bonusScore += 1;
+                    Debug.Log("Player Bonus Score: " + bonusScore);
+                }
+
+                if (theme == "winter" && (tag == "vibrant"))
+                {
+                    //Add bonus points
+                    bonusScore += 1;
+                    Debug.Log("Player Bonus Score: " + bonusScore);
+                }
+
+                //SUMMER
+                if (theme == "summer" && (tag == "vibrant"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 3;
+                    Debug.Log("Player Bonus Score: " + bonusScore);
+                }
+
+                if (theme == "summer" && (tag == "flirty"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 2;
+                    Debug.Log("Player Bonus Score: " + bonusScore);
+                }
+
+                if (theme == "summer" && (tag == "cozy"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                    Debug.Log("Player Bonus Score: " + bonusScore);
+                }
+
+                if (theme == "summer" && (tag == "bold" || tag == "edgy" || tag == "chic"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                    Debug.Log("Player Bonus Score: " + bonusScore);
+                }
+
+                //CASUAL DATE
+                if (theme == "casualdate" && (tag == "flirty" || tag == "chic"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 3;
+                }
+
+                if (theme == "casualdate" && (tag == "cozy"))
                 {
                     //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
                     bonusScore += 2;
                 }
 
-                //add the other conditions for the other themes!
+                if (theme == "casualdate" && (tag == "vibrant"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                if (theme == "casualdate" && (tag == "warm"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                //ARTSY STREET STYLE
+                if (theme == "artstreetstyle" && (tag == "edgy" || tag == "chic" || tag == "vibrant"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 3;
+                }
+
+                if (theme == "artstreetstyle" && (tag == "bold"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 2;
+                }
+
+                if (theme == "artstreetstyle" && (tag == "flirty"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                if (theme == "artstreetstyle" && (tag == "cozy"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                //TV SHOW AUDITION
+
+                if (theme == "tvshowaudition" && (tag == "bold" || tag == "chic"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 3;
+                }
+
+                if (theme == "tvshowaudition" && (tag == "edgy" || tag == "vibrant"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 2;
+                }
+
+                if (theme == "tvshowaudition" && (tag == "cozy"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
+                if (theme == "tvshowaudition" && (tag == "warm"))
+                {
+                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
+                    bonusScore += 1;
+                }
+
             }
         }
 
@@ -112,10 +240,12 @@ public class ScoringManager : MonoBehaviour
         lastPlayerBonus = bonusScore;
         playerTotalScore += bonusScore;
 
+        return bonusScore;
+
         //add a text popup or sparkle here 
     }
 
-    public void AiBonusPoints(ClothingItemData[] equippedItems, string theme)
+    public int AiBonusPoints(ClothingItemData[] equippedItems, string theme)
     {
         //Defining what the bonus score is so that we can ADD IT to the player's final score at the end of a round
         int bonusScore = 0;
@@ -133,13 +263,13 @@ public class ScoringManager : MonoBehaviour
                     bonusScore += 2;
                 }
 
-                if (theme == "winter" && (tag == "chic" && tag == "warm"))
+                if (theme == "winter" && (tag == "chic" || tag == "warm"))
                 {
                     //Add bonus points
                     bonusScore += 3;
                 }
 
-                if (theme == "summer" && tag == "vibrant")
+                if (theme == "summer" && (tag == "vibrant"))
                 {
                     //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
                     bonusScore += 2;
@@ -150,6 +280,8 @@ public class ScoringManager : MonoBehaviour
         //then add the bonus score to the player's total score
         lastAIBonus = bonusScore;
         aiTotalScore += bonusScore;
+
+        return bonusScore;
 
         //add a text popup or sparkle here 
     }
