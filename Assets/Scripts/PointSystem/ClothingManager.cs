@@ -198,15 +198,15 @@ public class ClothingManager : MonoBehaviour
         UpdateAiScoreUI(0);
    }
 
-    //METHOD THAT UPDATES THE FINAL SCORE UI AFTER THE ROUND ENDS:
-    public void UpdateFinalScoreUI(int playerFinalScore, int aiFinalScore, int playerBonus, int aiBonus)
-    {
-        // Update the final score text for player
-        playerLiveScoreText.text = $"Player Score: {playerFinalScore} pts\nBonus: +{playerBonus}\nTotal: {playerFinalScore} pts";
+    ////METHOD THAT UPDATES THE FINAL SCORE UI AFTER THE ROUND ENDS:
+    //public void UpdateFinalScoreUI(int playerFinalScore, int aiFinalScore, int playerBonus, int aiBonus)
+    //{
+    //    // Update the final score text for player
+    //    playerLiveScoreText.text = $"Player Score: {playerFinalScore} pts\nBonus: +{playerBonus}\nTotal: {playerFinalScore} pts";
 
-        // Update the final score text for AI
-        aiLiveScoreText.text = $"AI Score: {aiFinalScore} pts\nBonus: +{aiBonus}\nTotal: {aiFinalScore} pts";
-    }
+    //    // Update the final score text for AI
+    //    aiLiveScoreText.text = $"AI Score: {aiFinalScore} pts\nBonus: +{aiBonus}\nTotal: {aiFinalScore} pts";
+    //}
 
     // Method to trigger animation of bonus score
     public void AnimateBonusScoreInClothingManager(int baseScore, int bonus, string label)
@@ -225,13 +225,32 @@ public class ClothingManager : MonoBehaviour
     // Your existing AnimateBonusScore coroutine (unchanged)
     IEnumerator AnimateBonusScore(TextMeshProUGUI scoreText, int baseScore, int bonus, string label, float delay = 0.5f)
     {
+        //yield return new WaitForSeconds(delay);
+
+        //int finalScore = baseScore + bonus;
+
+        //scoreText.text = label + " Score: " + baseScore + " pts"
+        //    + "\nBonus: +" + bonus
+        //    + "\nTotal: " + finalScore + " pts";
+
+        //SKIIIP
+
+        scoreText.text = $"{label} Score: {baseScore} pts";
         yield return new WaitForSeconds(delay);
 
-        int finalScore = baseScore + bonus;
+        scoreText.text += $"\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+        yield return new WaitForSeconds(0.3f);
 
-        scoreText.text = label + " Score: " + baseScore + " pts"
-            + "\nBonus: +" + bonus
-            + "\nTotal: " + finalScore + " pts";
+        int finalScore = baseScore + bonus;
+        int current = baseScore;
+
+        while (current < finalScore)
+        {
+            current++;
+            scoreText.text = $"{label} Score: {current} pts\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+            scoreText.ForceMeshUpdate();
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }
 

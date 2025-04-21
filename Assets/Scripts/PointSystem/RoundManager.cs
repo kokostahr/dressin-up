@@ -88,6 +88,10 @@ public class RoundManager : MonoBehaviour
     {
         //When the game starts the first round should begin as well..duh
         StartRound();
+
+        //deactivate the final score text ui at the start of the game
+        clothingManager.playerFinalScoreText.gameObject.SetActive(false);
+        clothingManager.aiFinalScoreText.gameObject.SetActive(false);
     }
 
 
@@ -196,14 +200,17 @@ public class RoundManager : MonoBehaviour
         playerFinalScore = playerBaseScore + playerBonus;
         aiFinalScore = aiBaseScore + aiBonus;
 
-        //Update the finalscores in the UI USING THE CLOTHING MANAGER
-        clothingManager.UpdateFinalScoreUI(playerFinalScore, aiFinalScore, playerBonus, aiBonus);
+        // Activate final score UI now that we're showing results
+        clothingManager.playerFinalScoreText.gameObject.SetActive(true);
+        clothingManager.aiFinalScoreText.gameObject.SetActive(true);
+
+        // ✨ Start coroutine that handles animations, THEN compares scores, THEN next round
+        StartCoroutine(HandleEndRoundSequence(playerBaseScore, aiBaseScore, playerBonus, aiBonus));
 
 
-        ////THEN ANIMATE THE BONUSSS POINTSSSS HEY HEY
-        //StartCoroutine(AnimateBonusScore(playerFinalScoreText, playerBaseScore, ScoringManager.Instance.lastPlayerBonus, "Player"));
-        //StartCoroutine(AnimateBonusScore(aiFinalScoreText, aiBaseScore, ScoringManager.Instance.lastAIBonus, "AI"));
 
+        ////Update the finalscores in the UI USING THE CLOTHING MANAGER
+        //clothingManager.UpdateFinalScoreUI(playerFinalScore, aiFinalScore, playerBonus, aiBonus);
 
         //Show the score panel that will display AI and Player scores
         themeText.gameObject.SetActive(false);
@@ -212,10 +219,6 @@ public class RoundManager : MonoBehaviour
 
         //playerFinalScoreText.text = playerFinalScore.ToString();
         //aiFinalScoreText.text = aiFinalScore.ToString();
-
-        playerFinalScoreText.text = "Player Score: " + playerFinalScore + " points" + 
-            "\nBonus: " + playerBonus + "\nTotalScore: " + playerFinalScore;
-        aiFinalScoreText.text = "AI Score: " + aiFinalScore + " points";
 
         //audiostuffff
         calmAudioSource.Play();
@@ -226,9 +229,7 @@ public class RoundManager : MonoBehaviour
         aiOutfitChanger.AIHideAllRoundReset();
         playerOutfitChanger.PlayerHideAllRoundReset();
 
-        // ✨ Start coroutine that handles animations, THEN compares scores, THEN next round
-        StartCoroutine(HandleEndRoundSequence(playerBaseScore, aiBaseScore, playerBonus, aiBonus));
-
+       
         ////Then compare scores to determine the winner of the round.
         //CompareScores(playerFinalScore, aiFinalScore);
 
@@ -349,6 +350,10 @@ public class RoundManager : MonoBehaviour
         //turn on the live score text in the clothing manager again
         clothingManager.playerLiveScoreText.gameObject.SetActive(true);
         clothingManager.aiLiveScoreText.gameObject.SetActive(true);
+
+        //deactivate the final score text ui when a new round starts
+        clothingManager.playerFinalScoreText.gameObject.SetActive(false);
+        clothingManager.aiFinalScoreText.gameObject.SetActive(false);
 
         //Reset AI Score for next round
         clothingManager.ResetAiScore();
