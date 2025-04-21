@@ -15,3 +15,10 @@ MonoBehaviour:
   itemName: No Shirt
   itemIcon: {fileID: -1008294324084481806, guid: 80e9e8fef095e504fa819fe7c2e7042f, type: 3}
   winterPoints: 0
+  summerPoints: 0
+  casualDatePoints: 0
+  artStreetStylePoints: 1
+  tvShowAuditionPoints: 0
+  itemTag:
+  - bold
+  - flirty

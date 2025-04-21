@@ -15,4 +15,10 @@ MonoBehaviour:
   itemName: Highwaist Sweats
   itemIcon: {fileID: 2445061032195161141, guid: 37c9e996816be0343b1fbb4b5e55f467, type: 3}
   winterPoints: 3
-  summerPoints: 2
+  summerPoints: 1
+  casualDatePoints: 1
+  artStreetStylePoints: 2
+  tvShowAuditionPoints: 0
+  itemTag:
+  - cozy
+  - warm

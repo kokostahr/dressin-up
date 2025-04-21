@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Cargo Pants
   itemIcon: {fileID: -5981882978173692186, guid: 4f2efa322b0e3a74a8853a7326868d96, type: 3}
-  winterPoints: 3
-  summerPoints: 1
+  winterPoints: 1
+  summerPoints: 2
+  casualDatePoints: 1
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 1
+  itemTag:
+  - edgy
+  - bold

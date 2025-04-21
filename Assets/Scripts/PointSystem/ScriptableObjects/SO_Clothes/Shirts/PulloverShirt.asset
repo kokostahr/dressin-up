@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Pullover Shirt
   itemIcon: {fileID: -4690687608672113774, guid: 85845d2a4ebbeee41a491555a73433a2, type: 3}
-  winterPoints: 2
-  summerPoints: 1
+  winterPoints: 3
+  summerPoints: 0
+  casualDatePoints: 2
+  artStreetStylePoints: 2
+  tvShowAuditionPoints: 1
+  itemTag:
+  - warm
+  - chic

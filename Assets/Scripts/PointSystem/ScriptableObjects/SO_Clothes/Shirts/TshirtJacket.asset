@@ -14,4 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tshirt Jacket
   itemIcon: {fileID: -6946783028762120597, guid: 7919831b0cb2f804da0330e10dd8d0f3, type: 3}
-  winterPoints: 2
+  winterPoints: 3
+  summerPoints: 1
+  casualDatePoints: 3
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 2
+  itemTag:
+  - chic
+  - bold

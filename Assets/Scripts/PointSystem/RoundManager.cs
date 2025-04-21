@@ -22,8 +22,7 @@ public class RoundManager : MonoBehaviour
     //Text that will display the final/total score
     public TextMeshProUGUI playerFinalScoreText;
     public TextMeshProUGUI aiFinalScoreText;
-    //Referencing the clothing manager to count the points
-    public ClothingManager clothingManager;
+
     //text that will display what the next theme is
     public TextMeshProUGUI themeText;
     public TextMeshProUGUI themePopupText;
@@ -31,6 +30,11 @@ public class RoundManager : MonoBehaviour
     public Player_OutfitChange player_OutfitChange;
     //Need text showing who won the round
     public TextMeshProUGUI roundResultText;
+
+    [Header("POINT COMPARISON SETTINGS")]
+    //Referencing the clothing manager to count the points
+    public ClothingManager clothingManager;
+    public ScoringManager scoringManager;
 
     //AI related logic for when I make an AI manager...just a place holder for now
     public int aiFinalScore = 0;
@@ -49,6 +53,8 @@ public class RoundManager : MonoBehaviour
 
     //idk why im adding this
     public static RoundManager Instance;
+
+
 
     [Header("SCENE SETTINGS")]
     public GameObject sceneUI;
@@ -172,10 +178,17 @@ public class RoundManager : MonoBehaviour
         timerText.color = Color.white;
 
         //need to calculate the proper points of the final items on screen when round ends
-        int playerFinalScore = clothingManager.CalculateOutfitScore(currentTheme);
+        int playerBaseScore = clothingManager.CalculateOutfitScore(currentTheme);
+        int aiBaseScore = clothingManager.CalculateAiOutfitScore(currentTheme);
 
-        //calculate the ai's final score from the aiOutfitChanger
-        int aiFinalScore = clothingManager.CalculateAiOutfitScore(currentTheme);
+        //THEN ANIMATE THE BONUSSS POINTSSSS HEY HEY
+        StartCoroutine(AnimateBonusScore(playerFinalScoreText, playerBaseScore, ScoringManager.Instance.lastPlayerBonus, "Player"));
+        StartCoroutine(AnimateBonusScore(aiFinalScoreText, aiBaseScore, ScoringManager.Instance.lastAIBonus, "AI"));
+
+        //calculate the FINAL SCORE FOR BOTH
+        int playerFinalScore = ScoringManager.Instance.UpdatePlayerScore(currentTheme);
+        int aiFinalScore = scoringManager.UpdateAIScore(currentTheme);
+
 
         //Show the score panel that will display AI and Player scores
         themeText.gameObject.SetActive(false);
@@ -201,6 +214,26 @@ public class RoundManager : MonoBehaviour
         StartCoroutine(WaitAndStartNextRound());
 
        
+    }
+
+    //something that will animate the bonus score reveal
+    IEnumerator AnimateBonusScore(TextMeshProUGUI scoreText, int baseScore, int bonus, string label, float delay = 0.5f)
+    {
+        scoreText.text = $"{label} Score: {baseScore} pts";
+        yield return new WaitForSeconds(delay);
+
+        scoreText.text += $"\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+        yield return new WaitForSeconds(0.3f);
+
+        int finalScore = baseScore + bonus;
+        int current = baseScore;
+
+        while (current < finalScore)
+        {
+            current++;
+            scoreText.text = $"{label} Score: {current} pts\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
     void CompareScores(int playerFinalScore, int aiFinalScore)

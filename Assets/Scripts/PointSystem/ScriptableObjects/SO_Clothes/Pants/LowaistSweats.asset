@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Lowaist Sweats
   itemIcon: {fileID: 2021414167840197939, guid: c71b7e582a8f032418c63d2441951775, type: 3}
-  winterPoints: 2
-  summerPoints: 2
+  winterPoints: 3
+  summerPoints: 1
+  casualDatePoints: 1
+  artStreetStylePoints: 2
+  tvShowAuditionPoints: 0
+  itemTag:
+  - cozy
+  - edgy

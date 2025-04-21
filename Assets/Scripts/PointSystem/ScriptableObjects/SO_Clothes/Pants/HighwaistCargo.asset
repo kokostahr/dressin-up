@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Highwaist Cargo
   itemIcon: {fileID: -7759383249721531516, guid: 17f11354a430d6f4485f7fa38a816e4d, type: 3}
-  winterPoints: 3
+  winterPoints: 2
   summerPoints: 1
+  casualDatePoints: 2
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 1
+  itemTag:
+  - edgy
+  - bold

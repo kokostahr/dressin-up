@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sneakers
   itemIcon: {fileID: -8461923687830504554, guid: 470889f4b4f78214a9c443de2997c4c1, type: 3}
-  winterPoints: 1
+  winterPoints: 2
   summerPoints: 2
+  casualDatePoints: 2
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 2
+  itemTag:
+  - vibrant
+  - bold

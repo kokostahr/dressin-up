@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: TuckedIn Shirt
   itemIcon: {fileID: -4356737133192543584, guid: 85c7895c9c3a60047a4979c04d3d0786, type: 3}
-  winterPoints: 1
-  summerPoints: 2
+  winterPoints: 2
+  summerPoints: 1
+  casualDatePoints: 3
+  artStreetStylePoints: 1
+  tvShowAuditionPoints: 2
+  itemTag:
+  - chic
+  - flirty

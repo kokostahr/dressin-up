@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Plain Pants
   itemIcon: {fileID: 3544437381750979523, guid: b272b7c9bddcc8d4bba7b4208e2e5caa, type: 3}
-  winterPoints: 3
-  summerPoints: 2
+  winterPoints: 2
+  summerPoints: 1
+  casualDatePoints: 2
+  artStreetStylePoints: 1
+  tvShowAuditionPoints: 1
+  itemTag:
+  - warm
+  - chic

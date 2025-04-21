@@ -16,3 +16,9 @@ MonoBehaviour:
   itemIcon: {fileID: 6667722196501494047, guid: 1a58e4000ab8cdd48b6fab9f2f74b9ee, type: 3}
   winterPoints: 0
   summerPoints: 3
+  casualDatePoints: 1
+  artStreetStylePoints: 1
+  tvShowAuditionPoints: 0
+  itemTag:
+  - flirty
+  - vibrant

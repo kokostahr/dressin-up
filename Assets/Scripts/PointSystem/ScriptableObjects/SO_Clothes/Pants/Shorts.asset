@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Shorts
   itemIcon: {fileID: 4462423443229009173, guid: e72a88efd7474944581184a7ea898e11, type: 3}
-  winterPoints: 1
+  winterPoints: 0
   summerPoints: 3
+  casualDatePoints: 2
+  artStreetStylePoints: 2
+  tvShowAuditionPoints: 1
+  itemTag:
+  - flirty
+  - vibrant

@@ -14,4 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: TurtleNeck
   itemIcon: {fileID: -7750185776960917524, guid: 16ad2adc198796946beae1c37cff6221, type: 3}
-  winterPoints: 2
+  winterPoints: 3
+  summerPoints: 0
+  casualDatePoints: 2
+  artStreetStylePoints: 1
+  tvShowAuditionPoints: 1
+  itemTag:
+  - cozy
+  - warm

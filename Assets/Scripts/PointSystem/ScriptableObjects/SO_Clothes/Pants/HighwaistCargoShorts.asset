@@ -16,3 +16,9 @@ MonoBehaviour:
   itemIcon: {fileID: -7171169605833521200, guid: 44f95e0af3bd23c48a122befd1b28b1b, type: 3}
   winterPoints: 0
   summerPoints: 3
+  casualDatePoints: 1
+  artStreetStylePoints: 2
+  tvShowAuditionPoints: 1
+  itemTag:
+  - vibrant
+  - edgy

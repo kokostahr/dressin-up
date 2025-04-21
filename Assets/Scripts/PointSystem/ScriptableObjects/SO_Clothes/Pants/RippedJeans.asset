@@ -15,4 +15,10 @@ MonoBehaviour:
   itemName: Ripped Jeans
   itemIcon: {fileID: -8681556639226851738, guid: 6c2c7b5398500714c95b2142d3f248e8, type: 3}
   winterPoints: 1
-  summerPoints: 3
+  summerPoints: 2
+  casualDatePoints: 2
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 2
+  itemTag:
+  - edgy
+  - vibrant

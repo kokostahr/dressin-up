@@ -15,3 +15,10 @@ MonoBehaviour:
   itemName: No Pants
   itemIcon: {fileID: -7877059519184255145, guid: 4477c8215b2739b41a30e63cb47417df, type: 3}
   winterPoints: 0
+  summerPoints: 0
+  casualDatePoints: 0
+  artStreetStylePoints: 1
+  tvShowAuditionPoints: 0
+  itemTag:
+  - flirty
+  - bold

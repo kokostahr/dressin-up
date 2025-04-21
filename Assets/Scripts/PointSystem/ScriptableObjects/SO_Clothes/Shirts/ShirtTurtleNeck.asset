@@ -15,4 +15,10 @@ MonoBehaviour:
   itemName: Shirt TurtleNeck
   itemIcon: {fileID: -7531320820369166628, guid: e5e895078a1c134409dd8ea922a3086d, type: 3}
   winterPoints: 3
-  summerPoints: 1
+  summerPoints: 0
+  casualDatePoints: 2
+  artStreetStylePoints: 2
+  tvShowAuditionPoints: 2
+  itemTag:
+  - chic
+  - warm

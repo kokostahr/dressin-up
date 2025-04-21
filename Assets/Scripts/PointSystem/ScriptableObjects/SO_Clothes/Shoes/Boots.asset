@@ -15,3 +15,10 @@ MonoBehaviour:
   itemName: Boots
   itemIcon: {fileID: 7902364575885455685, guid: 22a71571415f8394b8cef724ea2d7285, type: 3}
   winterPoints: 3
+  summerPoints: 0
+  casualDatePoints: 2
+  artStreetStylePoints: 2
+  tvShowAuditionPoints: 2
+  itemTag:
+  - bold
+  - edgy

@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sneakers ShortSocks
   itemIcon: {fileID: 639586946530251843, guid: 10d9df3a70a95e94c93acfc4e59d7167, type: 3}
-  winterPoints: 2
+  winterPoints: 1
   summerPoints: 3
+  casualDatePoints: 2
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 2
+  itemTag:
+  - vibrant
+  - flirty

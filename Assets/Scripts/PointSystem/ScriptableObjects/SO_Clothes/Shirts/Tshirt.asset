@@ -14,5 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Tshirt
   itemIcon: {fileID: -8010340093674138757, guid: dabc9cf3922f1df4e88668f93558cdc1, type: 3}
-  winterPoints: 0
+  winterPoints: 1
   summerPoints: 3
+  casualDatePoints: 2
+  artStreetStylePoints: 2
+  tvShowAuditionPoints: 1
+  itemTag:
+  - vibrant

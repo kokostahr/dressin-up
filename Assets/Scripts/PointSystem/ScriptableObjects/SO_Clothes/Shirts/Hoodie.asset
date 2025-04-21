@@ -14,5 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Hoodie
   itemIcon: {fileID: 6283086519051686611, guid: e000165e09f2ea643b648523b01ccc5b, type: 3}
-  winterPoints: 2
-  summerPoints: 1
+  winterPoints: 3
+  summerPoints: 0
+  casualDatePoints: 1
+  artStreetStylePoints: 2
+  tvShowAuditionPoints: 0
+  itemTag:
+  - cozy
+  - warm

@@ -16,3 +16,9 @@ MonoBehaviour:
   itemIcon: {fileID: 7615489336185285909, guid: 818d47e91674f9f438ab79c4b08d2f0b, type: 3}
   winterPoints: 2
   summerPoints: 1
+  casualDatePoints: 3
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 2
+  itemTag:
+  - bold
+  - chic
