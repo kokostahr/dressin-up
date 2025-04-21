@@ -1,7 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 
 public class RoundManager : MonoBehaviour
 {
@@ -176,6 +177,9 @@ public class RoundManager : MonoBehaviour
         roundActive = false;
         timerText.text = "Time's Up!";
         timerText.color = Color.white;
+        //set the live score text from the clothing manager inactive
+        clothingManager.playerLiveScoreText.gameObject.SetActive(false);
+        clothingManager.aiLiveScoreText.gameObject.SetActive(false);
 
         //need to calculate the proper points of the final items on screen when round ends
         ScoringManager.Instance.UpdatePlayerScore(currentTheme);
@@ -192,9 +196,13 @@ public class RoundManager : MonoBehaviour
         playerFinalScore = playerBaseScore + playerBonus;
         aiFinalScore = aiBaseScore + aiBonus;
 
-        //THEN ANIMATE THE BONUSSS POINTSSSS HEY HEY
-        StartCoroutine(AnimateBonusScore(playerFinalScoreText, playerBaseScore, ScoringManager.Instance.lastPlayerBonus, "Player"));
-        StartCoroutine(AnimateBonusScore(aiFinalScoreText, aiBaseScore, ScoringManager.Instance.lastAIBonus, "AI"));
+        //Update the finalscores in the UI USING THE CLOTHING MANAGER
+        clothingManager.UpdateFinalScoreUI(playerFinalScore, aiFinalScore, playerBonus, aiBonus);
+
+
+        ////THEN ANIMATE THE BONUSSS POINTSSSS HEY HEY
+        //StartCoroutine(AnimateBonusScore(playerFinalScoreText, playerBaseScore, ScoringManager.Instance.lastPlayerBonus, "Player"));
+        //StartCoroutine(AnimateBonusScore(aiFinalScoreText, aiBaseScore, ScoringManager.Instance.lastAIBonus, "AI"));
 
 
         //Show the score panel that will display AI and Player scores
@@ -202,8 +210,12 @@ public class RoundManager : MonoBehaviour
         scorePanel.SetActive (true);
         //dont need to show these things anymore
 
-        //playerFinalScoreText.text = "Player Score: " + playerFinalScore + " points";
-        //aiFinalScoreText.text = "AI Score: " + aiFinalScore + " points";
+        //playerFinalScoreText.text = playerFinalScore.ToString();
+        //aiFinalScoreText.text = aiFinalScore.ToString();
+
+        playerFinalScoreText.text = "Player Score: " + playerFinalScore + " points" + 
+            "\nBonus: " + playerBonus + "\nTotalScore: " + playerFinalScore;
+        aiFinalScoreText.text = "AI Score: " + aiFinalScore + " points";
 
         //audiostuffff
         calmAudioSource.Play();
@@ -214,33 +226,64 @@ public class RoundManager : MonoBehaviour
         aiOutfitChanger.AIHideAllRoundReset();
         playerOutfitChanger.PlayerHideAllRoundReset();
 
-        //Then compare scores to determine the winner of the round.
-        CompareScores(playerFinalScore, aiFinalScore);
+        // ✨ Start coroutine that handles animations, THEN compares scores, THEN next round
+        StartCoroutine(HandleEndRoundSequence(playerBaseScore, aiBaseScore, playerBonus, aiBonus));
 
-        //Wait the start next round or end game
-        StartCoroutine(WaitAndStartNextRound());
+        ////Then compare scores to determine the winner of the round.
+        //CompareScores(playerFinalScore, aiFinalScore);
 
-       
+        ////Wait the start next round or end game
+        //StartCoroutine(WaitAndStartNextRound());
+
+
     }
 
-    //something that will animate the bonus score reveal
-    IEnumerator AnimateBonusScore(TextMeshProUGUI scoreText, int baseScore, int bonus, string label, float delay = 0.5f)
+    ////something that will animate the bonus score reveal
+    //IEnumerator AnimateBonusScore(TextMeshProUGUI scoreText, int baseScore, int bonus, string label, float delay = 0.5f)
+    //{
+    //    Debug.Log("Coroutine started for " + label);
+
+    //    yield return new WaitForSeconds(delay);
+
+    //    int finalScore = baseScore + bonus;
+
+    //    // 🩷 Just set the final text once, no animation
+    //    scoreText.text = label + " Score: " + baseScore + " pts"
+    //        + "\nBonus: +" + bonus
+    //        + "\nTotal: " + finalScore + " pts";
+    //    Debug.Log("ScoreText is " + (scoreText == null ? "NULL 😭" : "NOT NULL 🎉"));
+    //    Debug.Log($"[AnimateBonusScore] Setting final score text for {label}!");
+
+    //    //scoreText.text = $"{label} Score: {baseScore} pts";
+    //    //yield return new WaitForSeconds(delay);
+
+    //    //scoreText.text += $"\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+    //    //yield return new WaitForSeconds(0.3f);
+
+    //    //int finalScore = baseScore + bonus;
+    //    //int current = baseScore;
+
+    //    //while (current < finalScore)
+    //    //{
+    //    //    current++;
+    //    //    scoreText.text = $"{label} Score: {current} pts\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+    //    //    scoreText.ForceMeshUpdate();
+    //    //    yield return new WaitForSeconds(0.05f);
+    //    //}
+    //    //Debug.Log("Animating score: " + current);
+    //}
+
+    //coroutine that will... handle all the co-routines in the end round method
+    IEnumerator HandleEndRoundSequence(int playerBaseScore, int aiBaseScore, int playerBonus, int aiBonus)
     {
-        scoreText.text = $"{label} Score: {baseScore} pts";
-        yield return new WaitForSeconds(delay);
+        clothingManager.AnimateBonusScoreInClothingManager(playerBaseScore, playerBonus, "Player");
+        clothingManager.AnimateBonusScoreInClothingManager(aiBaseScore, aiBonus, "AI");
 
-        scoreText.text += $"\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
-        yield return new WaitForSeconds(0.3f);
-
-        int finalScore = baseScore + bonus;
-        int current = baseScore;
-
-        while (current < finalScore)
-        {
-            current++;
-            scoreText.text = $"{label} Score: {current} pts\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
-            yield return new WaitForSeconds(0.05f);
-        }
+        // Only once both animations are done
+        CompareScores(playerFinalScore, aiFinalScore);
+        yield return new WaitForSeconds(4f);
+        themePopupText.gameObject.SetActive(true);
+        StartNextRound();
     }
 
     void CompareScores(int playerFinalScore, int aiFinalScore)
@@ -302,6 +345,10 @@ public class RoundManager : MonoBehaviour
         roundTimer = 0f;
         //turn off the flash
         flashingStarted = false;
+
+        //turn on the live score text in the clothing manager again
+        clothingManager.playerLiveScoreText.gameObject.SetActive(true);
+        clothingManager.aiLiveScoreText.gameObject.SetActive(true);
 
         //Reset AI Score for next round
         clothingManager.ResetAiScore();

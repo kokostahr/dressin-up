@@ -103,21 +103,18 @@ public class ScoringManager : MonoBehaviour
                 {
                     //ADD BONUS POINTS TO THE INITIAL SCORE
                     bonusScore += 2;
-                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
                 if (theme == "winter" && (tag == "chic" || tag == "warm"))
                 {
                     //Add bonus points
                     bonusScore += 3;
-                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
                 if (theme == "winter" && (tag == "bold" || tag == "edgy"))
                 {
                     //Add bonus points
                     bonusScore += 1;
-                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
                 if (theme == "winter" && (tag == "flirty"))//Seperated them so bonus points can stack. 
@@ -126,14 +123,12 @@ public class ScoringManager : MonoBehaviour
                 {
                     //Add bonus points
                     bonusScore += 1;
-                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
                 if (theme == "winter" && (tag == "vibrant"))
                 {
                     //Add bonus points
                     bonusScore += 1;
-                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
                 //SUMMER
@@ -141,28 +136,24 @@ public class ScoringManager : MonoBehaviour
                 {
                     //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
                     bonusScore += 3;
-                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
                 if (theme == "summer" && (tag == "flirty"))
                 {
                     //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
                     bonusScore += 2;
-                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
                 if (theme == "summer" && (tag == "cozy"))
                 {
                     //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
                     bonusScore += 1;
-                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
                 if (theme == "summer" && (tag == "bold" || tag == "edgy" || tag == "chic"))
                 {
                     //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
                     bonusScore += 1;
-                    Debug.Log("Player Bonus Score: " + bonusScore);
                 }
 
                 //CASUAL DATE
@@ -240,7 +231,7 @@ public class ScoringManager : MonoBehaviour
                     //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
                     bonusScore += 1;
                 }
-
+                Debug.Log("Player Bonus Score: " + bonusScore);
             }
         }
 

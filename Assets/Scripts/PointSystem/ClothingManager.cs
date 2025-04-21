@@ -28,6 +28,10 @@ public class ClothingManager : MonoBehaviour
     public TextMeshProUGUI playerLiveScoreText;
     public TextMeshProUGUI aiLiveScoreText;
 
+    [Header("FINAL RESULTS UI")]
+    public TextMeshProUGUI playerFinalScoreText;
+    public TextMeshProUGUI aiFinalScoreText;
+
     public void SelectClothingItem(ClothingItemData selectedItem, string theme)
     {
 
@@ -188,10 +192,46 @@ public class ClothingManager : MonoBehaviour
     }
 
    public void ResetAiScore()
-    {
+   {
         //reset the score to 0 at the beninning of each round
         aiScore = 0;
         UpdateAiScoreUI(0);
+   }
+
+    //METHOD THAT UPDATES THE FINAL SCORE UI AFTER THE ROUND ENDS:
+    public void UpdateFinalScoreUI(int playerFinalScore, int aiFinalScore, int playerBonus, int aiBonus)
+    {
+        // Update the final score text for player
+        playerLiveScoreText.text = $"Player Score: {playerFinalScore} pts\nBonus: +{playerBonus}\nTotal: {playerFinalScore} pts";
+
+        // Update the final score text for AI
+        aiLiveScoreText.text = $"AI Score: {aiFinalScore} pts\nBonus: +{aiBonus}\nTotal: {aiFinalScore} pts";
+    }
+
+    // Method to trigger animation of bonus score
+    public void AnimateBonusScoreInClothingManager(int baseScore, int bonus, string label)
+    {
+        // Start the coroutine for animating the bonus score
+        if (label == "Player")
+        {
+            StartCoroutine(AnimateBonusScore(playerFinalScoreText, baseScore, bonus, label));
+        }
+        else if (label == "AI")
+        {
+            StartCoroutine(AnimateBonusScore(aiFinalScoreText, baseScore, bonus, label));
+        }
+    }
+
+    // Your existing AnimateBonusScore coroutine (unchanged)
+    IEnumerator AnimateBonusScore(TextMeshProUGUI scoreText, int baseScore, int bonus, string label, float delay = 0.5f)
+    {
+        yield return new WaitForSeconds(delay);
+
+        int finalScore = baseScore + bonus;
+
+        scoreText.text = label + " Score: " + baseScore + " pts"
+            + "\nBonus: +" + bonus
+            + "\nTotal: " + finalScore + " pts";
     }
 }
 
