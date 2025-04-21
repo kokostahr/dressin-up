@@ -312,8 +312,11 @@ public class RoundManager : MonoBehaviour
 
     void SetRandomTheme()
     {
+        string[] themes = { "summer", "winter", "casualdate", "artstreetstyle", "tvshowaudition" };
+        int randomIndex = Random.Range(0, themes.Length);
+
         //Let's set the theme randomly to summer or WINTER. this is gonna be hard LOL
-        currentTheme = Random.Range(0, 4) == 0 ? "summer" : "winter"; //casualdate, artstreetstyle, tvshowaudition
+        currentTheme = themes[randomIndex];
         themeText.text = "Theme: " + currentTheme.ToUpper(); //The hell this mean?
     }
 
