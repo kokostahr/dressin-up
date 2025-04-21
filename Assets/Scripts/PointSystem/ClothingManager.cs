@@ -247,7 +247,7 @@ public class ClothingManager : MonoBehaviour
         while (current < finalScore)
         {
             current++;
-            scoreText.text = $"{label} Score: {current} pts\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+            scoreText.text = $"{label} Score: {current} pts\n<color=#90258C>+{bonus} \nStyle Bonus!</color>";
             scoreText.ForceMeshUpdate();
             yield return new WaitForSeconds(0.05f);
         }
