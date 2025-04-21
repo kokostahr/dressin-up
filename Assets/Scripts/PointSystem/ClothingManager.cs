@@ -235,10 +235,10 @@ public class ClothingManager : MonoBehaviour
 
         //SKIIIP
 
-        scoreText.text = $"{label} Score: {baseScore} pts";
+        scoreText.text = $"{label} \nScore: {baseScore} pts";
         yield return new WaitForSeconds(delay);
 
-        scoreText.text += $"\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+        scoreText.text += $"\n<color=#90258C>+{bonus} \nStyle Bonus!</color>";
         yield return new WaitForSeconds(0.3f);
 
         int finalScore = baseScore + bonus;
@@ -247,7 +247,8 @@ public class ClothingManager : MonoBehaviour
         while (current < finalScore)
         {
             current++;
-            scoreText.text = $"{label} Score: {current} pts\n<color=#90258C>+{bonus} \nStyle Bonus!</color>";
+            scoreText.text = $"{label} \nScore: {current} pts\n<color=#90258C>+{bonus} \nStyle Bonus!</color>"
+            + "\nTotal: " + finalScore + " pts"; ;
             scoreText.ForceMeshUpdate();
             yield return new WaitForSeconds(0.05f);
         }

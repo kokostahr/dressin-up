@@ -282,7 +282,7 @@ public class RoundManager : MonoBehaviour
 
         // Only once both animations are done
         CompareScores(playerFinalScore, aiFinalScore);
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(6f);
         themePopupText.gameObject.SetActive(true);
         StartNextRound();
     }
