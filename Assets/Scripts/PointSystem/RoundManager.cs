@@ -181,13 +181,17 @@ public class RoundManager : MonoBehaviour
         int playerBaseScore = clothingManager.CalculateOutfitScore(currentTheme);
         int aiBaseScore = clothingManager.CalculateAiOutfitScore(currentTheme);
 
+        //get the bonus points 
+        int playerBonus = ScoringManager.Instance.lastPlayerBonus;
+        int aiBonus = ScoringManager.Instance.lastAIBonus;
+
+        //calculate the FINAL SCORE FOR BOTH
+        playerFinalScore = playerBaseScore + playerBonus;
+        aiFinalScore = aiBaseScore + aiBonus;
+
         //THEN ANIMATE THE BONUSSS POINTSSSS HEY HEY
         StartCoroutine(AnimateBonusScore(playerFinalScoreText, playerBaseScore, ScoringManager.Instance.lastPlayerBonus, "Player"));
         StartCoroutine(AnimateBonusScore(aiFinalScoreText, aiBaseScore, ScoringManager.Instance.lastAIBonus, "AI"));
-
-        //calculate the FINAL SCORE FOR BOTH
-        int playerFinalScore = ScoringManager.Instance.UpdatePlayerScore(currentTheme);
-        int aiFinalScore = scoringManager.UpdateAIScore(currentTheme);
 
 
         //Show the score panel that will display AI and Player scores
@@ -262,7 +266,7 @@ public class RoundManager : MonoBehaviour
     void SetRandomTheme()
     {
         //Let's set the theme randomly to summer or WINTER. this is gonna be hard LOL
-        currentTheme = Random.Range(0, 4) == 0 ? "summer" : "winter";
+        currentTheme = Random.Range(0, 4) == 0 ? "summer" : "winter"; //casualdate, artstreetstyle, tvshowaudition
         themeText.text = "Theme: " + currentTheme.ToUpper(); //The hell this mean?
     }
 
