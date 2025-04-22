@@ -117,7 +117,7 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints; 
                 //modifying for themes
-                    ;
+                score += GetThemePoints(theme, data.clothingItemData);
             }
         }
 
