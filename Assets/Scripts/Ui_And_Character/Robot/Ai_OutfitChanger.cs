@@ -133,10 +133,20 @@ public class Ai_OutfitChanger : MonoBehaviour
         List<GameObject> preferredItems = new List<GameObject>();
         foreach (GameObject item in options)
         {
+            if (item == null)
+            {
+                Debug.LogWarning("Item is null in AI selection pool.");
+                continue;
+            }
+
             ClothingItemData data = item.GetComponent<ClothingItemData>();
             if (data != null && data.itemTag.Any(tag => currentPreferredTags.Contains(tag)))
             {
                 preferredItems.Add(item);
+            }
+            else if (data == null)
+            {
+                Debug.LogWarning("Missing ClothingItemData on: " + item.name);
             }
         }
 
