@@ -33,7 +33,8 @@ public class Ai_OutfitChanger : MonoBehaviour
     public GameObject[] aiOutfitComments;
 
     [Header("AI PREFERENCE SELECTION")]
-    [HideInInspector] public List<string> currentPreferredTags = new List<string>();    
+    [HideInInspector] public List<string> currentPreferredTags = new List<string>();
+    
 
 
     void Start()
@@ -148,25 +149,25 @@ public class Ai_OutfitChanger : MonoBehaviour
             item.SetActive(false);
         }
 
-        int firstIndex = Random.Range(0, options.Length);
-        options[firstIndex].SetActive(true);
+        int firstIndex = Random.Range(0, pool.Length);
+        pool[firstIndex].SetActive(true);
         yield return new WaitForSeconds(1f);
-        options[firstIndex].SetActive(false);
+        pool[firstIndex].SetActive(false);
 
-        int secondIndex = Random.Range(0, options.Length);
+        int secondIndex = Random.Range(0, pool.Length);
         while (secondIndex == firstIndex)
-            secondIndex = Random.Range(0, options.Length);
+            secondIndex = Random.Range(0, pool.Length);
 
-        options[secondIndex].SetActive(true);
+        pool[secondIndex].SetActive(true);
         yield return new WaitForSeconds(1f);
-        options[secondIndex].SetActive(false);
+        pool[secondIndex].SetActive(false);
 
-        int finalIndex = Random.Range(0, options.Length);
-        options[finalIndex].SetActive(true);
+        int finalIndex = Random.Range(0, pool.Length);
+        pool[finalIndex].SetActive(true);
 
         //send the chosen item back through callback
 
-        callback(options[finalIndex]);
+        callback(pool[finalIndex]);
     }
 
     //Method to hide the comment after a short amount of time
