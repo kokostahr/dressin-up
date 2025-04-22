@@ -139,7 +139,7 @@ public class Ai_OutfitChanger : MonoBehaviour
                 continue;
             }
 
-            ClothingItemData data = item.GetComponent<ClothingItemData>();
+            ClothingItemData data = item.GetComponent<ClothingItemHolder>().clothingItemData;
             if (data != null && data.itemTag.Any(tag => currentPreferredTags.Contains(tag)))
             {
                 preferredItems.Add(item);
