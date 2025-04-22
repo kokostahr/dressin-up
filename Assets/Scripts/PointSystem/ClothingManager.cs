@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using DentedPixel;
 
 public class ClothingManager : MonoBehaviour
 {
@@ -73,6 +74,20 @@ public class ClothingManager : MonoBehaviour
     {
         pointsPopupText.text = "+" + bonusPoints.ToString() + " Bonus pts";
         pointsPopupText.gameObject.SetActive(true);
+
+        // Reset scale
+        pointsPopupText.transform.localScale = Vector3.zero;
+
+        // Scale-up bounce using LeanTween
+        LeanTween.scale(pointsPopupText.gameObject, Vector3.one * 1.2f, 0.3f).setEaseOutBack()
+            .setOnComplete(() => {
+                // Slight shrink back to normal size
+                LeanTween.scale(pointsPopupText.gameObject, Vector3.one, 0.2f).setEaseOutExpo();
+            });
+
+        // Optional: fade glow (if you have an outline component)
+        StartCoroutine(GlowEffect(pointsPopupText));
+
         StartCoroutine(HideBonusPopup());
     }
 
@@ -80,6 +95,31 @@ public class ClothingManager : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         pointsPopupText.gameObject.SetActive(false);
+    }
+
+    IEnumerator GlowEffect(TextMeshProUGUI text)
+    {
+        float duration = 1f;
+        float elapsed = 0f;
+
+        Outline outline = text.GetComponent<Outline>();
+        if (outline == null)
+        {
+            outline = text.gameObject.AddComponent<Outline>();
+        }
+
+        Color startColor = new Color(1f, 1f, 0.5f, 0f); // transparent yellow glow
+        Color endColor = new Color(1f, 1f, 0.5f, 0.8f); // bright yellow
+
+        while (elapsed < duration)
+        {
+            float t = Mathf.PingPong(elapsed * 2f, 1f); // pingpong effect
+            outline.effectColor = Color.Lerp(startColor, endColor, t);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        outline.effectColor = startColor; // reset glow at the end
     }
 
     //Need a method that will calculate the points of the current clothing worn

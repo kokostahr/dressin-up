@@ -1,10 +1,11 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using DentedPixel;
 
 
 public class Ai_OutfitChanger : MonoBehaviour
@@ -34,6 +35,7 @@ public class Ai_OutfitChanger : MonoBehaviour
 
     [Header("AI PREFERENCE SELECTION")]
     [HideInInspector] public List<string> currentPreferredTags = new List<string>();
+    public TextMeshProUGUI aiStyleMoodText;
     
 
 
@@ -234,8 +236,10 @@ public class Ai_OutfitChanger : MonoBehaviour
 
         currentPreferredTags.Add(tag); //USE THE PASSED IN TAG
 
+        
+
         //then add a second different tag randomly
-        while(currentPreferredTags.Count < 2)
+        while (currentPreferredTags.Count < 2)
         {
             string randomTag = possibleTags[Random.Range(0, possibleTags.Length)];
             if (!currentPreferredTags.Contains(randomTag))
@@ -244,9 +248,51 @@ public class Ai_OutfitChanger : MonoBehaviour
             }
         }
 
+        StartCoroutine(ShowAiStyleMood());
+        //string aiStyleMood = string.Join(" + ", currentPreferredTags);
+        //aiStyleText.text = "Lil Ai's mood: <b> " + aiStyleMood.ToUpper() + "</b>";
+
         Debug.Log("Lil Ai prefers: " + currentPreferredTags[0] + " and " + currentPreferredTags[1]);
     }
 
+    public IEnumerator ShowAiStyleMood()
+    {
+        // Set mood text
+        Dictionary<string, string> tagEmojis = new Dictionary<string, string>()
+    {
+        {"flirty", "💋"}, {"cozy", "🧣"}, {"chic", "💄"},
+        {"bold", "🔥"}, {"warm", "🌞"}, {"edgy", "⚡"}, {"vibrant", "🎉"}
+    };
+
+        string moodDisplay = string.Join(" + ", currentPreferredTags.Select(tag => tagEmojis[tag] + " " + tag));
+        aiStyleMoodText.text = "AI’s Style Mood: " + moodDisplay;
+
+        // Enable and set to full alpha
+        aiStyleMoodText.gameObject.SetActive(true);
+        Color color = aiStyleMoodText.color;
+        color.a = 1f;
+        aiStyleMoodText.color = color;
+
+        aiStyleMoodText.transform.localScale = Vector3.one * 1.2f;
+        LeanTween.scale(aiStyleMoodText.gameObject, Vector3.one, 0.5f).setEaseOutBack();
+
+        // Wait before starting fade
+        yield return new WaitForSeconds(2f);
+
+        // Fade out slowly
+        float duration = 2f;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.deltaTime;
+            color.a = Mathf.Lerp(1f, 0f, elapsed / duration);
+            aiStyleMoodText.color = color;
+            yield return null;
+        }
+
+        aiStyleMoodText.gameObject.SetActive(false);
+    }
 }
     
     ////Function that will help the AI randomly pick clothes. Made it a coroutine
