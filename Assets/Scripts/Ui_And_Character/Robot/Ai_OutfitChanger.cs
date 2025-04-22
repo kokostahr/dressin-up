@@ -1,8 +1,10 @@
 using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 
 public class Ai_OutfitChanger : MonoBehaviour
 {
@@ -28,7 +30,9 @@ public class Ai_OutfitChanger : MonoBehaviour
 
     [Header("TALK TALK LINES")]
     public GameObject[] aiOutfitComments;
-  
+
+    [Header("AI PREFERENCE SELECTION")]
+    private List<string> currentPreferredTags = new List<string>();    
 
 
     void Start()
@@ -193,6 +197,25 @@ public class Ai_OutfitChanger : MonoBehaviour
         {
             clothingManager.CalculateAiOutfitScore(theme);
         }
+
+    }
+
+    //Function that will randomly assign two tags to the AI at the start of each round
+    public void AssignRandomPreferredTags()
+    {
+        string[] possibleTags = { "flirty", "cozy", "chic", "bold", "warm", "edgy", "vibrant" };
+
+        currentPreferredTags.Clear();
+
+        while(currentPreferredTags.Count < 2)
+        {
+            string randomTag = possibleTags[Random.Range(0, possibleTags.Length)];
+            if (!currentPreferredTags.Contains(randomTag))
+            {
+                currentPreferredTags.Add(randomTag);
+            }
+        }
+
 
     }
 
