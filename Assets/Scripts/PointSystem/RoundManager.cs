@@ -55,6 +55,8 @@ public class RoundManager : MonoBehaviour
     //idk why im adding this
     public static RoundManager Instance;
 
+    [Header("THE AI PREFERENCES")]
+    private string currentAiPreferredTag;
 
 
     [Header("SCENE SETTINGS")]
@@ -119,6 +121,9 @@ public class RoundManager : MonoBehaviour
 
         //Randomly set the theme for the round
         SetRandomTheme();
+
+        //randomly set the AI's tag preferences for the round
+        SetRandomAiPreference();
     }
 
     //A couroutine that adds a flash panel to the scene
@@ -236,43 +241,8 @@ public class RoundManager : MonoBehaviour
         ////Wait the start next round or end game
         //StartCoroutine(WaitAndStartNextRound());
 
-
     }
 
-    ////something that will animate the bonus score reveal
-    //IEnumerator AnimateBonusScore(TextMeshProUGUI scoreText, int baseScore, int bonus, string label, float delay = 0.5f)
-    //{
-    //    Debug.Log("Coroutine started for " + label);
-
-    //    yield return new WaitForSeconds(delay);
-
-    //    int finalScore = baseScore + bonus;
-
-    //    // 🩷 Just set the final text once, no animation
-    //    scoreText.text = label + " Score: " + baseScore + " pts"
-    //        + "\nBonus: +" + bonus
-    //        + "\nTotal: " + finalScore + " pts";
-    //    Debug.Log("ScoreText is " + (scoreText == null ? "NULL 😭" : "NOT NULL 🎉"));
-    //    Debug.Log($"[AnimateBonusScore] Setting final score text for {label}!");
-
-    //    //scoreText.text = $"{label} Score: {baseScore} pts";
-    //    //yield return new WaitForSeconds(delay);
-
-    //    //scoreText.text += $"\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
-    //    //yield return new WaitForSeconds(0.3f);
-
-    //    //int finalScore = baseScore + bonus;
-    //    //int current = baseScore;
-
-    //    //while (current < finalScore)
-    //    //{
-    //    //    current++;
-    //    //    scoreText.text = $"{label} Score: {current} pts\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
-    //    //    scoreText.ForceMeshUpdate();
-    //    //    yield return new WaitForSeconds(0.05f);
-    //    //}
-    //    //Debug.Log("Animating score: " + current);
-    //}
 
     //coroutine that will... handle all the co-routines in the end round method
     IEnumerator HandleEndRoundSequence(int playerBaseScore, int aiBaseScore, int playerBonus, int aiBonus)
@@ -318,6 +288,15 @@ public class RoundManager : MonoBehaviour
         //Let's set the theme randomly to summer or WINTER. this is gonna be hard LOL
         currentTheme = themes[randomIndex];
         themeText.text = "Theme: " + currentTheme.ToUpper(); //The hell this mean?
+    }
+
+    void SetRandomAiPreference()
+    {
+        string[] tags = { "vibrant", "cozy", "chic", "flirty", "edgy", "bold", "warm" };
+        int randomIndex = Random.Range(0, tags.Length);
+        currentAiPreferredTag = tags[randomIndex];
+        Debug.Log("AI preference for this round: " + currentAiPreferredTag);
+        aiOutfitChanger.SetPreferredTag(currentAiPreferredTag);
     }
 
     public void StartNextRound()
@@ -395,10 +374,11 @@ public class RoundManager : MonoBehaviour
         //Reset the theme
         SetRandomTheme();
 
+        //randomly set the AI's tag preferences for the round
+        SetRandomAiPreference();
+
         //Resetting the round countdown
         StartCoroutine (RoundCountdown());
-
-
     }
 
     //method to end the game
@@ -429,3 +409,38 @@ public class RoundManager : MonoBehaviour
 
 
 }
+
+////something that will animate the bonus score reveal
+//IEnumerator AnimateBonusScore(TextMeshProUGUI scoreText, int baseScore, int bonus, string label, float delay = 0.5f)
+//{
+//    Debug.Log("Coroutine started for " + label);
+
+//    yield return new WaitForSeconds(delay);
+
+//    int finalScore = baseScore + bonus;
+
+//    // 🩷 Just set the final text once, no animation
+//    scoreText.text = label + " Score: " + baseScore + " pts"
+//        + "\nBonus: +" + bonus
+//        + "\nTotal: " + finalScore + " pts";
+//    Debug.Log("ScoreText is " + (scoreText == null ? "NULL 😭" : "NOT NULL 🎉"));
+//    Debug.Log($"[AnimateBonusScore] Setting final score text for {label}!");
+
+//    //scoreText.text = $"{label} Score: {baseScore} pts";
+//    //yield return new WaitForSeconds(delay);
+
+//    //scoreText.text += $"\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+//    //yield return new WaitForSeconds(0.3f);
+
+//    //int finalScore = baseScore + bonus;
+//    //int current = baseScore;
+
+//    //while (current < finalScore)
+//    //{
+//    //    current++;
+//    //    scoreText.text = $"{label} Score: {current} pts\n<color=#00FFC8>+{bonus} Style Bonus!</color>";
+//    //    scoreText.ForceMeshUpdate();
+//    //    yield return new WaitForSeconds(0.05f);
+//    //}
+//    //Debug.Log("Animating score: " + current);
+//}

@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -32,7 +33,7 @@ public class Ai_OutfitChanger : MonoBehaviour
     public GameObject[] aiOutfitComments;
 
     [Header("AI PREFERENCE SELECTION")]
-    private List<string> currentPreferredTags = new List<string>();    
+    [HideInInspector] public List<string> currentPreferredTags = new List<string>();    
 
 
     void Start()
@@ -127,6 +128,20 @@ public class Ai_OutfitChanger : MonoBehaviour
             yield break;
         }
 
+        //Create a weighted list of items that match the tags
+        List<GameObject> preferredItems = new List<GameObject>();
+        foreach (GameObject item in options)
+        {
+            ClothingItemData data = item.GetComponent<ClothingItemData>();
+            if (data != null && data.itemTag.Any(tag => currentPreferredTags.Contains(tag)))
+            {
+                preferredItems.Add(item);
+            }
+        }
+
+        GameObject[] pool = preferredItems.Count > 0 ? preferredItems.ToArray() : options; //to fallback if there are no matches
+
+
         //Ensure all stay hidden
         foreach (var item in options)
         {
@@ -201,12 +216,14 @@ public class Ai_OutfitChanger : MonoBehaviour
     }
 
     //Function that will randomly assign two tags to the AI at the start of each round
-    public void AssignRandomPreferredTags()
+    public void SetPreferredTag( string tag )
     {
         string[] possibleTags = { "flirty", "cozy", "chic", "bold", "warm", "edgy", "vibrant" };
-
         currentPreferredTags.Clear();
 
+        currentPreferredTags.Add(tag); //USE THE PASSED IN TAG
+
+        //then add a second different tag randomly
         while(currentPreferredTags.Count < 2)
         {
             string randomTag = possibleTags[Random.Range(0, possibleTags.Length)];
@@ -216,7 +233,7 @@ public class Ai_OutfitChanger : MonoBehaviour
             }
         }
 
-
+        Debug.Log("Lil Ai prefers: " + currentPreferredTags[0] + " and " + currentPreferredTags[1]);
     }
 
 }
