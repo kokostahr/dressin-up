@@ -32,6 +32,15 @@ public class ClothingManager : MonoBehaviour
     public TextMeshProUGUI playerFinalScoreText;
     public TextMeshProUGUI aiFinalScoreText;
 
+    [Header("BONUS POINTS LIVE TRACKING")]
+    public ScoringManager scoringManager;
+
+    void Start()
+    {
+        pointsPopupText.gameObject.SetActive(false);
+    }
+
+
     public void SelectClothingItem(ClothingItemData selectedItem, string theme)
     {
 
@@ -43,10 +52,13 @@ public class ClothingManager : MonoBehaviour
         //update the player's score (modifying for themes)
         //totalPoints += points;
 
-        int points = (theme == "summer") ? selectedItem.summerPoints : selectedItem.winterPoints;
-       
+        //int basePoints = (theme == "summer") ? selectedItem.summerPoints : selectedItem.winterPoints;
+
+        //Get the bonus points from the scoring manager 
+        int bonusPoints = scoringManager.GetBonusForSingleItem(selectedItem, theme);
+
         //show the popup points for the player
-        ShowPointsPopup(points);
+        ShowBonusPopup(bonusPoints);
 
         //Recalculate based on selected outfits
         int updatedScore = CalculateOutfitScore(theme);
@@ -57,14 +69,14 @@ public class ClothingManager : MonoBehaviour
     }
 
 
-    void ShowPointsPopup(int points)
+    void ShowBonusPopup(int bonusPoints)
     {
-        pointsPopupText.text = "+" + points.ToString() + " points";
+        pointsPopupText.text = "+" + bonusPoints.ToString() + " Bonus pts";
         pointsPopupText.gameObject.SetActive(true);
-        StartCoroutine(HidePointsPopup());
+        StartCoroutine(HideBonusPopup());
     }
 
-    IEnumerator HidePointsPopup()
+    IEnumerator HideBonusPopup()
     {
         yield return new WaitForSeconds(1f);
         pointsPopupText.gameObject.SetActive(false);
@@ -83,7 +95,7 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints;
                 //modifying to handle two themes
-                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+                score += GetThemePoints(theme, data.clothingItemData);
             }
         }
 
@@ -94,7 +106,7 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints; 
                 //modifying for two themes
-                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+                score += GetThemePoints(theme, data.clothingItemData);
             }
         }
 
@@ -105,7 +117,7 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints; 
                 //modifying for themes
-                score += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+                    ;
             }
         }
 
@@ -123,7 +135,7 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints;
                 //modifying for two themes . another if statement that needs to be expanded
-                aiScore += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+                aiScore += GetThemePoints(theme, data.clothingItemData);
             }
         }
 
@@ -134,7 +146,7 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints;
                 //modyifying, yeah
-                aiScore += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+                aiScore += GetThemePoints(theme, data.clothingItemData);
             }
         }
         
@@ -145,7 +157,7 @@ public class ClothingManager : MonoBehaviour
             {
                 //score += data.clothingItemData.winterPoints;
                 //modifyin yeah yeah
-                aiScore += (theme == "summer") ? data.clothingItemData.summerPoints : data.clothingItemData.winterPoints;
+                aiScore += GetThemePoints(theme, data.clothingItemData);
             }
         }
 
@@ -153,6 +165,26 @@ public class ClothingManager : MonoBehaviour
         aiLiveScoreText.text = "AI: " + aiScore.ToString() + " pts";
 
         return aiScore;
+    }
+
+    //Method that will handle the themes and their related points
+    private int GetThemePoints(string theme, ClothingItemData data)
+    {
+        switch (theme)
+        {
+            case "summer":
+                return data.summerPoints;
+            case "winter":
+                return data.winterPoints;
+            case "casual date":
+                return data.casualDatePoints;
+            case "artsy street style":
+                return data.artStreetStylePoints;
+            case "tv show audition":
+                return data.tvShowAuditionPoints;
+            default:
+                return 0;
+        }
     }
 
     public void UpdateAiScoreUI(int score)

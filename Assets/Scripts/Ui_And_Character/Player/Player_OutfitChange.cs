@@ -83,6 +83,11 @@ public class Player_OutfitChange : MonoBehaviour
 
             //Update the score for the shirt
             UpdatePlayerScore();
+
+            // Trigger the bonus popup for the shirt
+            ClothingItemData shirtData = shirts[index].GetComponent<ClothingItemHolder>().clothingItemData;
+            string currentTheme = RoundManager.Instance.GetCurrentTheme();
+            clothingManager.SelectClothingItem(shirtData, currentTheme);
         }
     }
 
@@ -98,6 +103,11 @@ public class Player_OutfitChange : MonoBehaviour
 
             //Update the score for pants
             UpdatePlayerScore();
+
+            // Trigger the bonus popup for the pants
+            ClothingItemData pantsData = pants[index].GetComponent<ClothingItemHolder>().clothingItemData;
+            string currentTheme = RoundManager.Instance.GetCurrentTheme();
+            clothingManager.SelectClothingItem(pantsData, currentTheme);
         }
     }
 
@@ -113,6 +123,10 @@ public class Player_OutfitChange : MonoBehaviour
 
             //Update the score for shoes
             UpdatePlayerScore();
+
+            ClothingItemData shoesData = shoes[index].GetComponent<ClothingItemHolder>().clothingItemData;
+            string currentTheme = RoundManager.Instance.GetCurrentTheme();
+            clothingManager.SelectClothingItem(shoesData, currentTheme);
         }
     }
 
