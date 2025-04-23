@@ -395,8 +395,8 @@ public class RoundManager : MonoBehaviour
         //clothingManager.aiFinalScoreText.gameObject.SetActive(false);
 
         //display the amount of wins:
-        clothingManager.playerFinalScoreText.text = "Total Player \nWins: " + playerWins.ToString() + "Wins";
-        clothingManager.aiFinalScoreText.text = "Total AI \nWins: " + aiWins.ToString() + "Wins";
+        clothingManager.playerFinalScoreText.text = "Total Player \nWins: " + playerWins.ToString() + " Wins";
+        clothingManager.aiFinalScoreText.text = "Total AI \nWins: " + aiWins.ToString() + " Wins";
 
         //displaying the total wins
         if (playerWins > aiWins)
