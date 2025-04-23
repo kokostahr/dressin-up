@@ -234,11 +234,11 @@ public class Ai_OutfitChanger : MonoBehaviour
         string[] possibleTags = { "flirty", "cozy", "chic", "bold", "warm", "edgy", "vibrant" };
         currentPreferredTags.Clear();
 
-        currentPreferredTags.Add(tag); //USE THE PASSED IN TAG
+        currentPreferredTags.Add(tag); //USE ONE OF THE TAGS PLES. PLEAS JUST WORK
 
         
 
-        //then add a second different tag randomly
+        //then add a second different tag randomly 
         while (currentPreferredTags.Count < 2)
         {
             string randomTag = possibleTags[Random.Range(0, possibleTags.Length)];
@@ -250,7 +250,7 @@ public class Ai_OutfitChanger : MonoBehaviour
 
         StartCoroutine(ShowAiStyleMood());
         //string aiStyleMood = string.Join(" + ", currentPreferredTags);
-        //aiStyleText.text = "Lil Ai's mood: <b> " + aiStyleMood.ToUpper() + "</b>";
+        //aiStyleMoodText.text = "Lil Ai's mood: <b> " + aiStyleMood.ToUpper() + "</b>";
 
         Debug.Log("Lil Ai prefers: " + currentPreferredTags[0] + " and " + currentPreferredTags[1]);
     }
@@ -258,14 +258,18 @@ public class Ai_OutfitChanger : MonoBehaviour
     public IEnumerator ShowAiStyleMood()
     {
         // Set mood text
-        Dictionary<string, string> tagEmojis = new Dictionary<string, string>()
-    {
-        {"flirty", "💋"}, {"cozy", "🧣"}, {"chic", "💄"},
-        {"bold", "🔥"}, {"warm", "🌞"}, {"edgy", "⚡"}, {"vibrant", "🎉"}
-    };
+        //    Dictionary<string, string> tagEmojis = new Dictionary<string, string>()
+        //{
+        //    {"flirty", "💋"}, {"cozy", "🧣"}, {"chic", "💄"},
+        //    {"bold", "🔥"}, {"warm", "🌞"}, {"edgy", "⚡"}, {"vibrant", "🎉"}
+        //};
 
-        string moodDisplay = string.Join(" + ", currentPreferredTags.Select(tag => tagEmojis[tag] + " " + tag));
-        aiStyleMoodText.text = "AI’s Style Mood: " + moodDisplay;
+        //    string moodDisplay = string.Join(" + ", currentPreferredTags.Select(tag => tagEmojis[tag] + " " + tag));
+        //    aiStyleMoodText.text = "AI’s Style Mood: " + moodDisplay;
+
+        string aiStyleMood = string.Join(" + ", currentPreferredTags);
+        aiStyleMoodText.text = "AI's Style Mood: <b> " + aiStyleMood.ToUpper() + "</b>";
+
 
         // Enable and set to full alpha
         aiStyleMoodText.gameObject.SetActive(true);
@@ -277,7 +281,7 @@ public class Ai_OutfitChanger : MonoBehaviour
         LeanTween.scale(aiStyleMoodText.gameObject, Vector3.one, 0.5f).setEaseOutBack();
 
         // Wait before starting fade
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.8f);
 
         // Fade out slowly
         float duration = 2f;

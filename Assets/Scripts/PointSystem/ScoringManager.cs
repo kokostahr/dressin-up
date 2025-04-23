@@ -206,149 +206,16 @@ public class ScoringManager : MonoBehaviour
                     Debug.Log("AI ROBOT BONUS FOR MATCHING TAAAAGS" + tag);
                 }
             }
+
+            foreach (ClothingItemData item in equippedItems)
+            {
+                //Call the getbonusforsingleitem to calculate 
+                bonusScore += GetBonusForSingleItem(item, theme);
+            }
         }
 
         //Code that will look at the tags an item has
-        foreach (ClothingItemData item in equippedItems)
-        {
-            //then need to check through the different tags an item will have
-            foreach (string tag in item.itemTag)
-            {
-                //WINTER
-                if (theme == "winter" && (tag == "cozy" || tag == "warm"))
-                {
-                    //ADD BONUS POINTS TO THE INITIAL SCORE
-                    bonusScore += 2;
-                }
-
-                if (theme == "winter" && (tag == "chic"))
-                {
-                    //Add bonus points
-                    bonusScore += 3;
-                }
-
-                if (theme == "winter" && (tag == "bold" || tag == "edgy"))
-                {
-                    //Add bonus points
-                    bonusScore += 1;
-                }
-
-                if (theme == "winter" && (tag == "flirty"))//Seperated them so bonus points can stack. 
-                                                           //If i added them all into one line like flirty || vibrant || etc, then its either or
-                                                           //not you can have flirty bonus points AND vibrant bonus points. 
-                {
-                    //Add bonus points
-                    bonusScore += 1;
-                }
-
-                if (theme == "winter" && (tag == "vibrant"))
-                {
-                    //Add bonus points
-                    bonusScore += 1;
-                }
-
-                //SUMMER
-                if (theme == "summer" && (tag == "vibrant"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 3;
-                }
-
-                if (theme == "summer" && (tag == "flirty"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 2;
-                }
-
-                if (theme == "summer" && (tag == "cozy"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 1;
-                }
-
-                if (theme == "summer" && (tag == "bold" || tag == "edgy" || tag == "chic"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 1;
-                }
-
-                //CASUAL DATE
-                if (theme == "casual date" && (tag == "flirty" || tag == "chic"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 3;
-                }
-
-                if (theme == "casual date" && (tag == "cozy"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 2;
-                }
-
-                if (theme == "casual date" && (tag == "vibrant"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 1;
-                }
-
-                if (theme == "casual date" && (tag == "warm"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 1;
-                }
-
-                //ARTSY STREET STYLE
-                if (theme == "artsy street style" && (tag == "edgy" || tag == "chic" || tag == "vibrant"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 3;
-                }
-
-                if (theme == "artsy street style" && (tag == "bold"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 2;
-                }
-
-                if (theme == "artsy street style" && (tag == "flirty"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 1;
-                }
-
-                if (theme == "artsy street style" && (tag == "cozy"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 1;
-                }
-
-                //TV SHOW AUDITION
-
-                if (theme == "tv showa udition" && (tag == "bold" || tag == "chic"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 3;
-                }
-
-                if (theme == "tv show audition" && (tag == "edgy" || tag == "vibrant"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 2;
-                }
-
-                if (theme == "tv show audition" && (tag == "cozy"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 1;
-                }
-
-                if (theme == "tv show audition" && (tag == "warm"))
-                {
-                    //ADD THREE BONUS POINTS TO THE INITIAL SCORRRRRE
-                    bonusScore += 1;
-                }
-            }
-        }
+        
 
         //then add the bonus score to the player's total score
         lastAIBonus = bonusScore;

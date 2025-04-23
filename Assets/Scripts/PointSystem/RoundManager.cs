@@ -287,7 +287,7 @@ public class RoundManager : MonoBehaviour
 
         //Let's set the theme randomly to summer or WINTER. this is gonna be hard LOL
         currentTheme = themes[randomIndex];
-        themeText.text = "Theme: " + currentTheme.ToUpper(); //The hell this mean?
+        themeText.text = "THEME: " + currentTheme.ToUpper(); //The hell this mean?
     }
 
     void SetRandomAiPreference()
@@ -384,15 +384,25 @@ public class RoundManager : MonoBehaviour
     //method to end the game
     void EndGame()
     {
+
         timerText.text = "Game Over \U0001F910"; //please don't be surprised future me. These are emojis in 'unicode' form
         scorePanel.SetActive(true);
         //Set the buttons active once the game has ended
         sceneUI.SetActive(true);
 
+        //deactivate the final score text ui when a new round starts
+        //clothingManager.playerFinalScoreText.gameObject.SetActive(false);
+        //clothingManager.aiFinalScoreText.gameObject.SetActive(false);
+
+        //display the amount of wins:
+        clothingManager.playerFinalScoreText.text = "Total Player \nWins: " + playerWins.ToString() + "Wins";
+        clothingManager.aiFinalScoreText.text = "Total AI \nWins: " + aiWins.ToString() + "Wins";
+
         //displaying the total wins
         if (playerWins > aiWins)
         {
             roundResultText.text = "Congratulations! You've outstyled the AI!";
+            
             //aiFinalScoreText.text = "-_-??";
             //playerFinalScoreText.text = "You got the most wins! Close the game. Its finshed.";
         }
