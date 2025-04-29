@@ -74,6 +74,9 @@ public class RoundManager : MonoBehaviour
     public Image flashPanelImg;
     private bool flashingStarted = false;
 
+    [Header("POINT CURRENCY SETTINGS")]
+    public PlayerCurrency playerCurrency;
+
 
     private void Awake()
     {
@@ -205,6 +208,10 @@ public class RoundManager : MonoBehaviour
         playerFinalScore = playerBaseScore + playerBonus;
         aiFinalScore = aiBaseScore + aiBonus;
 
+        //THEN ADD THE POINTS TO THE PLAYER'S CURRNCY
+        playerCurrency.AddPoints(playerFinalScore);
+
+
         // Activate final score UI now that we're showing results
         clothingManager.playerFinalScoreText.gameObject.SetActive(true);
         clothingManager.aiFinalScoreText.gameObject.SetActive(true);
@@ -220,8 +227,9 @@ public class RoundManager : MonoBehaviour
         //Show the score panel that will display AI and Player scores
         themeText.gameObject.SetActive(false);
         scorePanel.SetActive (true);
-        //dont need to show these things anymore
 
+
+        //dont need to show these things anymore
         //playerFinalScoreText.text = playerFinalScore.ToString();
         //aiFinalScoreText.text = aiFinalScore.ToString();
 
