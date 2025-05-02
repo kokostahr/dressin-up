@@ -48,6 +48,6 @@ public class ShopManager : MonoBehaviour
     //method that will close the shop panel
     public void CloseShop()
     {
-        shopPanel?.SetActive(false);
+        shopPanel.SetActive(false);
     }
 }

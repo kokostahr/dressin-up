@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e90f4fa097ef54ab66a1134ba3cb3f, type: 3}
+  m_Name: DenimTop
+  m_EditorClassIdentifier: 
+  itemName: Denim Top
+  itemIcon: {fileID: -3276987317760044622, guid: 52554b56c3e3f594b82eb7f17098c046, type: 3}
+  winterPoints: 0
+  summerPoints: 2
+  casualDatePoints: 0
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 0
+  itemTag:
+  - flirty
+  - edgy
+  - bold
+  cost: 180
+  isBought: 0

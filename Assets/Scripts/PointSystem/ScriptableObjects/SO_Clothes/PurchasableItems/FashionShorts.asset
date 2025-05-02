@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e90f4fa097ef54ab66a1134ba3cb3f, type: 3}
+  m_Name: FashionShorts
+  m_EditorClassIdentifier: 
+  itemName: Fashion Shorts
+  itemIcon: {fileID: 8965285116165143042, guid: 28cebf2740faf9a4fae1216d52fdba7e, type: 3}
+  winterPoints: 0
+  summerPoints: 2
+  casualDatePoints: 1
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 0
+  itemTag:
+  - chic
+  - bold
+  cost: 145
+  isBought: 0

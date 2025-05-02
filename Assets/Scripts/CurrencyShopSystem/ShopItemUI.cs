@@ -16,7 +16,7 @@ public class ShopItemUI : MonoBehaviour
    public void SetUp(ClothingItemData item)
     {
         myItem = item;
-        icon.sprite = item.icon;
+        icon.sprite = item.itemIcon;
         nameText.text = item.itemName;
         costText.text = item.cost.ToString();
 

@@ -13,7 +13,6 @@ public class ClothingItemData : ScriptableObject
     public int tvShowAuditionPoints; //For the relevant points associated with a TV Show Audition theme.
     public string[] itemTag; //Made it an array so I can add more than one tag.
     //new stuff related to player purchase
-    public Sprite icon;
     public int cost; //Self explanatory. Cost of the item
     public bool isBought; //A bool to check if the player has purchased the item. if not (false) then the item
                         //Is only avaliable in store. If yes (true) then the item goes to their wardrobe. 

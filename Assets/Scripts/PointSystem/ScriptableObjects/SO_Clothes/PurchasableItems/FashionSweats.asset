@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e90f4fa097ef54ab66a1134ba3cb3f, type: 3}
+  m_Name: FashionSweats
+  m_EditorClassIdentifier: 
+  itemName: Fashion Sweats
+  itemIcon: {fileID: -8543942030861395563, guid: a01bdaea63b2d364bb6a8bd2ac26a60a, type: 3}
+  winterPoints: 0
+  summerPoints: 3
+  casualDatePoints: 2
+  artStreetStylePoints: 3
+  tvShowAuditionPoints: 0
+  itemTag:
+  - flirty
+  - edgy
+  cost: 55
+  isBought: 0

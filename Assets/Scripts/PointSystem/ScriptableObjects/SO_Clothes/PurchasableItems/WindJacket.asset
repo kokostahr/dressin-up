@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2e90f4fa097ef54ab66a1134ba3cb3f, type: 3}
+  m_Name: WindJacket
+  m_EditorClassIdentifier: 
+  itemName: Wind Jacket
+  itemIcon: {fileID: -4718427709935547325, guid: 9bf2999194a99b34998746578fe7c0cb, type: 3}
+  winterPoints: 3
+  summerPoints: 1
+  casualDatePoints: 2
+  artStreetStylePoints: 1
+  tvShowAuditionPoints: 2
+  itemTag:
+  - vibrant
+  - warm
+  - ed
+  cost: 5
+  isBought: 0
