@@ -31,6 +31,7 @@ public class RoundManager : MonoBehaviour
     public Player_OutfitChange player_OutfitChange;
     //Need text showing who won the round
     public TextMeshProUGUI roundResultText;
+    public GameObject nextRoundButton;
 
     [Header("POINT COMPARISON SETTINGS")]
     //Referencing the clothing manager to count the points
@@ -262,7 +263,7 @@ public class RoundManager : MonoBehaviour
         CompareScores(playerFinalScore, aiFinalScore);
         yield return new WaitForSeconds(6f);
         themePopupText.gameObject.SetActive(true);
-        StartNextRound();
+        //StartNextRound();
     }
 
     void CompareScores(int playerFinalScore, int aiFinalScore)
@@ -322,12 +323,12 @@ public class RoundManager : MonoBehaviour
     }
 
     //co-routine that will wait for a while after the round has ended to show the score and give the next theme
-    IEnumerator WaitAndStartNextRound()
-    {
-        yield return new WaitForSeconds(4f);
-        themePopupText.gameObject.SetActive(true);
-        StartNextRound();
-    }
+    //public IEnumerator WaitAndStartNextRound()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    themePopupText.gameObject.SetActive(true);
+    //    StartNextRound();
+    //}
 
     void ResetRound()
     {
@@ -397,6 +398,8 @@ public class RoundManager : MonoBehaviour
         scorePanel.SetActive(true);
         //Set the buttons active once the game has ended
         sceneUI.SetActive(true);
+        //Make sure the next round button is hidden
+        nextRoundButton.SetActive(false);
 
         //deactivate the final score text ui when a new round starts
         //clothingManager.playerFinalScoreText.gameObject.SetActive(false);
