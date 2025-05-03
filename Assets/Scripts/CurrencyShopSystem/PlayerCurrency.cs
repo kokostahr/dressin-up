@@ -37,7 +37,7 @@ public class PlayerCurrency : MonoBehaviour
         //Trying my luck to reference the already existing points and get that to show at the end of each round
         fashionPoints += amount;
         // Updating the text whenever the player gets more points
-        fashionPointsText.text = amount.ToString();
+        fashionPointsText.text = "Fashion Pts: /n" + amount.ToString();
     }
 
     //A function that will check if the player has enough points to spend, then if they do it will reduce their points.
