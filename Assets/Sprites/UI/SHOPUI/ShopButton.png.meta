@@ -116,12 +116,12 @@ TextureImporter:
       name: ShopButton_0
       rect:
         serializedVersion: 2
-        x: 260
-        y: 155
-        width: 120
-        height: 41
+        x: 3
+        y: 0
+        width: 117
+        height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 09c986d21b734a74ba1c4b5cd6d3086b
     internalID: 0
     vertices: []
     indices: 
