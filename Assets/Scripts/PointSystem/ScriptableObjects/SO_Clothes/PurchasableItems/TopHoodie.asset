@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TopHoodie
   m_EditorClassIdentifier: 
   itemName: Hoodie Top
-  itemIcon: {fileID: 0}
+  itemIcon: {fileID: 5888479374299438171, guid: fcb90d89b282bd342ad9cacfc28020eb, type: 3}
   winterPoints: 3
   summerPoints: 0
   casualDatePoints: 1

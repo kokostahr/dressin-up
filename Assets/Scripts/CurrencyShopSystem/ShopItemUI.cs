@@ -18,7 +18,7 @@ public class ShopItemUI : MonoBehaviour
         myItem = item;
         icon.sprite = item.itemIcon;
         nameText.text = item.itemName;
-        costText.text = item.cost.ToString();
+        costText.text = item.cost.ToString() + " pts";
 
         //Ensuring that it doesn't mess with the boolean, because if they just click it, doesn't mean they necessairly bought it
         buyButton.interactable = !item.isBought;

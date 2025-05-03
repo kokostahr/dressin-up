@@ -22,6 +22,7 @@ public class ShopManager : MonoBehaviour
         //When the game starts, populate the shop with the avaliable items
         PopulateShop();
         shopPanel.SetActive(false);
+        itemPrefab.SetActive(false);
     }
 
     void PopulateShop()
