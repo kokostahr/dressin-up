@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static UnityEditor.Progress;
 
 public class ShopItemUI : MonoBehaviour
 {
@@ -37,6 +38,9 @@ public class ShopItemUI : MonoBehaviour
 
             //IF I HAVE TIME TO STORE THE BOUGHT DATA (like what they have and havent bought in each play session:
             PlayerPrefs.SetInt("Bought_" + myItem.itemName, 1);
+
+            // Then unlock the wardrobe icon
+            Object.FindFirstObjectByType<Player_OutfitChange>().RevealBoughtClothingUI(myItem.itemName);
         }
     }
 }

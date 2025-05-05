@@ -16,6 +16,9 @@ public class Player_OutfitChange : MonoBehaviour
     [HideInInspector] public GameObject currentPants;
     [HideInInspector] public GameObject currentShoes;
 
+    //Variables for the store items;
+    public GameObject[] shopItems;
+
     // Panel for each category
     [Header("UI PANELS")]
     public GameObject shirtPanel, pantsPanel, shoePanel;
@@ -39,6 +42,10 @@ public class Player_OutfitChange : MonoBehaviour
         HideAll(shirts);
         HideAll(pants);
         HideAll(shoes);
+        HideAll(shopItems);
+
+        //Show the items that have already been bought
+        RevealAlreadyBoughtItems();
     }
 
     // Function to hide all items in a category
@@ -57,18 +64,41 @@ public class Player_OutfitChange : MonoBehaviour
         HideAll(pants);
         HideAll(shoes);
     }
-    
-    ////Function to update the player's score live
-    //void UpdatePlayerScore()
-    //{
-    //    //Calculate the player's current outfit score based on the selected items
-    //    int totalScore = 0;
 
-    //    if (currentShirt != null)
-    //    {
-    //        totalScore += ClothingManager.CalculateOutfitScore(currentShirt);
-    //    } 
-    //}
+    //Function to Reveal the items that have been bought, into the player's wardrobe
+    public void RevealBoughtClothingUI (string itemName)
+    {
+        //Search all them wardrobe panels.
+        Transform itemUI = shirtPanel.transform.Find(itemName);
+        if (itemUI == null)
+        {
+            itemUI = pantsPanel.transform.Find(itemName);
+        }
+        if (itemUI == null)
+        {
+            itemUI = shoePanel.transform.Find(itemName);
+        }
+
+        if (itemUI != null)
+        {
+            itemUI.gameObject.SetActive(true); //then activate/show the relevant item inside the panel
+        }
+    }
+
+    //A method that will reveal the clothing items that have already been bought in a specific play session.
+    void RevealAlreadyBoughtItems()
+    {
+        string[] allPossibleItemNames = {"FashionSneakers", "LongBoots", "FlowyPants", "FashionSweats", "FashionShorts", "BaggyLowaistJeans",
+                    "WindJacket", "TopHoodie", "DenimTop", "SweaterShirt", "FancyShirt"};
+
+        foreach (string name  in allPossibleItemNames)
+        {
+            if (PlayerPrefs.GetInt("Bought_" +  name, 0) == 1)
+            {
+                RevealBoughtClothingUI(name);
+            }
+        }
+    }
 
     // Functions to set specific clothes based on button click
     public void SetShirt(int index)
@@ -171,3 +201,14 @@ public class Player_OutfitChange : MonoBehaviour
         shoePanel.SetActive(false);
     }
 }
+////Function to update the player's score live
+//void UpdatePlayerScore()
+//{
+//    //Calculate the player's current outfit score based on the selected items
+//    int totalScore = 0;
+
+//    if (currentShirt != null)
+//    {
+//        totalScore += ClothingManager.CalculateOutfitScore(currentShirt);
+//    } 
+//}

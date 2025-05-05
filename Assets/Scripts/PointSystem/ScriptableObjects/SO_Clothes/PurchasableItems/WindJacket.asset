@@ -24,4 +24,4 @@ MonoBehaviour:
   - warm
   - edgy
   cost: 5
-  isBought: 0
+  isBought: 1
