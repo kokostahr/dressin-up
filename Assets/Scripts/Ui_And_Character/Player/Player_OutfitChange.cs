@@ -43,7 +43,7 @@ public class Player_OutfitChange : MonoBehaviour
         HideAll(pants);
         HideAll(shoes);
         HideAll(shopItems);
-
+        shirtPanel.SetActive(false);
         //Show the items that have already been bought
         RevealAlreadyBoughtItems();
     }
@@ -92,7 +92,13 @@ public class Player_OutfitChange : MonoBehaviour
 
         if (itemUI != null)
         {
+            Debug.Log("Found item: " + itemUI.name); // Debug log to confirm the item is found
             itemUI.gameObject.SetActive(true); //then activate/show the relevant item inside the panel
+            Debug.Log("Searching for: " + itemName); // See exactly what the name is when searching
+        }
+        else
+        {
+            Debug.Log("Item not found: " + itemName); // Debug log if item is not found
         }
     }
 
@@ -114,8 +120,10 @@ public class Player_OutfitChange : MonoBehaviour
     //A method that will reveal the clothing items that have already been bought in a specific play session.
     void RevealAlreadyBoughtItems()
     {
-        string[] allPossibleItemNames = {"FashionSneakers", "LongBoots", "FlowyPants", "FashionSweats", "FashionShorts", "BaggyLowaistJeans",
-                    "WindJacket", "TopHoodie", "DenimTop", "SweaterShirt", "FancyShirt"};
+        string[] allPossibleItemNames = 
+            {"FashionSneakers", "LongBoots", "FlowyPants", "FashionSweats", 
+            "FashionShorts", "BaggyLowJeans", "Wind Jacket", "TopHoodie", 
+            "DenimTop", "SweaterShirt", "FancyShirt"};
 
         foreach (string name  in allPossibleItemNames)
         {

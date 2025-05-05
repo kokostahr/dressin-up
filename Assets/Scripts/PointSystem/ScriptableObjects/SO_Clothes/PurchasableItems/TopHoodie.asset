@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e90f4fa097ef54ab66a1134ba3cb3f, type: 3}
   m_Name: TopHoodie
   m_EditorClassIdentifier: 
-  itemName: Hoodie Top
+  itemName: TopHoodie
   itemIcon: {fileID: 5888479374299438171, guid: fcb90d89b282bd342ad9cacfc28020eb, type: 3}
   winterPoints: 3
   summerPoints: 0
@@ -24,4 +24,3 @@ MonoBehaviour:
   - bold
   - cozy
   cost: 85
-  isBought: 0

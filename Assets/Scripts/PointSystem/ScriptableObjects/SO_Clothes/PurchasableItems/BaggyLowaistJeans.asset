@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e90f4fa097ef54ab66a1134ba3cb3f, type: 3}
   m_Name: BaggyLowaistJeans
   m_EditorClassIdentifier: 
-  itemName: Baggy Low Jeans
+  itemName: BaggyLowJeans
   itemIcon: {fileID: 2037056978650709027, guid: f3c7ec83771b3cc4ea7b71ea4387bc17, type: 3}
   winterPoints: 1
   summerPoints: 2
@@ -23,4 +23,3 @@ MonoBehaviour:
   - bold
   - flirty
   cost: 120
-  isBought: 0

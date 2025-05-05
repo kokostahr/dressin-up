@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2e90f4fa097ef54ab66a1134ba3cb3f, type: 3}
   m_Name: LongBoots
   m_EditorClassIdentifier: 
-  itemName: Long Boots
+  itemName: LongBoots
   itemIcon: {fileID: -8384498371075348843, guid: f4ce03152033cb74585341920e077293, type: 3}
   winterPoints: 3
   summerPoints: 0
@@ -24,4 +24,3 @@ MonoBehaviour:
   - warm
   - edgy
   cost: 125
-  isBought: 0
