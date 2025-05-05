@@ -13,8 +13,8 @@ public class ShopItemUI : MonoBehaviour
 
     ClothingItemData myItem;
 
-   //Method that will set up each item appropriately within the shop 
-   public void SetUp(ClothingItemData item)
+    //Method that will set up each item appropriately within the shop 
+    public void SetUp(ClothingItemData item)
     {
         myItem = item;
         icon.sprite = item.itemIcon;
@@ -22,7 +22,10 @@ public class ShopItemUI : MonoBehaviour
         costText.text = item.cost.ToString() + " pts";
 
         //Ensuring that it doesn't mess with the boolean, because if they just click it, doesn't mean they necessairly bought it
-        buyButton.interactable = !item.isBought;
+        bool isBought = PlayerClothingData.IsItemBought(item.itemName);
+        buyButton.interactable = !isBought;
+
+        buyButton.onClick.RemoveAllListeners();
         buyButton.onClick.AddListener(BuyItem);
 
     }
@@ -33,11 +36,8 @@ public class ShopItemUI : MonoBehaviour
         if (PlayerCurrency.Instance.SpendPoints(myItem.cost))
         {
             //If the player manages to buy an item, then set the bool to true, make item disappear from the shop!
-            myItem.isBought = true;
-            buyButton.interactable = false; //THEY SHOUDN'T BE ABLE TO CLICK AND BUY INFINITE AMOUNT OF 1 THING
-
-            //IF I HAVE TIME TO STORE THE BOUGHT DATA (like what they have and havent bought in each play session:
-            PlayerPrefs.SetInt("Bought_" + myItem.itemName, 1);
+            PlayerClothingData.MarkItemAsBought(myItem.itemName);
+            buyButton.interactable = false;
 
             // Then unlock the wardrobe icon
             Object.FindFirstObjectByType<Player_OutfitChange>().RevealBoughtClothingUI(myItem.itemName);

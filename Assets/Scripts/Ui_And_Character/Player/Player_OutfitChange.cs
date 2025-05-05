@@ -69,20 +69,46 @@ public class Player_OutfitChange : MonoBehaviour
     public void RevealBoughtClothingUI (string itemName)
     {
         //Search all them wardrobe panels.
-        Transform itemUI = shirtPanel.transform.Find(itemName);
+        //Transform itemUI = shirtPanel.transform.Find(itemName);
+        //if (itemUI == null)
+        //{
+        //    itemUI = pantsPanel.transform.Find(itemName);
+        //}
+        //if (itemUI == null)
+        //{
+        //    itemUI = shoePanel.transform.Find(itemName);
+        //}
+
+        //if (itemUI != null)
+        //{
+        //    itemUI.gameObject.SetActive(true); //then activate/show the relevant item inside the panel
+        //}
+
+        Transform itemUI = FindChildRecursive(shirtPanel.transform, itemName);
         if (itemUI == null)
-        {
-            itemUI = pantsPanel.transform.Find(itemName);
-        }
+            itemUI = FindChildRecursive(pantsPanel.transform, itemName);
         if (itemUI == null)
-        {
-            itemUI = shoePanel.transform.Find(itemName);
-        }
+            itemUI = FindChildRecursive(shoePanel.transform, itemName);
 
         if (itemUI != null)
         {
             itemUI.gameObject.SetActive(true); //then activate/show the relevant item inside the panel
         }
+    }
+
+    //idk man
+    Transform FindChildRecursive(Transform parent, string childName)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.name == childName)
+                return child;
+
+            Transform found = FindChildRecursive(child, childName);
+            if (found != null)
+                return found;
+        }
+        return null;
     }
 
     //A method that will reveal the clothing items that have already been bought in a specific play session.

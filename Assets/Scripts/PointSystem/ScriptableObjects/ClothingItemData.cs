@@ -14,6 +14,7 @@ public class ClothingItemData : ScriptableObject
     public string[] itemTag; //Made it an array so I can add more than one tag.
     //new stuff related to player purchase
     public int cost; //Self explanatory. Cost of the item
-    public bool isBought; //A bool to check if the player has purchased the item. if not (false) then the item
+    //MISTAKE, NEVER PUT A CHANGING BOOL ON A SCRIPTABLE OBJECT! Oh my gawd T^T
+    //public bool isBought; //A bool to check if the player has purchased the item. if not (false) then the item
                         //Is only avaliable in store. If yes (true) then the item goes to their wardrobe. 
 }

@@ -1,6 +1,8 @@
 using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
+using static UnityEditor.Progress;
+using UnityEngine.Rendering.VirtualTexturing;
 
 public class ShopManager : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class ShopManager : MonoBehaviour
     //shop panel gameobject
     public GameObject shopPanel;
 
+    //public PlayerClothingData playerClothingData;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,16 +28,17 @@ public class ShopManager : MonoBehaviour
         PopulateShop();
         shopPanel.SetActive(false);
         itemPrefab.SetActive(false);
+
+        //remove the player prefs when the game starts so i can playtest
+        PlayerClothingData.ResetAllPurchasesForDebug();
+
+
     }
 
     void PopulateShop()
     {
         foreach (ClothingItemData item in itemsForSale)
         {
-
-            //for saving the player purcase data/history?
-            item.isBought = PlayerPrefs.GetInt("Bought_" + item.itemName, 0) == 1;
-
             GameObject newItem = Instantiate(itemPrefab, contentPanel);
             ShopItemUI ui = newItem.GetComponent<ShopItemUI>();
             ui.SetUp(item);
