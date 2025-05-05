@@ -18,10 +18,14 @@ public class ShopManager : MonoBehaviour
     //shop panel gameobject
     public GameObject shopPanel;
 
-    //public PlayerClothingData playerClothingData;
-    
+    private void Awake()
+    {
+        //remove the player prefs when the game starts so i can playtest
+        PlayerClothingData.ResetAllPurchasesForDebug();
+    }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
     void Start()
     {
         //When the game starts, populate the shop with the avaliable items
@@ -29,11 +33,10 @@ public class ShopManager : MonoBehaviour
         shopPanel.SetActive(false);
         itemPrefab.SetActive(false);
 
-        //remove the player prefs when the game starts so i can playtest
-        PlayerClothingData.ResetAllPurchasesForDebug();
-
 
     }
+
+
 
     void PopulateShop()
     {

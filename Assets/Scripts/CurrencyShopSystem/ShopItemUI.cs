@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static UnityEditor.Progress;
+
 
 public class ShopItemUI : MonoBehaviour
 {

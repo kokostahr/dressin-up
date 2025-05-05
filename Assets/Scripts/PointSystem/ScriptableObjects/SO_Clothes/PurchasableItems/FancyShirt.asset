@@ -23,5 +23,4 @@ MonoBehaviour:
   - flirty
   - vibrant
   - boldy
-  cost: 155
-  isBought: 0
+  cost: 1

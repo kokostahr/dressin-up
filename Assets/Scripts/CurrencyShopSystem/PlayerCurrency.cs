@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DentedPixel;
+using System.Collections;
 
 public class PlayerCurrency : MonoBehaviour   
 {
@@ -30,14 +31,21 @@ public class PlayerCurrency : MonoBehaviour
         else Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        declinedMessage.SetActive(false);
+    }
+
     //A function that will add the player's points at the end of each round.
     public void AddPoints(int amount)
     {
         //int amount = roundManager.playerFinalScore;
         //Trying my luck to reference the already existing points and get that to show at the end of each round
         fashionPoints += amount;
+        //Then update the UI to show total points.
+        UpdatePointsUI();
         // Updating the text whenever the player gets more points
-        fashionPointsText.text = "Fashion Pts: " + amount.ToString();
+        //fashionPointsText.text = "Fashion Pts: " + amount.ToString();
     }
 
     //A function that will check if the player has enough points to spend, then if they do it will reduce their points.
@@ -50,19 +58,39 @@ public class PlayerCurrency : MonoBehaviour
             fashionPoints -= amount;
             Debug.Log("Player has spent for " + amount + " points");
             //will do the UI UPDATE HERE ALSO
-            //fashionPointsText.Text = playerScore.ToString()
+            UpdatePointsUI();
             return true;
         }
         else //not enuf money? don't let them buy 
         {
             Debug.Log("PLayer doesn't have enuf points");
             //UI update to let player know they cant buy. Set the declined message true, add LEANTWEEN for juicy animatioms
-            declinedMessage.SetActive(true);
+            ShowDeclinedMessage();
             //Need a co-routine that will make the declinded message disappear after a second or smth
-            //Space for the co-routine>>
+            StartCoroutine(HideDeclinedMessage());
             return false;
         }
     }
+    
+    public void UpdatePointsUI()
+    {
+        fashionPointsText.text = "Fashion Pts: " + fashionPoints.ToString();
+        LeanTween.scale(fashionPointsText.rectTransform, Vector3.one * 1.2f, 0.1f).setLoopPingPong(1);
+    }
+
+    public void ShowDeclinedMessage()
+    {
+        declinedMessage.SetActive(true);
+        LeanTween.scale(declinedMessage.GetComponent<RectTransform>(), Vector3.one * 1.2f, 0.1f).setLoopPingPong(1);
+    }
+
+    //coroutine for the declined message
+    IEnumerator HideDeclinedMessage()
+    {
+        yield return new WaitForSeconds(1.5f);
+        declinedMessage.SetActive(false);
+    }
+
     
 
 }
