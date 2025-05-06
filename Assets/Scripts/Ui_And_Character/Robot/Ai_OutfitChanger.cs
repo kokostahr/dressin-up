@@ -8,7 +8,7 @@ using UnityEngine.UI;
 using DentedPixel;
 
 
-public class Ai_OutfitChanger : MonoBehaviour
+public abstract class Ai_OutfitChanger : MonoBehaviour
 {
     //Arrays to hold all the relevant Items. Yes
     [Header("ARRAY CATEGORY")]
@@ -36,10 +36,10 @@ public class Ai_OutfitChanger : MonoBehaviour
     [Header("AI PREFERENCE SELECTION")]
     [HideInInspector] public List<string> currentPreferredTags = new List<string>();
     public TextMeshProUGUI aiStyleMoodText;
-    
 
+    public abstract IEnumerator ChooseRandomOutfitDelay();// ABSTRACT method to override in children
 
-    void Start()
+    public virtual void Start()
     {
         HideAll(aishirts);
         HideAll(aipants);
@@ -53,7 +53,7 @@ public class Ai_OutfitChanger : MonoBehaviour
     }
 
     // Function to hide all items in a category
-    void HideAll(GameObject[] items)
+    protected void HideAll(GameObject[] items)
     {
         foreach (GameObject item in items)
         {
@@ -68,61 +68,8 @@ public class Ai_OutfitChanger : MonoBehaviour
         HideAll(aishoes);
     }
 
-    //Co-routine that will make the AI look like its still thinking about its choices xD
-    public IEnumerator ChooseRandomOutfitDelay()
-    {
-        //Wait a bit before choosing shirt
-        yield return new WaitForSeconds(2f); //Let AI pause before it starts selecting
-        yield return StartCoroutine(PickWithDeliberation(aishirts, (chosen) =>
-        {
-            currentShirt = chosen;
-            //update the UI to show the selected shirt
-            UpdateAIShirtDisplay(currentShirt);
-            int aiScore = clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme());
-            clothingManager.UpdateAiScoreUI(aiScore); //updating the live score?
-        }));
-
-
-        yield return new WaitForSeconds(6f);//Let AI PAUSE AGAIN
-
-        yield return StartCoroutine(PickWithDeliberation(aipants, (chosen) => {
-            currentPants = chosen;
-            //update the UI to show selected pants
-            UpdateAIPantsDisplay(currentPants);
-            //A simple way to make the AI comment when it makes a choice
-            //first hide all active comments
-            foreach (GameObject comment in aiOutfitComments)
-            {
-                comment.SetActive(false);
-            }
-
-            //Pick a new one to show
-            int randomIndex = Random.Range(0, aiOutfitComments.Length);
-            aiOutfitComments[randomIndex].SetActive(true);
-
-            //ANOTHER co routine to hide the comment after a short amount of time
-            StartCoroutine(HideCommentAfterDelay(aiOutfitComments[randomIndex], 4f));
-            
-            int aiScore = clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme());
-            clothingManager.UpdateAiScoreUI(aiScore);//updating the live score?
-        }));
-
-        yield return new WaitForSeconds(5f);//LET IT PAUSE ONCE MORE
-       
-        yield return StartCoroutine(PickWithDeliberation(aishoes, (chosen) => {
-            currentShoes = chosen;
-            //update the UI to show selected shoes
-            UpdateAIShoesDisplay(currentShoes);
-
-            int aiScore = clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme());
-            clothingManager.UpdateAiScoreUI(aiScore); //updating the live score?
-        }));
-
-       // FinaliseOutfitAndScore(RoundManager.Instance.GetCurrentTheme());
-    }
-
     //Coroutine that will make the AI pick multiple options before settling on one
-    IEnumerator PickWithDeliberation(GameObject[] options, System.Action<GameObject> callback)
+    protected IEnumerator PickWithDeliberation(GameObject[] options, System.Action<GameObject> callback)
     {
         if (options == null || options.Length == 0)
         {
@@ -183,13 +130,13 @@ public class Ai_OutfitChanger : MonoBehaviour
     }
 
     //Method to hide the comment after a short amount of time
-    IEnumerator HideCommentAfterDelay(GameObject commentObj, float delay)
+    protected IEnumerator HideCommentAfterDelay(GameObject commentObj, float delay)
     {
         yield return new WaitForSeconds(delay);
         commentObj.SetActive(false);
     }
 
-    void UpdateAIShirtDisplay(GameObject chosenShirt)
+    protected void UpdateAIShirtDisplay(GameObject chosenShirt)
     {
         //find the index of the chosen shirt
         int index = System.Array.IndexOf(aishirts, chosenShirt);
@@ -199,7 +146,7 @@ public class Ai_OutfitChanger : MonoBehaviour
         }
     }
 
-    void UpdateAIPantsDisplay(GameObject chosenPants)
+    protected void UpdateAIPantsDisplay(GameObject chosenPants)
     {
         //find the index of the chosen pants
         int index = System.Array.IndexOf(aipants, chosenPants);
@@ -209,7 +156,7 @@ public class Ai_OutfitChanger : MonoBehaviour
         }
     }
 
-    void UpdateAIShoesDisplay(GameObject chosenShoes)
+    protected void UpdateAIShoesDisplay(GameObject chosenShoes)
     {
         //Find the index of the selected shoes
         int index = System.Array.IndexOf(aishoes, chosenShoes);
@@ -229,7 +176,7 @@ public class Ai_OutfitChanger : MonoBehaviour
     }
 
     //Function that will randomly assign two tags to the AI at the start of each round
-    public void SetPreferredTag( string tag )
+    public virtual void SetPreferredTag( string tag )
     {
         string[] possibleTags = { "flirty", "cozy", "chic", "bold", "warm", "edgy", "vibrant" };
         currentPreferredTags.Clear();
@@ -255,7 +202,7 @@ public class Ai_OutfitChanger : MonoBehaviour
         Debug.Log("Lil Ai prefers: " + currentPreferredTags[0] + " and " + currentPreferredTags[1]);
     }
 
-    public IEnumerator ShowAiStyleMood()
+    protected virtual IEnumerator ShowAiStyleMood()
     {
         // Set mood text
         //    Dictionary<string, string> tagEmojis = new Dictionary<string, string>()
@@ -298,40 +245,95 @@ public class Ai_OutfitChanger : MonoBehaviour
         aiStyleMoodText.gameObject.SetActive(false);
     }
 }
-    
-    ////Function that will help the AI randomly pick clothes. Made it a coroutine
-    //public void ChooseRandomOutfit()
-    //{
-    //    currentShirt = PickRandom(aishirts);
-    //    currentPants = PickRandom(aipants);
-    //    currentShoes = PickRandom(aishoes);
-    //}
 
-    //GameObject PickRandom(GameObject[] options)
-    //{
-    //    if (options == null || options.Length == 0)
-    //    {
-    //        Debug.LogWarning("AI Outfitchanger: One of the arrays is empty");
-    //        return null;
-    //    }
+//Co-routine that will make the AI look like its still thinking about its choices xD
+//public IEnumerator ChooseRandomOutfitDelay()
+//{
+//    //Wait a bit before choosing shirt
+//    yield return new WaitForSeconds(2f); //Let AI pause before it starts selecting
+//    yield return StartCoroutine(PickWithDeliberation(aishirts, (chosen) =>
+//    {
+//        currentShirt = chosen;
+//        //update the UI to show the selected shirt
+//        UpdateAIShirtDisplay(currentShirt);
+//        int aiScore = clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme());
+//        clothingManager.UpdateAiScoreUI(aiScore); //updating the live score?
+//    }));
 
-    //    //Hide all the items on the AI character first
-    //    foreach (var item in options)
-    //    {
-    //        if (item != null)
-    //        {
-    //            item.SetActive(false);
-    //        }
-    //    }
 
-    //    //Pick items randomly
-    //    int randomIndex = Random.Range(0, options.Length);
-    //    GameObject chosen = options[randomIndex];
-    //    if (chosen != null)
-    //    {
-    //        chosen.SetActive(true);
-    //    }
-    //    return chosen;
-    //}
+//    yield return new WaitForSeconds(6f);//Let AI PAUSE AGAIN
+
+//    yield return StartCoroutine(PickWithDeliberation(aipants, (chosen) => {
+//        currentPants = chosen;
+//        //update the UI to show selected pants
+//        UpdateAIPantsDisplay(currentPants);
+//        //A simple way to make the AI comment when it makes a choice
+//        //first hide all active comments
+//        foreach (GameObject comment in aiOutfitComments)
+//        {
+//            comment.SetActive(false);
+//        }
+
+//        //Pick a new one to show
+//        int randomIndex = Random.Range(0, aiOutfitComments.Length);
+//        aiOutfitComments[randomIndex].SetActive(true);
+
+//        //ANOTHER co routine to hide the comment after a short amount of time
+//        StartCoroutine(HideCommentAfterDelay(aiOutfitComments[randomIndex], 4f));
+
+//        int aiScore = clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme());
+//        clothingManager.UpdateAiScoreUI(aiScore);//updating the live score?
+//    }));
+
+//    yield return new WaitForSeconds(5f);//LET IT PAUSE ONCE MORE
+
+//    yield return StartCoroutine(PickWithDeliberation(aishoes, (chosen) => {
+//        currentShoes = chosen;
+//        //update the UI to show selected shoes
+//        UpdateAIShoesDisplay(currentShoes);
+
+//        int aiScore = clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme());
+//        clothingManager.UpdateAiScoreUI(aiScore); //updating the live score?
+//    }));
+
+//   // FinaliseOutfitAndScore(RoundManager.Instance.GetCurrentTheme());
+//}
+
+
+
+////Function that will help the AI randomly pick clothes. Made it a coroutine
+//public void ChooseRandomOutfit()
+//{
+//    currentShirt = PickRandom(aishirts);
+//    currentPants = PickRandom(aipants);
+//    currentShoes = PickRandom(aishoes);
+//}
+
+//GameObject PickRandom(GameObject[] options)
+//{
+//    if (options == null || options.Length == 0)
+//    {
+//        Debug.LogWarning("AI Outfitchanger: One of the arrays is empty");
+//        return null;
+//    }
+
+//    //Hide all the items on the AI character first
+//    foreach (var item in options)
+//    {
+//        if (item != null)
+//        {
+//            item.SetActive(false);
+//        }
+//    }
+
+//    //Pick items randomly
+//    int randomIndex = Random.Range(0, options.Length);
+//    GameObject chosen = options[randomIndex];
+//    if (chosen != null)
+//    {
+//        chosen.SetActive(true);
+//    }
+//    return chosen;
+//}
 
 

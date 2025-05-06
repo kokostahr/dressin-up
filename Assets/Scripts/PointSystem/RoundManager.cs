@@ -49,6 +49,7 @@ public class RoundManager : MonoBehaviour
     //Resetting the AI's clothing choices every round
     public Ai_OutfitChanger aiOutfitChanger;
     public Player_OutfitChange playerOutfitChanger;
+    public LevelManager levelManager;
 
     //This is going to track the current theme
     private string currentTheme;
@@ -124,7 +125,8 @@ public class RoundManager : MonoBehaviour
         calmAudioSource.Play();
 
         //starting the ai's outfit choosing again
-        aiOutfitChanger.StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
+        //aiOutfitChanger.StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
+        levelManager.StartAIRound();
 
         //need to hide the score panel at the beginning
         scorePanel.SetActive(false);
@@ -429,10 +431,11 @@ public class RoundManager : MonoBehaviour
         fastAudioSource.Stop(); //Incase it was playing
         calmAudioSource.time = 0f;
         calmAudioSource.Play();
-        
+
 
         //call the AI outfitchanger coroutine to reset its clothes at the start of each round
-        StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
+        //StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
+        levelManager.StartAIRound();
 
         //Reset the theme
         SetRandomTheme();

@@ -902,10 +902,13 @@ GameObject:
   - component: {fileID: 51772523}
   - component: {fileID: 51772524}
   - component: {fileID: 51772525}
-  - component: {fileID: 51772526}
   - component: {fileID: 51772527}
   - component: {fileID: 51772528}
   - component: {fileID: 51772529}
+  - component: {fileID: 51772531}
+  - component: {fileID: 51772533}
+  - component: {fileID: 51772530}
+  - component: {fileID: 51772532}
   m_Layer: 0
   m_Name: DressingManager
   m_TagString: Untagged
@@ -1079,7 +1082,7 @@ MonoBehaviour:
   pointsPopupText: {fileID: 88156037}
   totalPoints: 0
   playerOutfitChanger: {fileID: 51772523}
-  aiOutfitChanger: {fileID: 51772526}
+  aiOutfitChanger: {fileID: 0}
   playerLiveScoreText: {fileID: 255987466}
   aiLiveScoreText: {fileID: 639654714}
   playerFinalScoreText: {fileID: 1666878569}
@@ -1114,8 +1117,9 @@ MonoBehaviour:
   playerFinalScore: 0
   playerWins: 0
   aiWins: 0
-  aiOutfitChanger: {fileID: 51772526}
+  aiOutfitChanger: {fileID: 0}
   playerOutfitChanger: {fileID: 51772523}
+  levelManager: {fileID: 0}
   sceneUI: {fileID: 506680799}
   calmAudioSource: {fileID: 180600076}
   fastAudioSource: {fileID: 1599780765}
@@ -1123,123 +1127,7 @@ MonoBehaviour:
   playerCurrency: {fileID: 51772528}
   playerRoundWinnerText: {fileID: 567064092}
   aiRoundWinnerText: {fileID: 517041019}
---- !u!114 &51772526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51772521}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfe45a127d01937428b54a33af50b0fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aishirts:
-  - {fileID: 1725256405}
-  - {fileID: 2131049013}
-  - {fileID: 1572499437}
-  - {fileID: 414066654}
-  - {fileID: 2075938494}
-  - {fileID: 587215804}
-  - {fileID: 1711569596}
-  - {fileID: 197986192}
-  - {fileID: 659547519}
-  - {fileID: 1550005332}
-  - {fileID: 1822433437}
-  - {fileID: 1240246366}
-  - {fileID: 155077946}
-  - {fileID: 652399159}
-  - {fileID: 1873369110}
-  - {fileID: 2120732325}
-  - {fileID: 511062185}
-  aipants:
-  - {fileID: 1168809641}
-  - {fileID: 2064870494}
-  - {fileID: 178725316}
-  - {fileID: 1661036008}
-  - {fileID: 974164735}
-  - {fileID: 684405191}
-  - {fileID: 1731321803}
-  - {fileID: 130793597}
-  - {fileID: 246648670}
-  - {fileID: 248000429}
-  - {fileID: 1119110618}
-  - {fileID: 1989148634}
-  - {fileID: 1177082480}
-  aishoes:
-  - {fileID: 936405994}
-  - {fileID: 402981445}
-  - {fileID: 30848442}
-  - {fileID: 517698870}
-  - {fileID: 1421834415}
-  - {fileID: 547827112}
-  - {fileID: 1285185798}
-  currentShirt: {fileID: 0}
-  currentPants: {fileID: 0}
-  currentShoes: {fileID: 0}
-  aiShirtDisplay: {fileID: 1588358571}
-  aiPantsDisplay: {fileID: 241443051}
-  aiShoeDisplay: {fileID: 1966537462}
-  aiShirtSprites:
-  - {fileID: -3062035596545835068, guid: 10f82a6472adac24f832feb8ca0df8f5, type: 3}
-  - {fileID: 6283086519051686611, guid: e000165e09f2ea643b648523b01ccc5b, type: 3}
-  - {fileID: -2115290598728278172, guid: c7683a486072f21499a4428f92015044, type: 3}
-  - {fileID: 3146836763502740044, guid: 97e8983290c4606419d5339440e8227b, type: 3}
-  - {fileID: 5990405327660008560, guid: 2cd33921e96f1fb40b38be12348f1707, type: 3}
-  - {fileID: 5767691062940104089, guid: 6bfd1c897e1fad145bced688e40d9169, type: 3}
-  - {fileID: -4690687608672113774, guid: 85845d2a4ebbeee41a491555a73433a2, type: 3}
-  - {fileID: -7531320820369166628, guid: e5e895078a1c134409dd8ea922a3086d, type: 3}
-  - {fileID: 3983230582232383312, guid: 31f9bdd182a9a3c4cbef49b408b3ecd0, type: 3}
-  - {fileID: 9163242574738384893, guid: e5e1d4509f0b42041b2f6991726376ac, type: 3}
-  - {fileID: -8010340093674138757, guid: dabc9cf3922f1df4e88668f93558cdc1, type: 3}
-  - {fileID: 7025314287074882029, guid: b58d8461ae6aea044bfdd9ab4aa9f062, type: 3}
-  - {fileID: -6946783028762120597, guid: 7919831b0cb2f804da0330e10dd8d0f3, type: 3}
-  - {fileID: -4356737133192543584, guid: 85c7895c9c3a60047a4979c04d3d0786, type: 3}
-  - {fileID: -7750185776960917524, guid: 16ad2adc198796946beae1c37cff6221, type: 3}
-  - {fileID: 7615489336185285909, guid: 818d47e91674f9f438ab79c4b08d2f0b, type: 3}
-  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
-  aiPantsSprites:
-  - {fileID: -5981882978173692186, guid: 4f2efa322b0e3a74a8853a7326868d96, type: 3}
-  - {fileID: -7759383249721531516, guid: 17f11354a430d6f4485f7fa38a816e4d, type: 3}
-  - {fileID: -7171169605833521200, guid: 44f95e0af3bd23c48a122befd1b28b1b, type: 3}
-  - {fileID: 5837270154239163223, guid: 6e223210e1973834f863dd4cf220d15a, type: 3}
-  - {fileID: 3950954994826211169, guid: 900cb1d7d66ec2945b7afa1d63f125b8, type: 3}
-  - {fileID: -3540640662500924763, guid: 8db06de00ed84524786e883a090635b9, type: 3}
-  - {fileID: 2445061032195161141, guid: 37c9e996816be0343b1fbb4b5e55f467, type: 3}
-  - {fileID: -2866437868543875834, guid: 139687b480e6d2b46bad5e3dc38cf536, type: 3}
-  - {fileID: 2021414167840197939, guid: c71b7e582a8f032418c63d2441951775, type: 3}
-  - {fileID: 3544437381750979523, guid: b272b7c9bddcc8d4bba7b4208e2e5caa, type: 3}
-  - {fileID: -8681556639226851738, guid: 6c2c7b5398500714c95b2142d3f248e8, type: 3}
-  - {fileID: 4462423443229009173, guid: e72a88efd7474944581184a7ea898e11, type: 3}
-  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
-  aiShoeSprites:
-  - {fileID: 7902364575885455685, guid: 22a71571415f8394b8cef724ea2d7285, type: 3}
-  - {fileID: 6667722196501494047, guid: 1a58e4000ab8cdd48b6fab9f2f74b9ee, type: 3}
-  - {fileID: 4952420816528754558, guid: 2d9f510d6f6b39841a319f41105741b3, type: 3}
-  - {fileID: -8461923687830504554, guid: 470889f4b4f78214a9c443de2997c4c1, type: 3}
-  - {fileID: 639586946530251843, guid: 10d9df3a70a95e94c93acfc4e59d7167, type: 3}
-  - {fileID: 2132590338773069140, guid: 13c82ea149caf87488d78373503696b4, type: 3}
-  - {fileID: -1123359309615499758, guid: 1d51375157eceae41afc38049a65a01f, type: 3}
-  clothingManager: {fileID: 51772524}
-  aiOutfitComments:
-  - {fileID: 786769345}
-  - {fileID: 1101295256}
-  - {fileID: 1498951754}
-  - {fileID: 1584077828}
-  - {fileID: 2084732304}
-  - {fileID: 1273655752}
-  - {fileID: 1672250112}
-  - {fileID: 601898345}
-  - {fileID: 1611330223}
-  - {fileID: 1395615805}
-  - {fileID: 704458275}
-  - {fileID: 599524013}
-  - {fileID: 459607665}
-  - {fileID: 1333181386}
-  - {fileID: 538876734}
-  currentPreferredTags: []
-  aiStyleMoodText: {fileID: 1868884827}
+  roundWinner: 15
 --- !u!114 &51772527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,6 +1190,405 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35df5adc665a07049990f03bb6d00fc5, type: 2}
   - {fileID: 11400000, guid: f376095d3f13152499b06b0269ecc919, type: 2}
   shopPanel: {fileID: 2047548205}
+--- !u!114 &51772530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51772521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa8b301c9360e3445b394483193b1b5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aishirts:
+  - {fileID: 102386768}
+  - {fileID: 1918698132}
+  - {fileID: 352395497}
+  - {fileID: 494194730}
+  - {fileID: 338428908}
+  - {fileID: 1793174342}
+  - {fileID: 1556780771}
+  - {fileID: 899127491}
+  - {fileID: 2113930864}
+  - {fileID: 1040257943}
+  - {fileID: 1129667646}
+  - {fileID: 1656040750}
+  - {fileID: 324690788}
+  - {fileID: 966297133}
+  - {fileID: 849509482}
+  - {fileID: 1061804771}
+  - {fileID: 1379863280}
+  - {fileID: 1514434702}
+  - {fileID: 556907772}
+  aipants:
+  - {fileID: 1385955239}
+  - {fileID: 1448569237}
+  - {fileID: 1840097580}
+  - {fileID: 201426978}
+  - {fileID: 1298736188}
+  - {fileID: 388336768}
+  - {fileID: 1449588067}
+  - {fileID: 579626159}
+  - {fileID: 1383140596}
+  - {fileID: 562823646}
+  - {fileID: 1095150342}
+  - {fileID: 1710403562}
+  - {fileID: 1681061772}
+  - {fileID: 815078570}
+  - {fileID: 170169635}
+  aishoes:
+  - {fileID: 374757594}
+  - {fileID: 1420471653}
+  - {fileID: 734572342}
+  - {fileID: 1917705549}
+  - {fileID: 1324456427}
+  - {fileID: 1002998432}
+  - {fileID: 483958914}
+  - {fileID: 222221842}
+  currentShirt: {fileID: 0}
+  currentPants: {fileID: 0}
+  currentShoes: {fileID: 0}
+  aiShirtDisplay: {fileID: 1588358571}
+  aiPantsDisplay: {fileID: 241443051}
+  aiShoeDisplay: {fileID: 1966537462}
+  aiShirtSprites:
+  - {fileID: -3062035596545835068, guid: 10f82a6472adac24f832feb8ca0df8f5, type: 3}
+  - {fileID: 6283086519051686611, guid: e000165e09f2ea643b648523b01ccc5b, type: 3}
+  - {fileID: -2115290598728278172, guid: c7683a486072f21499a4428f92015044, type: 3}
+  - {fileID: 3146836763502740044, guid: 97e8983290c4606419d5339440e8227b, type: 3}
+  - {fileID: 5990405327660008560, guid: 2cd33921e96f1fb40b38be12348f1707, type: 3}
+  - {fileID: 5767691062940104089, guid: 6bfd1c897e1fad145bced688e40d9169, type: 3}
+  - {fileID: -4690687608672113774, guid: 85845d2a4ebbeee41a491555a73433a2, type: 3}
+  - {fileID: -7531320820369166628, guid: e5e895078a1c134409dd8ea922a3086d, type: 3}
+  - {fileID: 3983230582232383312, guid: 31f9bdd182a9a3c4cbef49b408b3ecd0, type: 3}
+  - {fileID: 9163242574738384893, guid: e5e1d4509f0b42041b2f6991726376ac, type: 3}
+  - {fileID: -8010340093674138757, guid: dabc9cf3922f1df4e88668f93558cdc1, type: 3}
+  - {fileID: 7025314287074882029, guid: b58d8461ae6aea044bfdd9ab4aa9f062, type: 3}
+  - {fileID: -6946783028762120597, guid: 7919831b0cb2f804da0330e10dd8d0f3, type: 3}
+  - {fileID: -4356737133192543584, guid: 85c7895c9c3a60047a4979c04d3d0786, type: 3}
+  - {fileID: -7750185776960917524, guid: 16ad2adc198796946beae1c37cff6221, type: 3}
+  - {fileID: 7615489336185285909, guid: 818d47e91674f9f438ab79c4b08d2f0b, type: 3}
+  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
+  - {fileID: -4718427709935547325, guid: 9bf2999194a99b34998746578fe7c0cb, type: 3}
+  - {fileID: 5888479374299438171, guid: fcb90d89b282bd342ad9cacfc28020eb, type: 3}
+  aiPantsSprites:
+  - {fileID: -5981882978173692186, guid: 4f2efa322b0e3a74a8853a7326868d96, type: 3}
+  - {fileID: -7759383249721531516, guid: 17f11354a430d6f4485f7fa38a816e4d, type: 3}
+  - {fileID: -7171169605833521200, guid: 44f95e0af3bd23c48a122befd1b28b1b, type: 3}
+  - {fileID: 5837270154239163223, guid: 6e223210e1973834f863dd4cf220d15a, type: 3}
+  - {fileID: 3950954994826211169, guid: 900cb1d7d66ec2945b7afa1d63f125b8, type: 3}
+  - {fileID: -3540640662500924763, guid: 8db06de00ed84524786e883a090635b9, type: 3}
+  - {fileID: 2445061032195161141, guid: 37c9e996816be0343b1fbb4b5e55f467, type: 3}
+  - {fileID: -2866437868543875834, guid: 139687b480e6d2b46bad5e3dc38cf536, type: 3}
+  - {fileID: 2021414167840197939, guid: c71b7e582a8f032418c63d2441951775, type: 3}
+  - {fileID: 3544437381750979523, guid: b272b7c9bddcc8d4bba7b4208e2e5caa, type: 3}
+  - {fileID: -8681556639226851738, guid: 6c2c7b5398500714c95b2142d3f248e8, type: 3}
+  - {fileID: 4462423443229009173, guid: e72a88efd7474944581184a7ea898e11, type: 3}
+  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
+  - {fileID: -5373634296872368218, guid: e02a47e432b480b49a634dac3e000566, type: 3}
+  - {fileID: -8543942030861395563, guid: a01bdaea63b2d364bb6a8bd2ac26a60a, type: 3}
+  aiShoeSprites:
+  - {fileID: 7902364575885455685, guid: 22a71571415f8394b8cef724ea2d7285, type: 3}
+  - {fileID: 6667722196501494047, guid: 1a58e4000ab8cdd48b6fab9f2f74b9ee, type: 3}
+  - {fileID: 4952420816528754558, guid: 2d9f510d6f6b39841a319f41105741b3, type: 3}
+  - {fileID: -8461923687830504554, guid: 470889f4b4f78214a9c443de2997c4c1, type: 3}
+  - {fileID: 639586946530251843, guid: 10d9df3a70a95e94c93acfc4e59d7167, type: 3}
+  - {fileID: 2132590338773069140, guid: 13c82ea149caf87488d78373503696b4, type: 3}
+  - {fileID: -1123359309615499758, guid: 1d51375157eceae41afc38049a65a01f, type: 3}
+  - {fileID: -1937017060554121445, guid: bbce7d626a0497d42963fb1dfdb83882, type: 3}
+  clothingManager: {fileID: 51772524}
+  aiOutfitComments:
+  - {fileID: 786769345}
+  - {fileID: 1101295256}
+  - {fileID: 1498951754}
+  - {fileID: 1584077828}
+  - {fileID: 2084732304}
+  - {fileID: 1273655752}
+  - {fileID: 1672250112}
+  - {fileID: 601898345}
+  - {fileID: 1611330223}
+  - {fileID: 1395615805}
+  - {fileID: 704458275}
+  - {fileID: 599524013}
+  - {fileID: 459607665}
+  - {fileID: 1333181386}
+  - {fileID: 538876734}
+  currentPreferredTags: []
+  aiStyleMoodText: {fileID: 1868884827}
+--- !u!114 &51772531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51772521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6187a746ff7e5e4783a227aa7f38111, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  easyAI: {fileID: 64414006}
+  mediumAI: {fileID: 472187896}
+  hardAI: {fileID: 203403561}
+  roundManager: {fileID: 51772525}
+--- !u!114 &51772532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51772521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 138d17216e1999b48bad4a8e8ce9a906, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aishirts:
+  - {fileID: 2031462264}
+  - {fileID: 1677931993}
+  - {fileID: 1175439947}
+  - {fileID: 206163828}
+  - {fileID: 749090228}
+  - {fileID: 912427402}
+  - {fileID: 634251310}
+  - {fileID: 1690865892}
+  - {fileID: 1283118230}
+  - {fileID: 611772756}
+  - {fileID: 2089269363}
+  - {fileID: 807606074}
+  - {fileID: 709383569}
+  - {fileID: 1192490816}
+  - {fileID: 1306534156}
+  - {fileID: 113477188}
+  - {fileID: 1989375167}
+  - {fileID: 1389041238}
+  - {fileID: 2060855247}
+  - {fileID: 1325917413}
+  - {fileID: 1767482548}
+  - {fileID: 1458555720}
+  aipants:
+  - {fileID: 337010143}
+  - {fileID: 1194267869}
+  - {fileID: 939106249}
+  - {fileID: 793955796}
+  - {fileID: 1899252684}
+  - {fileID: 301742928}
+  - {fileID: 668466323}
+  - {fileID: 406376478}
+  - {fileID: 482317049}
+  - {fileID: 1630201575}
+  - {fileID: 1701533557}
+  - {fileID: 907432626}
+  - {fileID: 330156203}
+  - {fileID: 440647879}
+  - {fileID: 1212382648}
+  - {fileID: 997447067}
+  - {fileID: 1187755619}
+  aishoes:
+  - {fileID: 75607240}
+  - {fileID: 1092779521}
+  - {fileID: 1043578712}
+  - {fileID: 300926223}
+  - {fileID: 1615111233}
+  - {fileID: 57638951}
+  - {fileID: 1332483057}
+  - {fileID: 1554362337}
+  - {fileID: 850253978}
+  currentShirt: {fileID: 0}
+  currentPants: {fileID: 0}
+  currentShoes: {fileID: 0}
+  aiShirtDisplay: {fileID: 1588358571}
+  aiPantsDisplay: {fileID: 241443051}
+  aiShoeDisplay: {fileID: 1966537462}
+  aiShirtSprites:
+  - {fileID: -3062035596545835068, guid: 10f82a6472adac24f832feb8ca0df8f5, type: 3}
+  - {fileID: 6283086519051686611, guid: e000165e09f2ea643b648523b01ccc5b, type: 3}
+  - {fileID: -2115290598728278172, guid: c7683a486072f21499a4428f92015044, type: 3}
+  - {fileID: 3146836763502740044, guid: 97e8983290c4606419d5339440e8227b, type: 3}
+  - {fileID: 5990405327660008560, guid: 2cd33921e96f1fb40b38be12348f1707, type: 3}
+  - {fileID: 5767691062940104089, guid: 6bfd1c897e1fad145bced688e40d9169, type: 3}
+  - {fileID: -4690687608672113774, guid: 85845d2a4ebbeee41a491555a73433a2, type: 3}
+  - {fileID: -7531320820369166628, guid: e5e895078a1c134409dd8ea922a3086d, type: 3}
+  - {fileID: 3983230582232383312, guid: 31f9bdd182a9a3c4cbef49b408b3ecd0, type: 3}
+  - {fileID: 9163242574738384893, guid: e5e1d4509f0b42041b2f6991726376ac, type: 3}
+  - {fileID: -8010340093674138757, guid: dabc9cf3922f1df4e88668f93558cdc1, type: 3}
+  - {fileID: 7025314287074882029, guid: b58d8461ae6aea044bfdd9ab4aa9f062, type: 3}
+  - {fileID: -6946783028762120597, guid: 7919831b0cb2f804da0330e10dd8d0f3, type: 3}
+  - {fileID: -4356737133192543584, guid: 85c7895c9c3a60047a4979c04d3d0786, type: 3}
+  - {fileID: -7750185776960917524, guid: 16ad2adc198796946beae1c37cff6221, type: 3}
+  - {fileID: 7615489336185285909, guid: 818d47e91674f9f438ab79c4b08d2f0b, type: 3}
+  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
+  - {fileID: -4718427709935547325, guid: 9bf2999194a99b34998746578fe7c0cb, type: 3}
+  - {fileID: 5888479374299438171, guid: fcb90d89b282bd342ad9cacfc28020eb, type: 3}
+  - {fileID: -3276987317760044622, guid: 52554b56c3e3f594b82eb7f17098c046, type: 3}
+  - {fileID: -4795873216215436779, guid: 134b59f9fe9ac7d48bc7da6e13b43e89, type: 3}
+  - {fileID: 2413663058652013492, guid: 5d8bcec5466865a44a14a92776b2e59d, type: 3}
+  aiPantsSprites:
+  - {fileID: -5981882978173692186, guid: 4f2efa322b0e3a74a8853a7326868d96, type: 3}
+  - {fileID: -7759383249721531516, guid: 17f11354a430d6f4485f7fa38a816e4d, type: 3}
+  - {fileID: -7171169605833521200, guid: 44f95e0af3bd23c48a122befd1b28b1b, type: 3}
+  - {fileID: 5837270154239163223, guid: 6e223210e1973834f863dd4cf220d15a, type: 3}
+  - {fileID: 3950954994826211169, guid: 900cb1d7d66ec2945b7afa1d63f125b8, type: 3}
+  - {fileID: -3540640662500924763, guid: 8db06de00ed84524786e883a090635b9, type: 3}
+  - {fileID: 2445061032195161141, guid: 37c9e996816be0343b1fbb4b5e55f467, type: 3}
+  - {fileID: -2866437868543875834, guid: 139687b480e6d2b46bad5e3dc38cf536, type: 3}
+  - {fileID: 2021414167840197939, guid: c71b7e582a8f032418c63d2441951775, type: 3}
+  - {fileID: 3544437381750979523, guid: b272b7c9bddcc8d4bba7b4208e2e5caa, type: 3}
+  - {fileID: -8681556639226851738, guid: 6c2c7b5398500714c95b2142d3f248e8, type: 3}
+  - {fileID: 4462423443229009173, guid: e72a88efd7474944581184a7ea898e11, type: 3}
+  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
+  - {fileID: -5373634296872368218, guid: e02a47e432b480b49a634dac3e000566, type: 3}
+  - {fileID: -8543942030861395563, guid: a01bdaea63b2d364bb6a8bd2ac26a60a, type: 3}
+  - {fileID: 8965285116165143042, guid: 28cebf2740faf9a4fae1216d52fdba7e, type: 3}
+  - {fileID: 2037056978650709027, guid: f3c7ec83771b3cc4ea7b71ea4387bc17, type: 3}
+  aiShoeSprites:
+  - {fileID: 7902364575885455685, guid: 22a71571415f8394b8cef724ea2d7285, type: 3}
+  - {fileID: 6667722196501494047, guid: 1a58e4000ab8cdd48b6fab9f2f74b9ee, type: 3}
+  - {fileID: 4952420816528754558, guid: 2d9f510d6f6b39841a319f41105741b3, type: 3}
+  - {fileID: -8461923687830504554, guid: 470889f4b4f78214a9c443de2997c4c1, type: 3}
+  - {fileID: 639586946530251843, guid: 10d9df3a70a95e94c93acfc4e59d7167, type: 3}
+  - {fileID: 2132590338773069140, guid: 13c82ea149caf87488d78373503696b4, type: 3}
+  - {fileID: -1123359309615499758, guid: 1d51375157eceae41afc38049a65a01f, type: 3}
+  - {fileID: -1937017060554121445, guid: bbce7d626a0497d42963fb1dfdb83882, type: 3}
+  - {fileID: -8384498371075348843, guid: f4ce03152033cb74585341920e077293, type: 3}
+  clothingManager: {fileID: 51772524}
+  aiOutfitComments:
+  - {fileID: 786769345}
+  - {fileID: 1101295256}
+  - {fileID: 1498951754}
+  - {fileID: 1584077828}
+  - {fileID: 2084732304}
+  - {fileID: 1273655752}
+  - {fileID: 1672250112}
+  - {fileID: 601898345}
+  - {fileID: 1611330223}
+  - {fileID: 1395615805}
+  - {fileID: 704458275}
+  - {fileID: 599524013}
+  - {fileID: 459607665}
+  - {fileID: 1333181386}
+  - {fileID: 538876734}
+  currentPreferredTags: []
+  aiStyleMoodText: {fileID: 1868884827}
+--- !u!114 &51772533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 51772521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16cafc3ae3dc5ce4a86acc5fce82e34d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aishirts:
+  - {fileID: 1725256405}
+  - {fileID: 2131049013}
+  - {fileID: 1572499437}
+  - {fileID: 414066654}
+  - {fileID: 2075938494}
+  - {fileID: 587215804}
+  - {fileID: 1711569596}
+  - {fileID: 197986192}
+  - {fileID: 659547519}
+  - {fileID: 1550005332}
+  - {fileID: 1822433437}
+  - {fileID: 1240246366}
+  - {fileID: 155077946}
+  - {fileID: 652399159}
+  - {fileID: 1873369110}
+  - {fileID: 2120732325}
+  - {fileID: 511062185}
+  aipants:
+  - {fileID: 1168809641}
+  - {fileID: 2064870494}
+  - {fileID: 178725316}
+  - {fileID: 1661036008}
+  - {fileID: 974164735}
+  - {fileID: 684405191}
+  - {fileID: 1731321803}
+  - {fileID: 130793597}
+  - {fileID: 246648670}
+  - {fileID: 248000429}
+  - {fileID: 1119110618}
+  - {fileID: 1989148634}
+  - {fileID: 1177082480}
+  aishoes:
+  - {fileID: 936405994}
+  - {fileID: 402981445}
+  - {fileID: 30848442}
+  - {fileID: 517698870}
+  - {fileID: 1421834415}
+  - {fileID: 547827112}
+  - {fileID: 1285185798}
+  currentShirt: {fileID: 0}
+  currentPants: {fileID: 0}
+  currentShoes: {fileID: 0}
+  aiShirtDisplay: {fileID: 1588358571}
+  aiPantsDisplay: {fileID: 241443051}
+  aiShoeDisplay: {fileID: 1966537462}
+  aiShirtSprites:
+  - {fileID: -3062035596545835068, guid: 10f82a6472adac24f832feb8ca0df8f5, type: 3}
+  - {fileID: 6283086519051686611, guid: e000165e09f2ea643b648523b01ccc5b, type: 3}
+  - {fileID: -2115290598728278172, guid: c7683a486072f21499a4428f92015044, type: 3}
+  - {fileID: 5990405327660008560, guid: 2cd33921e96f1fb40b38be12348f1707, type: 3}
+  - {fileID: 5767691062940104089, guid: 6bfd1c897e1fad145bced688e40d9169, type: 3}
+  - {fileID: -4690687608672113774, guid: 85845d2a4ebbeee41a491555a73433a2, type: 3}
+  - {fileID: -7531320820369166628, guid: e5e895078a1c134409dd8ea922a3086d, type: 3}
+  - {fileID: 3983230582232383312, guid: 31f9bdd182a9a3c4cbef49b408b3ecd0, type: 3}
+  - {fileID: 9163242574738384893, guid: e5e1d4509f0b42041b2f6991726376ac, type: 3}
+  - {fileID: -8010340093674138757, guid: dabc9cf3922f1df4e88668f93558cdc1, type: 3}
+  - {fileID: 7025314287074882029, guid: b58d8461ae6aea044bfdd9ab4aa9f062, type: 3}
+  - {fileID: -6946783028762120597, guid: 7919831b0cb2f804da0330e10dd8d0f3, type: 3}
+  - {fileID: -6946783028762120597, guid: 7919831b0cb2f804da0330e10dd8d0f3, type: 3}
+  - {fileID: -4356737133192543584, guid: 85c7895c9c3a60047a4979c04d3d0786, type: 3}
+  - {fileID: -7750185776960917524, guid: 16ad2adc198796946beae1c37cff6221, type: 3}
+  - {fileID: 7615489336185285909, guid: 818d47e91674f9f438ab79c4b08d2f0b, type: 3}
+  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
+  aiPantsSprites:
+  - {fileID: -5981882978173692186, guid: 4f2efa322b0e3a74a8853a7326868d96, type: 3}
+  - {fileID: -7759383249721531516, guid: 17f11354a430d6f4485f7fa38a816e4d, type: 3}
+  - {fileID: -7171169605833521200, guid: 44f95e0af3bd23c48a122befd1b28b1b, type: 3}
+  - {fileID: 5837270154239163223, guid: 6e223210e1973834f863dd4cf220d15a, type: 3}
+  - {fileID: 3950954994826211169, guid: 900cb1d7d66ec2945b7afa1d63f125b8, type: 3}
+  - {fileID: -3540640662500924763, guid: 8db06de00ed84524786e883a090635b9, type: 3}
+  - {fileID: 2445061032195161141, guid: 37c9e996816be0343b1fbb4b5e55f467, type: 3}
+  - {fileID: -2866437868543875834, guid: 139687b480e6d2b46bad5e3dc38cf536, type: 3}
+  - {fileID: 2021414167840197939, guid: c71b7e582a8f032418c63d2441951775, type: 3}
+  - {fileID: 3544437381750979523, guid: b272b7c9bddcc8d4bba7b4208e2e5caa, type: 3}
+  - {fileID: -8681556639226851738, guid: 6c2c7b5398500714c95b2142d3f248e8, type: 3}
+  - {fileID: 4462423443229009173, guid: e72a88efd7474944581184a7ea898e11, type: 3}
+  - {fileID: 21300000, guid: a191e0c92bc03194ca90f44ae16e20bc, type: 3}
+  aiShoeSprites:
+  - {fileID: 7902364575885455685, guid: 22a71571415f8394b8cef724ea2d7285, type: 3}
+  - {fileID: 6667722196501494047, guid: 1a58e4000ab8cdd48b6fab9f2f74b9ee, type: 3}
+  - {fileID: 4952420816528754558, guid: 2d9f510d6f6b39841a319f41105741b3, type: 3}
+  - {fileID: -8461923687830504554, guid: 470889f4b4f78214a9c443de2997c4c1, type: 3}
+  - {fileID: 639586946530251843, guid: 10d9df3a70a95e94c93acfc4e59d7167, type: 3}
+  - {fileID: 2132590338773069140, guid: 13c82ea149caf87488d78373503696b4, type: 3}
+  - {fileID: -1123359309615499758, guid: 1d51375157eceae41afc38049a65a01f, type: 3}
+  clothingManager: {fileID: 51772524}
+  aiOutfitComments:
+  - {fileID: 786769345}
+  - {fileID: 1101295256}
+  - {fileID: 1498951754}
+  - {fileID: 1584077828}
+  - {fileID: 2084732304}
+  - {fileID: 1273655752}
+  - {fileID: 1672250112}
+  - {fileID: 601898345}
+  - {fileID: 1611330223}
+  - {fileID: 1395615805}
+  - {fileID: 704458275}
+  - {fileID: 599524013}
+  - {fileID: 459607665}
+  - {fileID: 1333181386}
+  - {fileID: 538876734}
+  currentPreferredTags: []
+  aiStyleMoodText: {fileID: 1868884827}
 --- !u!1 &57638951
 GameObject:
   m_ObjectHideFlags: 0
@@ -10262,6 +10549,164 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clothingItemData: {fileID: 11400000, guid: 806e889f831ffe547abff150c59a585c, type: 2}
+--- !u!1 &470103439
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 470103440}
+  - component: {fileID: 470103444}
+  - component: {fileID: 470103443}
+  - component: {fileID: 470103442}
+  - component: {fileID: 470103441}
+  m_Layer: 5
+  m_Name: TopHoodie (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &470103440
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470103439}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.48854983, y: 0.48854983, z: 0.48854983}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1127276872}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1661.9972, y: -45.562675}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &470103441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470103439}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 11400000, guid: 35df5adc665a07049990f03bb6d00fc5, type: 2}
+--- !u!114 &470103442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470103439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9098039, g: 0.32941177, b: 0.7294118, a: 1}
+    m_PressedColor: {r: 0.49411765, g: 0.105882354, b: 0.28627452, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 470103443}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetShirt
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 18
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 35df5adc665a07049990f03bb6d00fc5, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &470103443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470103439}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 5888479374299438171, guid: fcb90d89b282bd342ad9cacfc28020eb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &470103444
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470103439}
+  m_CullTransparentMesh: 1
 --- !u!1 &471445894
 GameObject:
   m_ObjectHideFlags: 0
@@ -17974,6 +18419,164 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 758051644}
   m_CullTransparentMesh: 1
+--- !u!1 &760745062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 760745063}
+  - component: {fileID: 760745067}
+  - component: {fileID: 760745066}
+  - component: {fileID: 760745065}
+  - component: {fileID: 760745064}
+  m_Layer: 5
+  m_Name: WindJacket  (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &760745063
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760745062}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.48854983, y: 0.48854983, z: 0.48854983}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1127276872}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 1614.0972, y: -45.562805}
+  m_SizeDelta: {x: 80, y: 80}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &760745064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760745062}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bd336a26f64ac149adc349da640e8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothingItemData: {fileID: 11400000, guid: f376095d3f13152499b06b0269ecc919, type: 2}
+--- !u!114 &760745065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760745062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9098039, g: 0.32941177, b: 0.7294118, a: 1}
+    m_PressedColor: {r: 0.49411765, g: 0.105882354, b: 0.28627452, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 760745066}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 51772523}
+        m_TargetAssemblyTypeName: Player_OutfitChange, Assembly-CSharp
+        m_MethodName: SetShirt
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 17
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 51772524}
+        m_TargetAssemblyTypeName: ClothingManager, Assembly-CSharp
+        m_MethodName: SelectClothingItem
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: f376095d3f13152499b06b0269ecc919, type: 2}
+          m_ObjectArgumentAssemblyTypeName: ClothingItemData, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &760745066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760745062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -4718427709935547325, guid: 9bf2999194a99b34998746578fe7c0cb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &760745067
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760745062}
+  m_CullTransparentMesh: 1
 --- !u!1 &764612324
 GameObject:
   m_ObjectHideFlags: 0
@@ -25489,6 +26092,8 @@ RectTransform:
   - {fileID: 1986287347}
   - {fileID: 1787118967}
   - {fileID: 1170824776}
+  - {fileID: 760745063}
+  - {fileID: 470103440}
   m_Father: {fileID: 1232161697}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
