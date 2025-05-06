@@ -77,6 +77,9 @@ public class RoundManager : MonoBehaviour
 
     [Header("POINT CURRENCY SETTINGS")]
     public PlayerCurrency playerCurrency;
+    public TextMeshProUGUI playerRoundWinnerText;
+    public TextMeshProUGUI aiRoundWinnerText;
+    public int roundWinner = 15;
 
 
     private void Awake()
@@ -98,6 +101,10 @@ public class RoundManager : MonoBehaviour
         //deactivate the final score text ui at the start of the game
         clothingManager.playerFinalScoreText.gameObject.SetActive(false);
         clothingManager.aiFinalScoreText.gameObject.SetActive(false);
+
+        //deactivate the winner bonus text at the beginning of the game
+        playerRoundWinnerText.gameObject.SetActive(false);
+        aiRoundWinnerText.gameObject.SetActive(false);
     }
 
 
@@ -266,27 +273,74 @@ public class RoundManager : MonoBehaviour
         //StartNextRound();
     }
 
+
     void CompareScores(int playerFinalScore, int aiFinalScore)
     {
+        
         if (playerFinalScore > aiFinalScore)
         {
             roundResultText.gameObject.SetActive (true);
-            roundResultText.text = "Congrats, you won this round O.o!?";
+            roundResultText.text = "Congrats. You won this round.";
             //increment if player wins
             playerWins++;
+
+            //Then add 15 points to their fashion points
+            StartCoroutine(PlayerRoundWinnerText());
+
         }
         else if (playerFinalScore < aiFinalScore)
         {
             roundResultText.gameObject.SetActive(true);
-            roundResultText.text = "Damn, the AI won this round <<!";
+            roundResultText.text = "Damn, the AI won this round.";
             //increment if ai wins
             aiWins++;
+
+            //Add 15 points to the AI's score
+            StartCoroutine(AIRoundWinnerText());
+
         }
         else
         {
             roundResultText.gameObject.SetActive(true);
             roundResultText.text = "Oh! It's a tie... -_-??";
         }
+    }
+
+    //Co-routines that reveal the bonus points for the round winners.
+    IEnumerator PlayerRoundWinnerText()
+    {
+        yield return new WaitForSeconds(2f);
+        playerRoundWinnerText.gameObject.SetActive(true);
+        playerRoundWinnerText.text = "Winner Bonus: " + roundWinner.ToString() + " pts";
+
+        // Scale-up bounce using LeanTween
+        LeanTween.scale(playerRoundWinnerText.gameObject, Vector3.one * 1.2f, 0.3f).setEaseOutBack()
+            .setOnComplete(() => {
+                // Slight shrink back to normal size
+                LeanTween.scale(playerRoundWinnerText.gameObject, Vector3.one, 0.2f).setEaseOutExpo();
+            });
+
+        playerCurrency.AddPoints(roundWinner);
+
+        yield return new WaitForSeconds(2f);
+        playerRoundWinnerText.gameObject.SetActive(false);
+    }
+
+    IEnumerator AIRoundWinnerText()
+    {
+        yield return new WaitForSeconds(2f);
+        aiRoundWinnerText.gameObject.SetActive(true);
+        aiRoundWinnerText.text = "Winner Bonus: " + roundWinner.ToString() + " pts";
+
+        // Scale-up bounce using LeanTween
+        LeanTween.scale(aiRoundWinnerText.gameObject, Vector3.one * 1.2f, 0.3f).setEaseOutBack()
+            .setOnComplete(() => {
+                // Slight shrink back to normal size
+                LeanTween.scale(aiRoundWinnerText.gameObject, Vector3.one, 0.2f).setEaseOutExpo();
+            });
+
+        yield return new WaitForSeconds(2f);
+        aiRoundWinnerText.gameObject.SetActive(false);
     }
 
     void SetRandomTheme()
