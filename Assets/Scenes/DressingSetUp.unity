@@ -1083,6 +1083,7 @@ MonoBehaviour:
   totalPoints: 0
   playerOutfitChanger: {fileID: 51772523}
   aiOutfitChanger: {fileID: 0}
+  aiScore: 0
   wanaiOutfitChanger: {fileID: 51772533}
   tooaiOutfitChanger: {fileID: 51772530}
   treeaiOutfitChanger: {fileID: 51772532}
@@ -1337,6 +1338,7 @@ MonoBehaviour:
   easyAI: {fileID: 64414006}
   mediumAI: {fileID: 472187896}
   hardAI: {fileID: 203403561}
+  activeAi: {fileID: 0}
   roundManager: {fileID: 51772525}
 --- !u!114 &51772532
 MonoBehaviour:
