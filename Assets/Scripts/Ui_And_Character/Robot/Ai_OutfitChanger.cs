@@ -16,10 +16,13 @@ public class Ai_OutfitChanger : MonoBehaviour
     public GameObject[] aipants;
     public GameObject[] aishoes;
 
+    public GameObject[] aiPersonas;
+
     //Variables to track the current worn item
     [HideInInspector] public GameObject currentShirt;
     [HideInInspector] public GameObject currentPants;
     [HideInInspector] public GameObject currentShoes;
+
 
     [Header("AI DISPLAY IMAGES")]
     public Image aiShirtDisplay, aiPantsDisplay, aiShoeDisplay;
@@ -49,6 +52,14 @@ public class Ai_OutfitChanger : MonoBehaviour
         {
             comment.SetActive(false);
         }
+
+        //first hide all the active AI characters
+        foreach (GameObject character in aiPersonas)
+        {
+            character.SetActive(false);
+        }
+        // then set one of the AI's active
+        SetRandomAI();
         //StartCoroutine(ChooseRandomOutfitDelay());
     }
 
@@ -66,6 +77,13 @@ public class Ai_OutfitChanger : MonoBehaviour
         HideAll(aishirts);
         HideAll(aipants);
         HideAll(aishoes);
+    }
+
+    //function to set random AI's at the beginning of the game
+    public void SetRandomAI()
+    {
+        int randomIndex = Random.Range(0, aiPersonas.Length);
+        aiPersonas[randomIndex].SetActive(true);
     }
 
     //Co-routine that will make the AI look like its still thinking about its choices xD
