@@ -60,7 +60,6 @@ public class ScoringManager : MonoBehaviour
         return playerTotalScore;
     }
 
-    //Getting the updated scores for the ai player
     public int UpdateAIScore(string theme)
     {
         //int aiScore = clothingManager.CalculateAiOutfitScore(theme);
@@ -97,7 +96,6 @@ public class ScoringManager : MonoBehaviour
 
     }
 
-
     //Setting up the bonus points for the player
     public int PlayerBonus(ClothingItemData[] equippedItems, string theme)
     {
@@ -130,7 +128,7 @@ public class ScoringManager : MonoBehaviour
 
         //then add the bonus score to the player's total score
         lastPlayerBonus = bonusScore;
-        playerTotalScore += bonusScore;
+        //playerTotalScore += bonusScore;
 
         return bonusScore;
 
@@ -230,7 +228,7 @@ public class ScoringManager : MonoBehaviour
 
         //then add the bonus score to the player's total score
         lastAIBonus = bonusScore;
-        aiTotalScore += bonusScore;
+        //aiTotalScore += bonusScore;
 
         return bonusScore;
 
@@ -238,6 +236,44 @@ public class ScoringManager : MonoBehaviour
     }
 
 }
+
+//Getting the updated scores for the ai player
+//public int UpdateAIScore(string theme)
+//{
+//    //int aiScore = clothingManager.CalculateAiOutfitScore(theme);
+
+//    ////Checking which items are currently eqquiped for the AI
+//    //ClothingItemData[] equippedItems = new ClothingItemData[3];
+
+//    //if (clothingManager.aiOutfitChanger.currentShirt != null)
+//    //{
+//    //    equippedItems[0] = clothingManager.aiOutfitChanger.currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+//    //    equippedItems[1] = clothingManager.aiOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+//    //    equippedItems[2] = clothingManager.aiOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+
+//    //}
+
+//    ////Get the bonus points 
+//    //int bonus = AiBonusPoints(equippedItems, theme);
+
+//    ////combine the bonus to the actual score
+//    //aiTotalScore = aiScore + bonus;
+
+//    //return aiTotalScore;
+
+//    if (clothingManager.aiOutfitChanger != null)
+//    {
+//        aiTotalScore = clothingManager.aiOutfitChanger.CalculateAiOutfitScoreWithBonus(theme);
+//        return aiTotalScore;
+//    }
+//    else
+//    {
+//        Debug.LogWarning("AI Outfit Changer is not set in ClothingManager!");
+//        return 0;
+//    }
+
+//}
+
 
 //OLD BONUS SCORING LOGIC THAT WAS INSIDE PLAYERBONUS()
 ////Code that will look at the tags an item has

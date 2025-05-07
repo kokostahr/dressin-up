@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
     public GameObject mediumAI;
     public GameObject hardAI;
 
-    private Ai_OutfitChanger activeAi;
+    public Ai_OutfitChanger activeAi;
     public RoundManager roundManager;
 
 

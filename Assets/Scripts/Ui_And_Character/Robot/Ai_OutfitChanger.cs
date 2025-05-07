@@ -37,11 +37,23 @@ public abstract class Ai_OutfitChanger : MonoBehaviour
     [HideInInspector] public List<string> currentPreferredTags = new List<string>();
     public TextMeshProUGUI aiStyleMoodText;
 
+    [Header("REFERENCES")]
+   // public ClothingManager clothingManager;
+    public ScoringManager scoringManager;
+
+    //[Header("ScoreStuff")]
+    //public int lastCalculatedBaseScore { get; protected set; }
+    //public int lastCalculatedBonus { get; protected set; }
+
+
     public abstract IEnumerator ChooseRandomOutfitDelay();// ABSTRACT method to override in children
 
+   
 
     //trying to fix the scoring manager
     public abstract int CalculateAiOutfitScoreWithBonus(string theme);
+    //Method to calculate the final score with bonus
+    //public abstract int CalculateAiOutfitScoreWithBonus(string theme);
 
     public virtual void Start()
     {

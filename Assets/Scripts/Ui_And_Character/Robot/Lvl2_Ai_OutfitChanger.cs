@@ -10,7 +10,6 @@ using DentedPixel;
 
 public class Lvl2_Ai_OutfitChanger : Ai_OutfitChanger
 {
-    public ScoringManager scoringManager;
 
     public override IEnumerator ChooseRandomOutfitDelay()
     {
@@ -60,17 +59,40 @@ public class Lvl2_Ai_OutfitChanger : Ai_OutfitChanger
         if (currentShirt != null)
         {
             equippedItems[0] = currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+        }
+        if (currentPants != null)
+        {
             equippedItems[1] = currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+        }
+        if (currentShoes != null)
+        {
             equippedItems[2] = currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
         }
+        //calculate base score based on equipped items and theme
+        if (clothingManager != null)
+        {
+            if (equippedItems[0] != null) baseScore += clothingManager.GetThemePoints(theme, equippedItems[0]);
+            if (equippedItems[1] != null) baseScore += clothingManager.GetThemePoints(theme, equippedItems[1]);
+            if (equippedItems[2] != null) baseScore += clothingManager.GetThemePoints(theme, equippedItems[2]);
+        }
 
-        int bonus = scoringManager.AiBonusPoints(equippedItems, theme);
+        int bonus = 0;
+        if (scoringManager != null)
+        {
+            //use scoring manager to calculate the bonus points
+            bonus = scoringManager.AiBonusPoints(equippedItems, theme);
+        }
 
-        //combine the bonus to the actual score
-        scoringManager.aiTotalScore = baseScore + bonus;
+        //then the total score for the AI level
+        int totalScore = baseScore + bonus;
 
+        // Optionally, update the ScoringManager's aiTotalScore here if needed elsewhere
+        if (scoringManager != null)
+        {
+            scoringManager.aiTotalScore = totalScore;
+        }
 
-        return scoringManager.aiTotalScore;
+        return totalScore;
     }
 
     public override void SetPreferredTag(string tag)

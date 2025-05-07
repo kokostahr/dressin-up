@@ -87,7 +87,8 @@ public class RoundManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        sceneUI.SetActive(false);
+        if (sceneUI != null)
+            sceneUI.SetActive(false);
     }
 
     public string GetCurrentTheme()
@@ -108,6 +109,22 @@ public class RoundManager : MonoBehaviour
         //deactivate the winner bonus text at the beginning of the game
         playerRoundWinnerText.gameObject.SetActive(false);
         aiRoundWinnerText.gameObject.SetActive(false);
+
+        // Ensure playerFinalScoreText and aiFinalScoreText are assigned and initialized
+        if (clothingManager != null && clothingManager.playerFinalScoreText != null)
+            clothingManager.playerFinalScoreText.gameObject.SetActive(false);
+        if (clothingManager != null && clothingManager.aiFinalScoreText != null)
+            clothingManager.aiFinalScoreText.gameObject.SetActive(false);
+
+        if (playerRoundWinnerText != null)
+            playerRoundWinnerText.gameObject.SetActive(false);
+        if (aiRoundWinnerText != null)
+            aiRoundWinnerText.gameObject.SetActive(false);
+
+        // Ensure aiScore in ClothingManager is initialized
+        if (clothingManager != null)
+            clothingManager.aiScore = 0;
+
     }
 
 
@@ -210,16 +227,23 @@ public class RoundManager : MonoBehaviour
         //need to calculate the proper points of the final items on screen when round ends
         ScoringManager.Instance.UpdatePlayerScore(currentTheme);
         ScoringManager.Instance.UpdateAIScore(currentTheme);
+       
 
         int playerBaseScore = clothingManager.CalculateOutfitScore(currentTheme);
-        int aiBaseScore = clothingManager.CalculateAiOutfitScore(currentTheme);
+        int aiBaseScore = clothingManager.CalculateAiOutfitScore(currentTheme); ;
 
         //get the bonus points 
         int playerBonus = ScoringManager.Instance.lastPlayerBonus;
-        int aiBonus = ScoringManager.Instance.lastAIBonus;
+        int aiBonus = ScoringManager.Instance.lastAIBonus; ;
 
         //calculate the FINAL SCORE FOR BOTH
         playerFinalScore = playerBaseScore + playerBonus;
+        //get the AI's final score 
+        //if (levelManager.activeAi != null)
+        //{
+        //    aiBaseScore = levelManager.activeAi.lastCalculatedBaseScore;
+        //    aiBonus = levelManager.activeAi.lastCalculatedBonus;
+        //}
         aiFinalScore = aiBaseScore + aiBonus;
 
         //THEN ADD THE POINTS TO THE PLAYER'S CURRNCY
@@ -488,7 +512,6 @@ public class RoundManager : MonoBehaviour
         themeText.gameObject.SetActive (false);
         themePopupText.gameObject .SetActive (false);
     }
-
 
 }
 

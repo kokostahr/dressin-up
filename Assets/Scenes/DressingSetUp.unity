@@ -1321,6 +1321,7 @@ MonoBehaviour:
   - {fileID: 538876734}
   currentPreferredTags: []
   aiStyleMoodText: {fileID: 1868884827}
+  scoringManager: {fileID: 51772527}
 --- !u!114 &51772531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1476,6 +1477,7 @@ MonoBehaviour:
   - {fileID: 538876734}
   currentPreferredTags: []
   aiStyleMoodText: {fileID: 1868884827}
+  scoringManager: {fileID: 51772527}
 --- !u!114 &51772533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1593,6 +1595,7 @@ MonoBehaviour:
   - {fileID: 538876734}
   currentPreferredTags: []
   aiStyleMoodText: {fileID: 1868884827}
+  scoringManager: {fileID: 51772527}
 --- !u!1 &57638951
 GameObject:
   m_ObjectHideFlags: 0

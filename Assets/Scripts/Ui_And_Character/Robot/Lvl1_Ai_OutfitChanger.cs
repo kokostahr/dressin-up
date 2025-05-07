@@ -3,10 +3,6 @@ using UnityEngine;
 
 public class Lvl1_Ai_OutfitChanger : Ai_OutfitChanger
 {
-    public ScoringManager scoringManager;
-    public ClothingManager clothingManager;
-   
-
     public override IEnumerator ChooseRandomOutfitDelay()
     {
         yield return new WaitForSeconds(2f);
@@ -14,7 +10,10 @@ public class Lvl1_Ai_OutfitChanger : Ai_OutfitChanger
         {
             currentShirt = chosen;
             UpdateAIShirtDisplay(currentShirt);
-            clothingManager.UpdateAiScoreUI(clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme()));
+            if (clothingManager != null)
+            {
+                clothingManager.UpdateAiScoreUI(clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme()));
+            }
         }));
 
         yield return new WaitForSeconds(2f);
@@ -23,7 +22,10 @@ public class Lvl1_Ai_OutfitChanger : Ai_OutfitChanger
             currentPants = chosen;
             UpdateAIPantsDisplay(currentPants);
             ShowRandomComment();
-            clothingManager.UpdateAiScoreUI(clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme()));
+            if (clothingManager != null)
+            {
+                clothingManager.UpdateAiScoreUI(clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme()));
+            }
         }));
 
         yield return new WaitForSeconds(2f);
@@ -31,13 +33,17 @@ public class Lvl1_Ai_OutfitChanger : Ai_OutfitChanger
         {
             currentShoes = chosen;
             UpdateAIShoesDisplay(currentShoes);
-            clothingManager.UpdateAiScoreUI(clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme()));
+            if (clothingManager != null)
+            {
+                clothingManager.UpdateAiScoreUI(clothingManager.CalculateAiOutfitScore(RoundManager.Instance.GetCurrentTheme()));
+            }
+           
         }));
     }
 
     public override int CalculateAiOutfitScoreWithBonus(string theme)
     {
-        //Calculate the base score
+        //Calculate the base score for this specific AI level
         int baseScore = clothingManager.CalculateAiOutfitScore(theme);
 
         //then access the equipped items directly in this class
@@ -45,17 +51,41 @@ public class Lvl1_Ai_OutfitChanger : Ai_OutfitChanger
         if (currentShirt != null)
         {
             equippedItems[0] = currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+        }
+        if (currentPants != null)
+        {
             equippedItems[1] = currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+        }
+        if (currentShoes != null)
+        {
             equippedItems[2] = currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
         }
 
-        int bonus = scoringManager.AiBonusPoints(equippedItems,theme);
+        //calculate base score based on equipped items and theme
+        if (clothingManager != null)
+        {
+            if (equippedItems[0] != null) baseScore += clothingManager.GetThemePoints(theme, equippedItems[0]);
+            if (equippedItems[1] != null) baseScore += clothingManager.GetThemePoints(theme, equippedItems[1]);
+            if (equippedItems[2] != null) baseScore += clothingManager.GetThemePoints(theme, equippedItems[2]);
+        }
 
-        //combine the bonus to the actual score
-        scoringManager.aiTotalScore = baseScore + bonus;
+        int bonus = 0;
+        if (scoringManager != null)
+        {
+            //use scoring manager to calculate the bonus points
+            bonus = scoringManager.AiBonusPoints(equippedItems, theme);
+        }
 
+        //then the total score for the AI level
+        int totalScore = baseScore + bonus;
 
-        return scoringManager.aiTotalScore;
+        // Optionally, update the ScoringManager's aiTotalScore here if needed elsewhere
+        if (scoringManager != null)
+        {
+            scoringManager.aiTotalScore = totalScore;
+        }
+
+        return totalScore;
     }
 
     void ShowRandomComment()
