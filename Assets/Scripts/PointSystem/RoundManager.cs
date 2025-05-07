@@ -14,6 +14,7 @@ public class RoundManager : MonoBehaviour
     //variables that enable there to be multiple rounds. 
     public int totalRounds = 3;
     private int currentRound = 1;
+    public GameObject levelSelectPanel;
 
     [Header("UI SETTINGS")]
     //Text that will display the countdown
@@ -97,7 +98,8 @@ public class RoundManager : MonoBehaviour
     void Start()
     {
         //When the game starts the first round should begin as well..duh
-        StartRound();
+        //NO AUTO ROUND START
+        //StartRound();
 
         //deactivate the final score text ui at the start of the game
         clothingManager.playerFinalScoreText.gameObject.SetActive(false);
@@ -112,6 +114,8 @@ public class RoundManager : MonoBehaviour
     //Function that starts each round..very self explanatory
     public void StartRound()
     {
+        //disable the level select panel 
+        levelSelectPanel.gameObject.SetActive(false);
         timeLeft = roundDuration;
         roundActive = true;
         roundTimer = 0f;

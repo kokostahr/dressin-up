@@ -11,7 +11,6 @@ public class LevelManager : MonoBehaviour
     public RoundManager roundManager;
 
 
-
     //Method to select the levels
     public void OnLevelChosen(int difficulty)
     {
@@ -41,6 +40,11 @@ public class LevelManager : MonoBehaviour
                 hardAI.SetActive(true);
                 activeAi = hardAI.GetComponent<Ai_OutfitChanger>();
                 break;
+        }
+
+        if (activeAi != null && activeAi.clothingManager != null)
+        {
+            activeAi.clothingManager.SetAIDifficulty(difficulty); // ⭐ tell it everything
         }
     }
 

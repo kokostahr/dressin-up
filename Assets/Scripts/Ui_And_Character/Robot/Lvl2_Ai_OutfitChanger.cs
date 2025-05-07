@@ -10,6 +10,7 @@ using DentedPixel;
 
 public class Lvl2_Ai_OutfitChanger : Ai_OutfitChanger
 {
+    public ScoringManager scoringManager;
 
     public override IEnumerator ChooseRandomOutfitDelay()
     {
@@ -39,8 +40,6 @@ public class Lvl2_Ai_OutfitChanger : Ai_OutfitChanger
         }));
     }
 
-    
-
     void ShowRandomComment()
     {
         foreach (GameObject comment in aiOutfitComments)
@@ -49,6 +48,29 @@ public class Lvl2_Ai_OutfitChanger : Ai_OutfitChanger
         int index = Random.Range(0, aiOutfitComments.Length);
         aiOutfitComments[index].SetActive(true);
         StartCoroutine(HideCommentAfterDelay(aiOutfitComments[index], 3.5f));
+    }
+
+    public override int CalculateAiOutfitScoreWithBonus(string theme)
+    {
+        //Calculate the base score
+        int baseScore = clothingManager.CalculateAiOutfitScore(theme);
+
+        //then access the equipped items directly in this class
+        ClothingItemData[] equippedItems = new ClothingItemData[3];
+        if (currentShirt != null)
+        {
+            equippedItems[0] = currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+            equippedItems[1] = currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+            equippedItems[2] = currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+        }
+
+        int bonus = scoringManager.AiBonusPoints(equippedItems, theme);
+
+        //combine the bonus to the actual score
+        scoringManager.aiTotalScore = baseScore + bonus;
+
+
+        return scoringManager.aiTotalScore;
     }
 
     public override void SetPreferredTag(string tag)

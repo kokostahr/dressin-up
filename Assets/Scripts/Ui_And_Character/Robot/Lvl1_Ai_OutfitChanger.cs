@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class Lvl1_Ai_OutfitChanger : Ai_OutfitChanger
 {
+    public ScoringManager scoringManager;
+    public ClothingManager clothingManager;
+   
+
     public override IEnumerator ChooseRandomOutfitDelay()
     {
         yield return new WaitForSeconds(2f);
@@ -31,7 +35,28 @@ public class Lvl1_Ai_OutfitChanger : Ai_OutfitChanger
         }));
     }
 
+    public override int CalculateAiOutfitScoreWithBonus(string theme)
+    {
+        //Calculate the base score
+        int baseScore = clothingManager.CalculateAiOutfitScore(theme);
 
+        //then access the equipped items directly in this class
+        ClothingItemData[] equippedItems = new ClothingItemData[3];
+        if (currentShirt != null)
+        {
+            equippedItems[0] = currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+            equippedItems[1] = currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+            equippedItems[2] = currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
+        }
+
+        int bonus = scoringManager.AiBonusPoints(equippedItems,theme);
+
+        //combine the bonus to the actual score
+        scoringManager.aiTotalScore = baseScore + bonus;
+
+
+        return scoringManager.aiTotalScore;
+    }
 
     void ShowRandomComment()
     {

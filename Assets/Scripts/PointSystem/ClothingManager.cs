@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -21,8 +21,14 @@ public class ClothingManager : MonoBehaviour
 
     [Header("AI RELATED SCORING")]
     //Int to track the ai's score
-
     public Ai_OutfitChanger aiOutfitChanger;
+
+    [Header("AI PERSONALITY SETUP")]
+    private int aiDifficultyLevel = 1; //default easy
+
+    public Lvl1_Ai_OutfitChanger wanaiOutfitChanger;
+    public Lvl2_Ai_OutfitChanger tooaiOutfitChanger;
+    public Lvl3_Ai_OutfitChanger treeaiOutfitChanger;
 
     [Header("LIVE SCOREBOARD UI")]
     //ui to track the live score of the player and Ai
@@ -41,6 +47,26 @@ public class ClothingManager : MonoBehaviour
         pointsPopupText.gameObject.SetActive(false);
     }
 
+    public void SetAIDifficulty(int level)
+    {
+        aiDifficultyLevel = level;
+        Debug.Log("Clothing Manager set to AI Difficulty: " + aiDifficultyLevel);
+
+        switch (level)
+        {
+            case 1:
+                aiOutfitChanger = wanaiOutfitChanger;
+                break;
+            case 2:
+                aiOutfitChanger = tooaiOutfitChanger;
+                break;
+            case 3:
+                aiOutfitChanger = treeaiOutfitChanger;
+                break;
+        }
+
+        Debug.Log("AI Difficulty set! Reference ready to SLAY ✨");
+    }
 
     public void SelectClothingItem(ClothingItemData selectedItem, string theme)
     {
@@ -166,46 +192,159 @@ public class ClothingManager : MonoBehaviour
 
     public int CalculateAiOutfitScore(string theme)
     {
-        aiScore = 0;
-
-        if (aiOutfitChanger.currentShirt != null)
-        {
-            var data = aiOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();
-            if (data != null) 
-            {
-                //score += data.clothingItemData.winterPoints;
-                //modifying for two themes . another if statement that needs to be expanded
-                aiScore += GetThemePoints(theme, data.clothingItemData);
-            }
-        }
-
-        if (aiOutfitChanger.currentPants !=null)
-        {
-            var data = aiOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
-            if (data != null)
-            {
-                //score += data.clothingItemData.winterPoints;
-                //modyifying, yeah
-                aiScore += GetThemePoints(theme, data.clothingItemData);
-            }
-        }
         
-        if (aiOutfitChanger.currentShoes!= null)
+        //// Scoring logic that changes with AI level
+        //switch (aiDifficultyLevel)
+        //{
+        //    case 1:
+        //        aiScore = CalculateScoreBasic(theme); // ez peasy
+        //        break;
+        //    case 2:
+        //        aiScore = CalculateScoreIntermediate(theme); // medium spice
+        //        break;
+        //    case 3:
+        //        aiScore = CalculateScoreAdvanced(theme); // full drag
+        //        break;
+        //}
+
+        //////Update the AI live score
+        //aiLiveScoreText.text = "AI: " + aiScore.ToString() + " pts";
+
+        //return aiScore;
+
+        if (aiOutfitChanger != null)
         {
-            var data = aiOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
-            if (data != null)
-            {
-                //score += data.clothingItemData.winterPoints;
-                //modifyin yeah yeah
-                aiScore += GetThemePoints(theme, data.clothingItemData);
-            }
+            //let the active level difficulty calculate it's own score
+            aiScore = aiOutfitChanger.CalculateAiOutfitScoreWithBonus(theme);
+
+            ////Update the AI live score
+            aiLiveScoreText.text = "AI: " + aiScore.ToString() + " pts";
+
+            return aiScore;
         }
-
-        ////Update the AI live score
-        aiLiveScoreText.text = "AI: " + aiScore.ToString() + " pts";
-
-        return aiScore;
+        else
+        {
+            Debug.LogWarning("AI Outfit Changer is not set in ClothingManager!");
+            return 0;
+        }
     }
+
+    //methods for the different AI LEVELS
+    //private int CalculateScoreBasic(string theme)
+    //{
+    //    aiScore = 0;
+
+    //    if (wanaiOutfitChanger.currentShirt != null)
+    //    {
+    //        var data = wanaiOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();
+    //        if (data != null)
+    //        {
+    //            //score += data.clothingItemData.winterPoints;
+    //            //modifying for two themes . another if statement that needs to be expanded
+    //            aiScore += GetThemePoints(theme, data.clothingItemData);
+    //        }
+    //    }
+
+    //    if (wanaiOutfitChanger.currentPants != null)
+    //    {
+    //        var data = wanaiOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
+    //        if (data != null)
+    //        {
+    //            //score += data.clothingItemData.winterPoints;
+    //            //modyifying, yeah
+    //            aiScore += GetThemePoints(theme, data.clothingItemData);
+    //        }
+    //    }
+
+    //    if (wanaiOutfitChanger.currentShoes != null)
+    //    {
+    //        var data = wanaiOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
+    //        if (data != null)
+    //        {
+    //            //score += data.clothingItemData.winterPoints;
+    //            //modifyin yeah yeah
+    //            aiScore += GetThemePoints(theme, data.clothingItemData);
+    //        }
+    //    }
+    //    return aiScore;
+    //}
+
+    //private int CalculateScoreIntermediate(string theme)
+    //{
+    //    aiScore = 0;
+    //    if (tooaiOutfitChanger.currentShirt != null)
+    //    {
+    //        var data = tooaiOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();
+    //        if (data != null)
+    //        {
+    //            //score += data.clothingItemData.winterPoints;
+    //            //modifying for two themes . another if statement that needs to be expanded
+    //            aiScore += GetThemePoints(theme, data.clothingItemData);
+    //        }
+    //    }
+
+    //    if (tooaiOutfitChanger.currentPants != null)
+    //    {
+    //        var data = tooaiOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
+    //        if (data != null)
+    //        {
+    //            //score += data.clothingItemData.winterPoints;
+    //            //modyifying, yeah
+    //            aiScore += GetThemePoints(theme, data.clothingItemData);
+    //        }
+    //    }
+
+    //    if (tooaiOutfitChanger.currentShoes != null)
+    //    {
+    //        var data = tooaiOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
+    //        if (data != null)
+    //        {
+    //            //score += data.clothingItemData.winterPoints;
+    //            //modifyin yeah yeah
+    //            aiScore += GetThemePoints(theme, data.clothingItemData);
+    //        }
+    //    }
+    //    return aiScore;
+    //}
+
+    //private int CalculateScoreAdvanced(string theme) 
+    //{
+    //    aiScore = 0;
+
+    //    if (treeaiOutfitChanger.currentShirt != null)
+    //    {
+    //        var data = treeaiOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();
+    //        if (data != null)
+    //        {
+    //            //score += data.clothingItemData.winterPoints;
+    //            //modifying for two themes . another if statement that needs to be expanded
+    //            aiScore += GetThemePoints(theme, data.clothingItemData);
+    //        }
+    //    }
+
+    //    if (treeaiOutfitChanger.currentPants != null)
+    //    {
+    //        var data = treeaiOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
+    //        if (data != null)
+    //        {
+    //            //score += data.clothingItemData.winterPoints;
+    //            //modyifying, yeah
+    //            aiScore += GetThemePoints(theme, data.clothingItemData);
+    //        }
+    //    }
+
+    //    if (treeaiOutfitChanger.currentShoes != null)
+    //    {
+    //        var data = treeaiOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
+    //        if (data != null)
+    //        {
+    //            //score += data.clothingItemData.winterPoints;
+    //            //modifyin yeah yeah
+    //            aiScore += GetThemePoints(theme, data.clothingItemData);
+    //        }
+    //    }
+    //    return aiScore; 
+    //}
 
     //Method that will handle the themes and their related points
     private int GetThemePoints(string theme, ClothingItemData data)
@@ -243,7 +382,6 @@ public class ClothingManager : MonoBehaviour
         UpdatePlayerScoreUI(points);
     }
 
-
     void UpdatePlayerScoreUI(int score)
     {
         if (playerLiveScoreText != null)
@@ -251,7 +389,6 @@ public class ClothingManager : MonoBehaviour
             playerLiveScoreText.text = "Player: " + score + " pts";
         }
     }
-
 
     public void ResetPlayerScore()
     {
@@ -270,16 +407,7 @@ public class ClothingManager : MonoBehaviour
         UpdateAiScoreUI(0);
    }
 
-    ////METHOD THAT UPDATES THE FINAL SCORE UI AFTER THE ROUND ENDS:
-    //public void UpdateFinalScoreUI(int playerFinalScore, int aiFinalScore, int playerBonus, int aiBonus)
-    //{
-    //    // Update the final score text for player
-    //    playerLiveScoreText.text = $"Player Score: {playerFinalScore} pts\nBonus: +{playerBonus}\nTotal: {playerFinalScore} pts";
-
-    //    // Update the final score text for AI
-    //    aiLiveScoreText.text = $"AI Score: {aiFinalScore} pts\nBonus: +{aiBonus}\nTotal: {aiFinalScore} pts";
-    //}
-
+  
     // Method to trigger animation of bonus score
     public void AnimateBonusScoreInClothingManager(int baseScore, int bonus, string label)
     {
@@ -327,4 +455,13 @@ public class ClothingManager : MonoBehaviour
     }
 }
 
+////METHOD THAT UPDATES THE FINAL SCORE UI AFTER THE ROUND ENDS:
+//public void UpdateFinalScoreUI(int playerFinalScore, int aiFinalScore, int playerBonus, int aiBonus)
+//{
+//    // Update the final score text for player
+//    playerLiveScoreText.text = $"Player Score: {playerFinalScore} pts\nBonus: +{playerBonus}\nTotal: {playerFinalScore} pts";
+
+//    // Update the final score text for AI
+//    aiLiveScoreText.text = $"AI Score: {aiFinalScore} pts\nBonus: +{aiBonus}\nTotal: {aiFinalScore} pts";
+//}
 

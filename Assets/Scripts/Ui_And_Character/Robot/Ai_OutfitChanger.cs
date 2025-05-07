@@ -39,6 +39,10 @@ public abstract class Ai_OutfitChanger : MonoBehaviour
 
     public abstract IEnumerator ChooseRandomOutfitDelay();// ABSTRACT method to override in children
 
+
+    //trying to fix the scoring manager
+    public abstract int CalculateAiOutfitScoreWithBonus(string theme);
+
     public virtual void Start()
     {
         HideAll(aishirts);
@@ -51,6 +55,7 @@ public abstract class Ai_OutfitChanger : MonoBehaviour
         }
         //StartCoroutine(ChooseRandomOutfitDelay());
     }
+
 
     // Function to hide all items in a category
     protected void HideAll(GameObject[] items)
