@@ -21,6 +21,8 @@ public class PlayerCurrency : MonoBehaviour
     public TextMeshProUGUI fashionPointsText;
     public GameObject declinedMessage;
 
+    private const string FASHION_POINTS_KEY = "FashionPoints"; // Key to store the points in PlayerPrefs
+
 
     private void Awake()
     {
@@ -34,6 +36,9 @@ public class PlayerCurrency : MonoBehaviour
     private void Start()
     {
         declinedMessage.SetActive(false);
+
+        //load saved points when game starts
+        LoadPoints();
     }
 
     //A function that will add the player's points at the end of each round.
@@ -42,6 +47,7 @@ public class PlayerCurrency : MonoBehaviour
         //int amount = roundManager.playerFinalScore;
         //Trying my luck to reference the already existing points and get that to show at the end of each round
         fashionPoints += amount;
+        SavePoints();
         //Then update the UI to show total points.
         UpdatePointsUI();
         // Updating the text whenever the player gets more points
@@ -56,6 +62,7 @@ public class PlayerCurrency : MonoBehaviour
         if (fashionPoints >= amount)
         {
             fashionPoints -= amount;
+            SavePoints();
             Debug.Log("Player has spent for " + amount + " points");
             //will do the UI UPDATE HERE ALSO
             UpdatePointsUI();
@@ -71,7 +78,28 @@ public class PlayerCurrency : MonoBehaviour
             return false;
         }
     }
-    
+
+    // Save fashion points to PlayerPrefs
+    private void SavePoints()
+    {
+        PlayerPrefs.SetInt(FASHION_POINTS_KEY, fashionPoints);
+        PlayerPrefs.Save();  // Ensure data is written to disk
+    }
+
+    // Load fashion points from PlayerPrefs
+    private void LoadPoints()
+    {
+        if (PlayerPrefs.HasKey(FASHION_POINTS_KEY))
+        {
+            fashionPoints = PlayerPrefs.GetInt(FASHION_POINTS_KEY);
+        }
+        else
+        {
+            fashionPoints = 0; // If no saved points, default to 0
+        }
+        UpdatePointsUI();
+    }
+
     public void UpdatePointsUI()
     {
         fashionPointsText.text = "Fashion Pts: " + fashionPoints.ToString();

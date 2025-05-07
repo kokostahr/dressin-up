@@ -21,7 +21,7 @@ public class ShopManager : MonoBehaviour
     private void Awake()
     {
         //remove the player prefs when the game starts so i can playtest
-        PlayerClothingData.ResetAllPurchasesForDebug();
+        //PlayerClothingData.ResetAllPurchasesForDebug();
     }
 
 
