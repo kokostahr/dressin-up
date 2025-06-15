@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      FlowyPants_0: -5373634296872368218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

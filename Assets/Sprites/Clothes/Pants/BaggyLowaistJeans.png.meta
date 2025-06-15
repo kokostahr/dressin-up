@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BaggyLowaistJeans_0: 2037056978650709027
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
