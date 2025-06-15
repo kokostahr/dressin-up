@@ -36,6 +36,11 @@ public class Ai_OutfitChanger : MonoBehaviour
     [Header("AI PREFERENCE SELECTION")]
     [HideInInspector] public List<string> currentPreferredTags = new List<string>();
     public TextMeshProUGUI aiStyleMoodText;
+
+    [Header("CURRENT ROUND OPTIONS")] //the options for the turn based round.
+    public List<GameObject> roundShirts = new List<GameObject>();
+    public List<GameObject> roundPants = new List<GameObject>();
+    public List<GameObject> roundShoes = new List<GameObject>();
     
 
 
@@ -49,7 +54,7 @@ public class Ai_OutfitChanger : MonoBehaviour
         {
             comment.SetActive(false);
         }
-        //StartCoroutine(ChooseRandomOutfitDelay());
+        
     }
 
     // Function to hide all items in a category
@@ -68,6 +73,28 @@ public class Ai_OutfitChanger : MonoBehaviour
         HideAll(aishoes);
     }
 
+    //Function that will pull a few clothing items from the full list randomly for each clothing category
+    public void GenerateRandomRoundItems(int shirtCount = 3, int pantsCount = 3, int shoesCount = 3)
+    {
+        roundShirts = GetRandomItems(aishirts, shirtCount);
+        roundPants = GetRandomItems(aipants, pantsCount);
+        roundShoes = GetRandomItems(aishoes, shoesCount);
+    }
+
+    List<GameObject> GetRandomItems(GameObject[] sourceArray, int count)
+    {
+        List<GameObject> selected = new List<GameObject>();
+        List<GameObject> source = new List<GameObject>(sourceArray);
+
+        for (int i = 0; i < count && source.Count > 0; i++)
+        {
+            int index = Random.Range(0, source.Count);
+            selected.Add(source[index]);
+            source.RemoveAt(index);
+        }
+        return selected;
+    }
+
     //Co-routine that will make the AI look like its still thinking about its choices xD
     public IEnumerator ChooseRandomOutfitDelay()
     {
@@ -83,7 +110,7 @@ public class Ai_OutfitChanger : MonoBehaviour
         }));
 
 
-        yield return new WaitForSeconds(6f);//Let AI PAUSE AGAIN
+        yield return new WaitForSeconds(2f);//Let AI PAUSE AGAIN
 
         yield return StartCoroutine(PickWithDeliberation(aipants, (chosen) => {
             currentPants = chosen;
@@ -95,7 +122,6 @@ public class Ai_OutfitChanger : MonoBehaviour
             {
                 comment.SetActive(false);
             }
-
             //Pick a new one to show
             int randomIndex = Random.Range(0, aiOutfitComments.Length);
             aiOutfitComments[randomIndex].SetActive(true);
@@ -107,7 +133,7 @@ public class Ai_OutfitChanger : MonoBehaviour
             clothingManager.UpdateAiScoreUI(aiScore);//updating the live score?
         }));
 
-        yield return new WaitForSeconds(5f);//LET IT PAUSE ONCE MORE
+        yield return new WaitForSeconds(2f);//LET IT PAUSE ONCE MORE
        
         yield return StartCoroutine(PickWithDeliberation(aishoes, (chosen) => {
             currentShoes = chosen;
@@ -118,7 +144,6 @@ public class Ai_OutfitChanger : MonoBehaviour
             clothingManager.UpdateAiScoreUI(aiScore); //updating the live score?
         }));
 
-       // FinaliseOutfitAndScore(RoundManager.Instance.GetCurrentTheme());
     }
 
     //Coroutine that will make the AI pick multiple options before settling on one
@@ -151,8 +176,18 @@ public class Ai_OutfitChanger : MonoBehaviour
                 Debug.LogWarning("Missing ClothingItemData on: " + item.name);
             }
         }
+        //adding the limited selection thingy
+        List<GameObject> sourceList = new List<GameObject>(options);
 
-        GameObject[] pool = preferredItems.Count > 0 ? preferredItems.ToArray() : options; //to fallback if there are no matches
+        if (options == aishirts)
+            sourceList = roundShirts;
+        else if (options == aipants)
+            sourceList = roundPants;
+        else if (options == aishoes)
+            sourceList = roundShoes;
+
+        GameObject[] pool = preferredItems.Count > 0 ? preferredItems.Intersect(sourceList).ToArray() : sourceList.ToArray();
+        //GameObject[] pool = preferredItems.Count > 0 ? preferredItems.ToArray() : options; //to fallback if there are no matches
 
 
         //Ensure all stay hidden
@@ -176,9 +211,6 @@ public class Ai_OutfitChanger : MonoBehaviour
 
         int finalIndex = Random.Range(0, pool.Length);
         pool[finalIndex].SetActive(true);
-
-        //send the chosen item back through callback
-
         callback(pool[finalIndex]);
     }
 
@@ -225,7 +257,6 @@ public class Ai_OutfitChanger : MonoBehaviour
         {
             clothingManager.CalculateAiOutfitScore(theme);
         }
-
     }
 
     //Function that will randomly assign two tags to the AI at the start of each round
@@ -233,11 +264,7 @@ public class Ai_OutfitChanger : MonoBehaviour
     {
         string[] possibleTags = { "flirty", "cozy", "chic", "bold", "warm", "edgy", "vibrant" };
         currentPreferredTags.Clear();
-
         currentPreferredTags.Add(tag); //USE ONE OF THE TAGS PLES. PLEAS JUST WORK
-
-        
-
         //then add a second different tag randomly 
         while (currentPreferredTags.Count < 2)
         {
@@ -249,27 +276,13 @@ public class Ai_OutfitChanger : MonoBehaviour
         }
 
         StartCoroutine(ShowAiStyleMood());
-        //string aiStyleMood = string.Join(" + ", currentPreferredTags);
-        //aiStyleMoodText.text = "Lil Ai's mood: <b> " + aiStyleMood.ToUpper() + "</b>";
-
         Debug.Log("Lil Ai prefers: " + currentPreferredTags[0] + " and " + currentPreferredTags[1]);
     }
 
     public IEnumerator ShowAiStyleMood()
     {
-        // Set mood text
-        //    Dictionary<string, string> tagEmojis = new Dictionary<string, string>()
-        //{
-        //    {"flirty", "💋"}, {"cozy", "🧣"}, {"chic", "💄"},
-        //    {"bold", "🔥"}, {"warm", "🌞"}, {"edgy", "⚡"}, {"vibrant", "🎉"}
-        //};
-
-        //    string moodDisplay = string.Join(" + ", currentPreferredTags.Select(tag => tagEmojis[tag] + " " + tag));
-        //    aiStyleMoodText.text = "AI’s Style Mood: " + moodDisplay;
-
         string aiStyleMood = string.Join(" + ", currentPreferredTags);
         aiStyleMoodText.text = "AI's Style Mood: <b> " + aiStyleMood.ToUpper() + "</b>";
-
 
         // Enable and set to full alpha
         aiStyleMoodText.gameObject.SetActive(true);
@@ -297,6 +310,7 @@ public class Ai_OutfitChanger : MonoBehaviour
 
         aiStyleMoodText.gameObject.SetActive(false);
     }
+
 }
     
     ////Function that will help the AI randomly pick clothes. Made it a coroutine

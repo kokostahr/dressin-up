@@ -297,16 +297,6 @@ public class ClothingManager : MonoBehaviour
     // Your existing AnimateBonusScore coroutine (unchanged)
     IEnumerator AnimateBonusScore(TextMeshProUGUI scoreText, int baseScore, int bonus, string label, float delay = 0.5f)
     {
-        //yield return new WaitForSeconds(delay);
-
-        //int finalScore = baseScore + bonus;
-
-        //scoreText.text = label + " Score: " + baseScore + " pts"
-        //    + "\nBonus: +" + bonus
-        //    + "\nTotal: " + finalScore + " pts";
-
-        //SKIIIP
-
         scoreText.text = $"{label} \nScore: {baseScore} pts";
         yield return new WaitForSeconds(delay);
 
@@ -326,5 +316,3 @@ public class ClothingManager : MonoBehaviour
         }
     }
 }
-
-

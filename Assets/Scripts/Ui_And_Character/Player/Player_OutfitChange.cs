@@ -1,7 +1,8 @@
-using TMPro;
+﻿using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class Player_OutfitChange : MonoBehaviour
 {
@@ -68,22 +69,6 @@ public class Player_OutfitChange : MonoBehaviour
     //Function to Reveal the items that have been bought, into the player's wardrobe
     public void RevealBoughtClothingUI (string itemName)
     {
-        //Search all them wardrobe panels.
-        //Transform itemUI = shirtPanel.transform.Find(itemName);
-        //if (itemUI == null)
-        //{
-        //    itemUI = pantsPanel.transform.Find(itemName);
-        //}
-        //if (itemUI == null)
-        //{
-        //    itemUI = shoePanel.transform.Find(itemName);
-        //}
-
-        //if (itemUI != null)
-        //{
-        //    itemUI.gameObject.SetActive(true); //then activate/show the relevant item inside the panel
-        //}
-
         Transform itemUI = FindChildRecursive(shirtPanel.transform, itemName);
         if (itemUI == null)
             itemUI = FindChildRecursive(pantsPanel.transform, itemName);
@@ -131,6 +116,44 @@ public class Player_OutfitChange : MonoBehaviour
             {
                 RevealBoughtClothingUI(name);
             }
+        }
+    }
+
+    //function that will do the random picking of clothes cards:
+    public void GenerateRandomRoundItems()
+    {
+        Debug.Log("Generating the player round oufti items");
+        //first hide everything
+        PlayerHideAllRoundReset();
+
+        //Now reveal the three random items of each category
+        RevealRandomItems(shirts, shirtPanel, 3);
+        RevealRandomItems(pants, pantsPanel, 3);
+        RevealRandomItems(shoes, shoePanel, 3);
+
+    }
+
+    void RevealRandomItems(GameObject[] items, GameObject panel, int count)
+    {
+        List<int> chosenIndexes = new List<int>();
+        int safeLimit = 50; // just in case you got low variety lol
+
+        while (chosenIndexes.Count < count && safeLimit > 0)
+        {
+            int rand = Random.Range(0, items.Length);
+            if (!chosenIndexes.Contains(rand))
+                chosenIndexes.Add(rand);
+
+            safeLimit--;
+        }
+
+        foreach (int index in chosenIndexes)
+        {
+            items[index].SetActive(true);
+            // Also make sure their corresponding UI buttons inside the panel are active
+            Transform ui = FindChildRecursive(panel.transform, items[index].name);
+            if (ui != null)
+                ui.gameObject.SetActive(true);
         }
     }
 
@@ -202,6 +225,28 @@ public class Player_OutfitChange : MonoBehaviour
 
         //Update the ui 
         clothingManager.UpdatePlayerScore(playerScore);
+    }
+
+    //Disabling and Enabling the relevant panels when it is a player's turn
+    //lock the panels:
+    public void DisablePlayerInput()
+    {
+        Debug.Log("Locking player wardrobe");
+        shirtPanel.SetActive(false);
+        pantsPanel.SetActive(false);
+        shoePanel.SetActive(false);
+
+        // Optional: You can also gray out or disable specific buttons if you want a UI effect
+        //Game object that will be active and say "WAIT UR TURN"
+    }
+
+    //UNLOCK THE PANEL. LET THEM COOK
+    public void EnableInput()
+    {
+        Debug.Log("Unlocking player wardrobe");
+        shirtPanel.SetActive(true);
+        pantsPanel.SetActive(true);
+        shoePanel.SetActive(true);
     }
 
     // Panel Open/Close Methods for each category
