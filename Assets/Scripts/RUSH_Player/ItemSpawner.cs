@@ -1,0 +1,51 @@
+using UnityEngine;
+
+public class ItemSpawner : MonoBehaviour
+{
+    public GameObject[] clothesPrefabs;
+    public GameObject[] obstaclePrefabs;
+    public float spawnInterval = 3f; //every few seconds, clothes should popup
+    public float spawnZ = 10f; //this is the distance infront of the player
+    public float laneDistance = 2f;
+
+    public float timer = 0f;
+
+
+    // Update is called once per frame
+    void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= spawnInterval)
+        {
+            SpawnRandomItem();
+            timer = 0f;
+        }
+    }
+
+    void SpawnRandomItem()
+    {
+        int lane = Random.Range(0, 3); // 3 lanes: 0,1,2
+        float xPos = laneDistance * (lane - 1);
+        Vector3 spawnPos = new Vector3(xPos, 0f, spawnZ);
+
+        // Decide if it's clothes or obstacle
+        bool spawnClothes = Random.value > 0.5f;
+
+        GameObject prefabToSpawn;
+
+        if (spawnClothes && clothesPrefabs.Length > 0)
+        {
+            prefabToSpawn = clothesPrefabs[Random.Range(0, clothesPrefabs.Length)];
+        }
+        else if (obstaclePrefabs.Length > 0)
+        {
+            prefabToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
+        }
+        else
+        {
+            return; // Nothing to spawn
+        }
+
+        Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+    }
+}
