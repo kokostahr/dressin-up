@@ -19,8 +19,6 @@ public class ScoringManager : MonoBehaviour
     public int lastAIBonus = 0;
     //making a text that will popup when the player gets a bonus point
 
-
-
     private void Awake()
     {
         if (Instance == null)
@@ -39,15 +37,7 @@ public class ScoringManager : MonoBehaviour
         int playerScore = clothingManager.CalculateOutfitScore(theme);
 
         //Checking which items are currently equiped for the player
-        ClothingItemData[] equippedItems = new ClothingItemData[3];
-
-        if (clothingManager.playerOutfitChanger.currentShirt != null)
-        {
-            equippedItems[0] = clothingManager.playerOutfitChanger.currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-            equippedItems[1] = clothingManager.playerOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-            equippedItems[2] = clothingManager.playerOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-
-        }
+        ClothingItemData[] equippedItems = clothingManager.playerCollectedItems.ToArray();
 
         //Get the bonus points
         int bonus = PlayerBonus(equippedItems, theme);
@@ -72,7 +62,6 @@ public class ScoringManager : MonoBehaviour
             equippedItems[0] = clothingManager.aiOutfitChanger.currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
             equippedItems[1] = clothingManager.aiOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
             equippedItems[2] = clothingManager.aiOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-
         }
 
         //Get the bonus points 
@@ -83,9 +72,7 @@ public class ScoringManager : MonoBehaviour
 
 
         return aiTotalScore;
-
     }
-
 
     //Setting up the bonus points for the player
     public int PlayerBonus(ClothingItemData[] equippedItems, string theme)
@@ -114,8 +101,6 @@ public class ScoringManager : MonoBehaviour
                 bonusScore += GetBonusForSingleItem(item, theme);
             }
         }
-
-       
 
         //then add the bonus score to the player's total score
         lastPlayerBonus = bonusScore;
@@ -214,8 +199,7 @@ public class ScoringManager : MonoBehaviour
             }
         }
 
-        //Code that will look at the tags an item has
-        
+        //Code that will look at the tags an item has   
 
         //then add the bonus score to the player's total score
         lastAIBonus = bonusScore;
@@ -225,7 +209,6 @@ public class ScoringManager : MonoBehaviour
 
         //add a text popup or sparkle here 
     }
-
 }
 
 //OLD BONUS SCORING LOGIC THAT WAS INSIDE PLAYERBONUS()

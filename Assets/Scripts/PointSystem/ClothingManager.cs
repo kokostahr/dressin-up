@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using DentedPixel;
+using System.Collections.Generic;
 
 public class ClothingManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class ClothingManager : MonoBehaviour
     //variale to track the player's live score
     //public int currentScore = 0;
     public Player_OutfitChange playerOutfitChanger;
+    public List<ClothingItemData> playerCollectedItems = new List<ClothingItemData>();
 
     [Header("AI RELATED SCORING")]
     //Int to track the ai's score
@@ -44,17 +46,6 @@ public class ClothingManager : MonoBehaviour
 
     public void SelectClothingItem(ClothingItemData selectedItem, string theme)
     {
-
-        ////Update the player's score
-        //totalWinterPoints += selectedItem.winterPoints;
-        ////Show the popup points
-        //ShowPointsPopup(selectedItem.winterPoints);
-
-        //update the player's score (modifying for themes)
-        //totalPoints += points;
-
-        //int basePoints = (theme == "summer") ? selectedItem.summerPoints : selectedItem.winterPoints;
-
         //Get the bonus points from the scoring manager 
         int bonusPoints = scoringManager.GetBonusForSingleItem(selectedItem, theme);
 
@@ -66,9 +57,13 @@ public class ClothingManager : MonoBehaviour
         int aiUpdatedScore = CalculateAiOutfitScore(theme);
         UpdatePlayerScoreUI(updatedScore);
         UpdateAiScoreUI(aiUpdatedScore);
-        
     }
 
+    //clean up the clothes collected when a round ends:
+    public void ResetPlayerClothes()
+    {
+        playerCollectedItems.Clear();
+    }
 
     void ShowBonusPopup(int bonusPoints)
     {
@@ -128,37 +123,9 @@ public class ClothingManager : MonoBehaviour
         int score = 0;
 
         //Let's try and get ClothingItemData from each equipped piece
-        if (playerOutfitChanger.currentShirt != null)
+        foreach (ClothingItemData item in playerCollectedItems)
         {
-            var data = playerOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();   
-            if (data != null)
-            {
-                //score += data.clothingItemData.winterPoints;
-                //modifying to handle two themes
-                score += GetThemePoints(theme, data.clothingItemData);
-            }
-        }
-
-        if (playerOutfitChanger.currentPants != null)
-        {
-            var data = playerOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
-            if (data != null) 
-            {
-                //score += data.clothingItemData.winterPoints; 
-                //modifying for two themes
-                score += GetThemePoints(theme, data.clothingItemData);
-            }
-        }
-
-        if (playerOutfitChanger.currentShoes != null)
-        {
-            var data = playerOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
-            if (data != null) 
-            {
-                //score += data.clothingItemData.winterPoints; 
-                //modifying for themes
-                score += GetThemePoints(theme, data.clothingItemData);
-            }
+            score += GetThemePoints(theme, item);
         }
 
         return score;
@@ -243,7 +210,6 @@ public class ClothingManager : MonoBehaviour
         UpdatePlayerScoreUI(points);
     }
 
-
     void UpdatePlayerScoreUI(int score)
     {
         if (playerLiveScoreText != null)
@@ -251,7 +217,6 @@ public class ClothingManager : MonoBehaviour
             playerLiveScoreText.text = "Player: " + score + " pts";
         }
     }
-
 
     public void ResetPlayerScore()
     {
@@ -269,17 +234,6 @@ public class ClothingManager : MonoBehaviour
         aiScore = 0;
         UpdateAiScoreUI(0);
    }
-
-    ////METHOD THAT UPDATES THE FINAL SCORE UI AFTER THE ROUND ENDS:
-    //public void UpdateFinalScoreUI(int playerFinalScore, int aiFinalScore, int playerBonus, int aiBonus)
-    //{
-    //    // Update the final score text for player
-    //    playerLiveScoreText.text = $"Player Score: {playerFinalScore} pts\nBonus: +{playerBonus}\nTotal: {playerFinalScore} pts";
-
-    //    // Update the final score text for AI
-    //    aiLiveScoreText.text = $"AI Score: {aiFinalScore} pts\nBonus: +{aiBonus}\nTotal: {aiFinalScore} pts";
-    //}
-
     // Method to trigger animation of bonus score
     public void AnimateBonusScoreInClothingManager(int baseScore, int bonus, string label)
     {
@@ -297,16 +251,6 @@ public class ClothingManager : MonoBehaviour
     // Your existing AnimateBonusScore coroutine (unchanged)
     IEnumerator AnimateBonusScore(TextMeshProUGUI scoreText, int baseScore, int bonus, string label, float delay = 0.5f)
     {
-        //yield return new WaitForSeconds(delay);
-
-        //int finalScore = baseScore + bonus;
-
-        //scoreText.text = label + " Score: " + baseScore + " pts"
-        //    + "\nBonus: +" + bonus
-        //    + "\nTotal: " + finalScore + " pts";
-
-        //SKIIIP
-
         scoreText.text = $"{label} \nScore: {baseScore} pts";
         yield return new WaitForSeconds(delay);
 
@@ -326,5 +270,14 @@ public class ClothingManager : MonoBehaviour
         }
     }
 }
+////METHOD THAT UPDATES THE FINAL SCORE UI AFTER THE ROUND ENDS:
+//public void UpdateFinalScoreUI(int playerFinalScore, int aiFinalScore, int playerBonus, int aiBonus)
+//{
+//    // Update the final score text for player
+//    playerLiveScoreText.text = $"Player Score: {playerFinalScore} pts\nBonus: +{playerBonus}\nTotal: {playerFinalScore} pts";
+
+//    // Update the final score text for AI
+//    aiLiveScoreText.text = $"AI Score: {aiFinalScore} pts\nBonus: +{aiBonus}\nTotal: {aiFinalScore} pts";
+//}
 
 

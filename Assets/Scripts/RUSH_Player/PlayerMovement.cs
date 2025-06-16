@@ -6,6 +6,8 @@ public class PlayerMovement : MonoBehaviour
     private int currentLane = 1; // 0= left land, 1= middle lane, 2= right lane
     private Vector3 targetPosition;
 
+    public float forwardSpeed = 5f; //basic movement speed
+    public float speedMultiplier = 1.5f; //speed increase!
 
     void Start()
     {
@@ -13,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
         targetPosition = transform.position;
     }
 
-    
     void Update()
     {
         //Let's do the lane switching keyboard input
@@ -36,5 +37,22 @@ public class PlayerMovement : MonoBehaviour
         targetPosition = new Vector3(laneDistance * (currentLane - 1), transform.position.y, transform.position.z);
         //smoothly move to the next lane
         transform.position = Vector3.Lerp(transform.position, targetPosition, 10f * Time.deltaTime);
+
+        //move forward constantly on the y axis
+        transform.Translate(Vector3.up * forwardSpeed * speedMultiplier * Time.deltaTime);
+    }
+
+    //call this temporarily to boost the player's speed
+    public void BoostSpeed(float multiplier, float duration)
+    {
+        StopAllCoroutines();
+        StartCoroutine(SpeedBoostCoroutine(multiplier, duration));
+    }
+
+    private System.Collections.IEnumerator SpeedBoostCoroutine(float multiplier, float duration)
+    {
+        speedMultiplier = multiplier;
+        yield return new WaitForSeconds(duration);
+        speedMultiplier = 1f;
     }
 }

@@ -68,22 +68,6 @@ public class Player_OutfitChange : MonoBehaviour
     //Function to Reveal the items that have been bought, into the player's wardrobe
     public void RevealBoughtClothingUI (string itemName)
     {
-        //Search all them wardrobe panels.
-        //Transform itemUI = shirtPanel.transform.Find(itemName);
-        //if (itemUI == null)
-        //{
-        //    itemUI = pantsPanel.transform.Find(itemName);
-        //}
-        //if (itemUI == null)
-        //{
-        //    itemUI = shoePanel.transform.Find(itemName);
-        //}
-
-        //if (itemUI != null)
-        //{
-        //    itemUI.gameObject.SetActive(true); //then activate/show the relevant item inside the panel
-        //}
-
         Transform itemUI = FindChildRecursive(shirtPanel.transform, itemName);
         if (itemUI == null)
             itemUI = FindChildRecursive(pantsPanel.transform, itemName);

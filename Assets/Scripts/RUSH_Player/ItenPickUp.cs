@@ -1,23 +1,28 @@
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.WSA;
 
 public class ItenPickUp : MonoBehaviour
 {
-    private int playerScore = 0;
+    public ClothingManager clothingManager;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Clothing"))
+        var itemHolder = other.GetComponent<ClothingItemHolder>();
+
+        if (itemHolder != null)
         {
-            playerScore += 10; // or whatever points
+            // Add to list
+            clothingManager.playerCollectedItems.Add(itemHolder.clothingItemData);
+
+            // Get current theme from RoundManager
+            string currentTheme = RoundManager.Instance.GetCurrentTheme();
+
+            // Tell clothing manager to score this item
+            clothingManager.SelectClothingItem(itemHolder.clothingItemData, currentTheme);
+
+            // Destroy or hide the collected item
             Destroy(other.gameObject);
-            Debug.Log("Clothing picked up! Score: " + playerScore);
-        }
-        else if (other.CompareTag("Obstacle"))
-        {
-            playerScore -= 5; // penalty maybe
-            Destroy(other.gameObject);
-            Debug.Log("Ouch! Hit obstacle. Score: " + playerScore);
         }
     }
 }
