@@ -66,6 +66,8 @@ public class RoundManager : MonoBehaviour
     [Header("MUSIC SETTINGS")]
     public AudioSource calmAudioSource;//The slow music track
     public AudioSource fastAudioSource; //Sped up version of the music track
+    //public AudioClip calmMusic; 
+    //public AudioClip fastMusic; 
     private float roundTimer; //Timer to track the round's time
     private bool isFastMusicPlaying = false;
 
@@ -113,6 +115,10 @@ public class RoundManager : MonoBehaviour
         roundActive = true;
         roundTimer = 0f;
         isFastMusicPlaying = false;
+        //Starting the calm music at the beginning of the round
+        //audioSource.clip = calmMusic;
+        //audioSource.loop = true;
+        //audioSource.Play();
         fastAudioSource.Stop(); //Incase it was playing
         calmAudioSource.time = 0f;
         calmAudioSource.Play();
@@ -158,6 +164,12 @@ public class RoundManager : MonoBehaviour
             //Check if the round is nearing the last 10 seconds
             if (roundTimer >= (roundDuration - 10f) && !isFastMusicPlaying)
             {
+                //switch to the faster music for the last 10 seconds
+                //audioSource.Stop();
+                //audioSource.clip = fastMusic;
+                //audioSource.loop = true;
+                //audioSource.time = 0f;
+                //audioSource.Play();
                 calmAudioSource.Stop();
                 fastAudioSource.time = 0f;
                 fastAudioSource.Play();
@@ -215,9 +227,19 @@ public class RoundManager : MonoBehaviour
         // ✨ Start coroutine that handles animations, THEN compares scores, THEN next round
         StartCoroutine(HandleEndRoundSequence(playerBaseScore, aiBaseScore, playerBonus, aiBonus));
 
+
+
+        ////Update the finalscores in the UI USING THE CLOTHING MANAGER
+        //clothingManager.UpdateFinalScoreUI(playerFinalScore, aiFinalScore, playerBonus, aiBonus);
+
         //Show the score panel that will display AI and Player scores
         themeText.gameObject.SetActive(false);
         scorePanel.SetActive (true);
+
+
+        //dont need to show these things anymore
+        //playerFinalScoreText.text = playerFinalScore.ToString();
+        //aiFinalScoreText.text = aiFinalScore.ToString();
 
         //audiostuffff
         calmAudioSource.Play();
@@ -227,6 +249,13 @@ public class RoundManager : MonoBehaviour
         //Need to hide all the clothes again
         aiOutfitChanger.AIHideAllRoundReset();
         playerOutfitChanger.PlayerHideAllRoundReset();
+
+       
+        ////Then compare scores to determine the winner of the round.
+        //CompareScores(playerFinalScore, aiFinalScore);
+
+        ////Wait the start next round or end game
+        //StartCoroutine(WaitAndStartNextRound());
 
     }
 
@@ -240,6 +269,8 @@ public class RoundManager : MonoBehaviour
         // Only once both animations are done
         CompareScores(playerFinalScore, aiFinalScore);
         yield return new WaitForSeconds(6f);
+        //themePopupText.gameObject.SetActive(true);
+        //StartNextRound();
     }
 
 
@@ -255,6 +286,7 @@ public class RoundManager : MonoBehaviour
 
             //Then add 15 points to their fashion points
             StartCoroutine(PlayerRoundWinnerText());
+
         }
         else if (playerFinalScore < aiFinalScore)
         {
@@ -265,6 +297,7 @@ public class RoundManager : MonoBehaviour
 
             //Add 15 points to the AI's score
             StartCoroutine(AIRoundWinnerText());
+
         }
         else
         {
@@ -335,12 +368,21 @@ public class RoundManager : MonoBehaviour
         {
             currentRound++;
             ResetRound();
+
         }
         else
         {
             EndGame(); 
         }
     }
+
+    //co-routine that will wait for a while after the round has ended to show the score and give the next theme
+    //public IEnumerator WaitAndStartNextRound()
+    //{
+    //    yield return new WaitForSeconds(1f);
+    //    themePopupText.gameObject.SetActive(true);
+    //    StartNextRound();
+    //}
 
     void ResetRound()
     {
@@ -377,9 +419,17 @@ public class RoundManager : MonoBehaviour
         //Reset the timer and clear 
         roundActive = true;
         timeLeft = roundDuration;
+
+        //Reset the music to calm for the next round
+        //audioSource.Stop(); //stop the fast music or anything else
+        //audioSource.clip = calmMusic;
+        //audioSource.loop = true;
+        //audioSource.time = 0f; //reset the music position to start
+        //audioSource.Play();
         fastAudioSource.Stop(); //Incase it was playing
         calmAudioSource.time = 0f;
         calmAudioSource.Play();
+        
 
         //call the AI outfitchanger coroutine to reset its clothes at the start of each round
         StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
@@ -405,6 +455,10 @@ public class RoundManager : MonoBehaviour
         //Make sure the next round button is hidden
         nextRoundButton.SetActive(false);
 
+        //deactivate the final score text ui when a new round starts
+        //clothingManager.playerFinalScoreText.gameObject.SetActive(false);
+        //clothingManager.aiFinalScoreText.gameObject.SetActive(false);
+
         //display the amount of wins:
         clothingManager.playerFinalScoreText.text = "Total Player \nWins: " + playerWins.ToString() + " Wins";
         clothingManager.aiFinalScoreText.text = "Total AI \nWins: " + aiWins.ToString() + " Wins";
@@ -413,10 +467,15 @@ public class RoundManager : MonoBehaviour
         if (playerWins > aiWins)
         {
             roundResultText.text = "Congratulations! You've outstyled the AI!";
+            
+            //aiFinalScoreText.text = "-_-??";
+            //playerFinalScoreText.text = "You got the most wins! Close the game. Its finshed.";
         }
         else if (playerWins < aiWins)
         {
             roundResultText.text = "Sadly you lost. The Ai outstyled you!";
+            //aiFinalScoreText.text = "The robot got the most wins. Close the game, It's finished.";
+            //playerFinalScoreText.text = "The robot beat you.";
         }
         
         themeText.gameObject.SetActive (false);
