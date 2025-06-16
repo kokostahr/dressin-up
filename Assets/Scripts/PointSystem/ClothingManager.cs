@@ -18,7 +18,7 @@ public class ClothingManager : MonoBehaviour
     public int totalPoints = 0;
     //variale to track the player's live score
     //public int currentScore = 0;
-    public Player_OutfitChange playerOutfitChanger;
+    //public Player_OutfitChange playerOutfitChanger;
     public List<ClothingItemData> playerCollectedItems = new List<ClothingItemData>();
 
     [Header("AI RELATED SCORING")]

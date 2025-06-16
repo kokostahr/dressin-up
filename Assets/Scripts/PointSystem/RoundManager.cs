@@ -379,7 +379,7 @@ public class RoundManager : MonoBehaviour
         calmAudioSource.Play();
         
         //call the AI outfitchanger coroutine to reset its clothes at the start of each round
-        //StartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
+        //fStartCoroutine(aiOutfitChanger.ChooseRandomOutfitDelay());
 
         //Reset the theme
         SetRandomTheme();
