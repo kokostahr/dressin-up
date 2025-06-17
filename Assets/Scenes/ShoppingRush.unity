@@ -31729,8 +31729,8 @@ Transform:
   m_GameObject: {fileID: 807087659}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.16, y: -3.89, z: 0.078689896}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 13.16, y: -3.884, z: 0.078689896}
+  m_LocalScale: {x: 1.2263, y: 1.2263, z: 1.2263}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 959334140}
@@ -31769,17 +31769,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.026717067}
+  m_Offset: {x: 0.013018608, y: -0.065772176}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.22, y: 3.4}
+    oldSize: {x: 1.78, y: 2.37}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 3.228978}
+  m_Size: {x: 1.9112806, y: 2.6822107}
   m_EdgeRadius: 0
 --- !u!50 &807087662
 Rigidbody2D:
@@ -31852,8 +31852,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -4329093817333758864, guid: e3d77b3e5f6ba6143ad3759142b9c84a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -3015973597732310919, guid: ff146f9df1c3a9348895f8c59385e34e, type: 3}
+  m_Color: {r: 1, g: 0.73018867, b: 0.73018867, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -73037,7 +73037,7 @@ MonoBehaviour:
   nextRoundButton: {fileID: 1255612309}
   clothingManager: {fileID: 1452340705}
   scoringManager: {fileID: 1452340706}
-  itemSpawner: {fileID: 0}
+  itemSpawner: {fileID: 1452340704}
   aiFinalScore: 0
   playerFinalScore: 0
   playerWins: 0
@@ -85649,7 +85649,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.55, y: -3.89, z: 0.078689896}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3253, y: 1.3253, z: 1.3253}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 959334140}
@@ -85698,7 +85698,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -4264112774608061252, guid: bb9b40aad796c3f4486e6dbbf87e38b3, type: 3}
+  m_Sprite: {fileID: 663144637380208133, guid: 258fdca02d9091a4187d62b2fb9fbf85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85770,17 +85770,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.00000035762787}
+  m_Offset: {x: 0.017220974, y: 0.05166191}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.33, y: 3.39}
+    oldSize: {x: 2.26, y: 2.48}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 3.318034}
+  m_Size: {x: 2.435058, y: 2.6866078}
   m_EdgeRadius: 0
 --- !u!114 &1685983617
 MonoBehaviour:
@@ -99587,7 +99587,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: DressingSetUp
+          m_StringArgument: ShoppingRush
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &2064190019
