@@ -5319,7 +5319,7 @@ Transform:
   m_GameObject: {fileID: 475707497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.545214, y: -3.632921, z: -10}
+  m_LocalPosition: {x: 1.9352145, y: -3.632921, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9369,7 +9369,7 @@ Transform:
   m_GameObject: {fileID: 807087659}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.95, y: -3.89, z: 0.078689896}
+  m_LocalPosition: {x: 13.16, y: -3.89, z: 0.078689896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9429,7 +9429,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807087659}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -9446,7 +9446,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!212 &807087663
 SpriteRenderer:
@@ -9529,8 +9529,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laneDistance: 9
-  forwardSpeed: 5
-  decisionInterval: 1.5
+  forwardSpeed: 7
+  decisionInterval: 0.5
 --- !u!1 &845533721
 GameObject:
   m_ObjectHideFlags: 0
@@ -14987,7 +14987,7 @@ MonoBehaviour:
   - {fileID: 760097662}
   - {fileID: 1236002175}
   obstaclePrefabs: []
-  spawnInterval: 3
+  spawnInterval: 2
   spawnZ: 6
   laneDistance: 9
   player: {fileID: 1685983613}
@@ -17145,7 +17145,7 @@ Transform:
   m_GameObject: {fileID: 1685983612}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.16, y: -3.89, z: 0.078689896}
+  m_LocalPosition: {x: 4.55, y: -3.89, z: 0.078689896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17214,7 +17214,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1685983612}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -17231,7 +17231,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1685983616
 BoxCollider2D:
@@ -19593,7 +19593,7 @@ GameObject:
   - component: {fileID: 1909090121}
   - component: {fileID: 1909090120}
   - component: {fileID: 1909090119}
-  - component: {fileID: 1909090118}
+  - component: {fileID: 1909090122}
   m_Layer: 0
   m_Name: CinemachineFollowCamera
   m_TagString: Untagged
@@ -19601,35 +19601,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1909090118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909090117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f38bda98361e1de48a4ca2bd86ea3c17, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Composition:
-    ScreenPosition: {x: 0, y: 0}
-    DeadZone:
-      Enabled: 0
-      Size: {x: 0.2, y: 0.2}
-    HardLimits:
-      Enabled: 0
-      Size: {x: 0.8, y: 0.8}
-      Offset: {x: 0, y: 0}
-  CenterOnActivate: 1
-  TargetOffset: {x: 0, y: 0, z: 0}
-  Damping: {x: 0.5, y: 0.5}
-  Lookahead:
-    Enabled: 0
-    Time: 0
-    Smoothing: 0
-    IgnoreY: 0
 --- !u!114 &1909090119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19701,12 +19672,25 @@ Transform:
   m_GameObject: {fileID: 1909090117}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.545214, y: -3.632921, z: -10}
+  m_LocalPosition: {x: 1.9352145, y: -3.632921, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1909090122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909090117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e8b78ac948f05a46a6d8339a503172b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LookAtOffset: {x: 0, y: 0, z: 0}
 --- !u!1 &1962146186
 GameObject:
   m_ObjectHideFlags: 0

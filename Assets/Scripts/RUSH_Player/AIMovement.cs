@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class AIMovement : MonoBehaviour
@@ -12,7 +13,8 @@ public class AIMovement : MonoBehaviour
 
     void Start()
     {
-        targetPosition = transform.position;
+        currentLane = Random.Range(0, 3);
+        targetPosition = new Vector3(laneDistance * (currentLane - 1), transform.position.y, transform.position.z);
         decisionTimer = decisionInterval;
     }
 

@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         //when the game starts, the player must start in the middle lane
-        targetPosition = transform.position;
+        currentLane = Random.Range(0, 3);
+        targetPosition = new Vector3(laneDistance * (currentLane - 1), transform.position.y, transform.position.z);
     }
 
     void Update()
