@@ -91,9 +91,11 @@ public class AIMovement : MonoBehaviour
 
     private IEnumerator SpeedBoostCoroutine(float multiplier, float duration)
     {
+        Debug.Log("Speed Boost STARTED");
         speedMultiplier = multiplier;
         yield return new WaitForSeconds(duration);
         speedMultiplier = 1f;
+        Debug.Log("Speed Boost ENDED");
     }
 
     public void StopMoving()

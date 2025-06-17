@@ -352,7 +352,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7235432}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -712,7 +712,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 20229821}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -977,7 +977,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 31351187}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1303,7 +1303,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43493213}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1687,7 +1687,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 78432519}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -1777,7 +1777,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &88800467
 GameObject:
   m_ObjectHideFlags: 0
@@ -2091,7 +2092,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 93725879}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -7171,7 +7172,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 121607985}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -7261,7 +7262,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &137739893
 GameObject:
   m_ObjectHideFlags: 0
@@ -7341,7 +7343,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137739893}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -7431,7 +7433,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &156031290
 GameObject:
   m_ObjectHideFlags: 0
@@ -8128,7 +8131,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182070022}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8318,7 +8321,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192586616}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8508,7 +8511,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209232638}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8698,7 +8701,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209890006}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8946,7 +8949,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 242303084}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -8963,7 +8966,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &242303087
 BoxCollider2D:
@@ -9082,7 +9085,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &270689686
 GameObject:
   m_ObjectHideFlags: 0
@@ -9806,7 +9810,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 314010843}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -9917,7 +9921,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 319273307}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -10007,7 +10011,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &330574424
 GameObject:
   m_ObjectHideFlags: 0
@@ -10141,7 +10146,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334870535}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -10158,7 +10163,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &334870538
 BoxCollider2D:
@@ -10277,7 +10282,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &377524904
 GameObject:
   m_ObjectHideFlags: 0
@@ -10471,7 +10477,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385695550}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -10740,7 +10746,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427976398}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -10757,7 +10763,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &427976401
 BoxCollider2D:
@@ -10876,7 +10882,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &436369254
 GameObject:
   m_ObjectHideFlags: 0
@@ -11011,7 +11018,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -11035,7 +11042,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 436369254}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -11280,7 +11287,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 465151223}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -11370,7 +11377,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &472002974
 GameObject:
   m_ObjectHideFlags: 0
@@ -11563,7 +11571,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475660925}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -11923,7 +11931,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475715796}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -12465,7 +12473,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 509193155}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -12540,7 +12548,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 536165464}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -12557,7 +12565,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &536165467
 BoxCollider2D:
@@ -12676,7 +12684,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &559021092
 GameObject:
   m_ObjectHideFlags: 0
@@ -12835,7 +12844,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559021092}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -13236,7 +13245,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600324429}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -13434,7 +13443,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614015217}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -13524,7 +13533,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &619131416
 GameObject:
   m_ObjectHideFlags: 0
@@ -13803,7 +13813,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624648911}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -13950,7 +13960,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 632660067}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -14040,7 +14050,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &634462087
 GameObject:
   m_ObjectHideFlags: 0
@@ -14120,7 +14131,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634462087}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -14210,7 +14221,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &655426441
 GameObject:
   m_ObjectHideFlags: 0
@@ -14561,7 +14573,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 683515315}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -14843,7 +14855,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723798023}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -15159,7 +15171,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 730357054}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -15358,7 +15370,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -15382,7 +15394,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760097662}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -15548,7 +15560,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -15572,7 +15584,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778014010}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -15898,7 +15910,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 783182801}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -16360,7 +16372,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805103892}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -16544,7 +16556,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -4329093817333758864, guid: e3d77b3e5f6ba6143ad3759142b9c84a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -16628,7 +16640,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813360100}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -16645,7 +16657,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &813360103
 BoxCollider2D:
@@ -16764,7 +16776,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &845533721
 GameObject:
   m_ObjectHideFlags: 0
@@ -17019,7 +17032,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 885479854}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -17036,7 +17049,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &885479857
 BoxCollider2D:
@@ -17155,7 +17168,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &887508714
 GameObject:
   m_ObjectHideFlags: 0
@@ -17291,7 +17305,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912554840}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -17381,7 +17395,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &913862883
 GameObject:
   m_ObjectHideFlags: 0
@@ -17425,7 +17440,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913862883}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -17442,7 +17457,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &913862886
 BoxCollider2D:
@@ -17561,7 +17576,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &931731235
 GameObject:
   m_ObjectHideFlags: 0
@@ -17752,7 +17768,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -17776,7 +17792,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944309651}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -17851,7 +17867,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944814598}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -17868,7 +17884,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &944814601
 BoxCollider2D:
@@ -17987,7 +18003,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &947121731
 GameObject:
   m_ObjectHideFlags: 0
@@ -18122,11 +18139,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.09278917, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -18136,7 +18153,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.2142857, y: 0.85714287}
+  m_Size: {x: 2.5727205, y: 2.119072}
   m_EdgeRadius: 0
 --- !u!50 &947121736
 Rigidbody2D:
@@ -18146,7 +18163,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947121731}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -18221,7 +18238,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947668075}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -18238,7 +18255,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &947668078
 BoxCollider2D:
@@ -18357,7 +18374,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &947882714
 GameObject:
   m_ObjectHideFlags: 0
@@ -18516,7 +18534,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 947882714}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -18840,7 +18858,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 955465211}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -19299,7 +19317,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968468986}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -19389,7 +19407,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &985043453
 GameObject:
   m_ObjectHideFlags: 0
@@ -19720,7 +19739,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1044192364}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -19810,7 +19829,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &1047428837
 GameObject:
   m_ObjectHideFlags: 0
@@ -20400,7 +20420,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1149443192}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -20858,7 +20878,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1168742801}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -21069,7 +21089,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1173384401}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -21086,7 +21106,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1173384404
 BoxCollider2D:
@@ -21205,7 +21225,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &1176060603
 GameObject:
   m_ObjectHideFlags: 0
@@ -21249,7 +21270,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176060603}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -21266,7 +21287,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1176060606
 BoxCollider2D:
@@ -21385,7 +21406,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &1187897294
 GameObject:
   m_ObjectHideFlags: 0
@@ -21596,11 +21618,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.005874157, y: -0.24376678}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -21610,7 +21632,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.84, y: 1.04}
+  m_Size: {x: 2.355464, y: 1.6920013}
   m_EdgeRadius: 0
 --- !u!50 &1214652230
 Rigidbody2D:
@@ -21620,7 +21642,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1214652225}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -21810,7 +21832,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229474505}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -21976,7 +21998,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -22000,7 +22022,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236002175}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -23011,7 +23033,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362572742}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -23101,7 +23123,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &1375165559
 GameObject:
   m_ObjectHideFlags: 0
@@ -23260,7 +23283,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1375165559}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -23633,7 +23656,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1405147433}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -23744,7 +23767,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406017612}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -23834,7 +23857,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &1406444853
 GameObject:
   m_ObjectHideFlags: 0
@@ -24029,7 +24053,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410287086}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -24744,7 +24768,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464546572}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -24990,7 +25014,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1472613562}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -25692,7 +25716,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -25716,7 +25740,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545882386}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -26010,7 +26034,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1560810047}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -26200,7 +26224,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1590672664}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -26576,7 +26600,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1653387744}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -26666,7 +26690,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &1672721686
 GameObject:
   m_ObjectHideFlags: 0
@@ -26710,7 +26735,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672721686}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -26727,7 +26752,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1672721689
 BoxCollider2D:
@@ -26846,7 +26871,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &1685983612
 GameObject:
   m_ObjectHideFlags: 0
@@ -26926,7 +26952,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -4264112774608061252, guid: bb9b40aad796c3f4486e6dbbf87e38b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -27173,7 +27199,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -27197,7 +27223,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1686162495}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -29146,7 +29172,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872500091}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -29221,7 +29247,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901764189}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -29238,7 +29264,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &1901764192
 BoxCollider2D:
@@ -29357,7 +29383,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &1904543878
 GameObject:
   m_ObjectHideFlags: 0
@@ -29728,7 +29755,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934108253}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -29818,7 +29845,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &1962146186
 GameObject:
   m_ObjectHideFlags: 0
@@ -30623,7 +30651,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2040311071}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -30713,7 +30741,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   speedMultiplier: 2
   boostDuration: 3
-  speedIncreasedText: {fileID: 103647561}
+  speedIncreased: {fileID: 0}
+  speedIncreasedAI: {fileID: 0}
 --- !u!1 &2064190015
 GameObject:
   m_ObjectHideFlags: 0
@@ -30912,7 +30941,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2080894223}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -30929,7 +30958,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &2080894226
 BoxCollider2D:
@@ -31048,7 +31077,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &2084170516
 GameObject:
   m_ObjectHideFlags: 0
@@ -31207,7 +31237,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2084170516}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -31517,7 +31547,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2104966959}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -31860,7 +31890,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2122374969}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -31877,7 +31907,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &2122374972
 BoxCollider2D:
@@ -31996,7 +32026,8 @@ MonoBehaviour:
   AIMovement: {fileID: 807087665}
   slowMultiplier: 0.5
   slowDuration: 2
-  speedSlowedText: {fileID: 1169270908}
+  speedSlowed: {fileID: 0}
+  speedSlowedAI: {fileID: 0}
 --- !u!1 &2136346206
 GameObject:
   m_ObjectHideFlags: 0

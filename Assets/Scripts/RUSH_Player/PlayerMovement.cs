@@ -50,8 +50,10 @@ public class PlayerMovement : MonoBehaviour
     //call this temporarily to boost the player's speed
     public void BoostSpeed(float multiplier, float duration)
     {
+        Debug.Log("Speed Boost STARTED");
         StopAllCoroutines();
         StartCoroutine(SpeedBoostCoroutine(multiplier, duration));
+        Debug.Log("Speed Boost ENDED");
     }
 
     private System.Collections.IEnumerator SpeedBoostCoroutine(float multiplier, float duration)

@@ -46,7 +46,7 @@ public class ItemSpawner : MonoBehaviour
         Vector3 spawnPos = new Vector3(xPos, dynamicY, 0f); // Y instead of Z!
 
         // Decide if it's clothes or obstacle
-        bool spawnClothes = Random.value > 0.5f;
+        //bool spawnClothes = Random.value > 0.5f;
 
         GameObject prefabToSpawn;
         // Add a third possibility: 10% chance to spawn powerup

@@ -8,24 +8,28 @@ public class SpeedPowerUp : MonoBehaviour
     public AIMovement AIMovement;
     public float speedMultiplier = 2f;
     public float boostDuration = 3f;
-    public GameObject speedIncreasedText;
+    public GameObject speedIncreased;
+    public GameObject speedIncreasedAI;
 
     private void Start()
     {
-        speedIncreasedText.SetActive(false);
+        speedIncreased.SetActive(false);
+        speedIncreasedAI.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Triggered by: " + other.name);
         if (other.CompareTag("Player"))
         {
-            speedIncreasedText.SetActive(true);
+            speedIncreased.SetActive(true);
             playerMovement.BoostSpeed(speedMultiplier, boostDuration);
             Destroy(gameObject);
             StartCoroutine(HideSpeedText());
         }
         else if (other.CompareTag("AI"))
         {
+            speedIncreased.SetActive(true);
             AIMovement.BoostSpeed(speedMultiplier, boostDuration);
             Destroy(gameObject);
         }
@@ -34,7 +38,8 @@ public class SpeedPowerUp : MonoBehaviour
     //co-routine to make the text go away!
     IEnumerator HideSpeedText()
     {
-        yield return new WaitForSeconds(1f);
-        speedIncreasedText.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1.5f);
+        speedIncreased.SetActive(false);
+        speedIncreasedAI.SetActive(false);
     }
 }

@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class SlowDownObstacle : MonoBehaviour
@@ -8,24 +7,31 @@ public class SlowDownObstacle : MonoBehaviour
     public AIMovement AIMovement;
     public float slowMultiplier = 0.5f;
     public float slowDuration = 2f;
-    public GameObject speedSlowedText;
+    public GameObject speedSlowed;
+    public GameObject speedSlowedAI;
 
     private void Start()
     {
-        speedSlowedText.SetActive(false);
+        speedSlowed.SetActive(false);
+        speedSlowedAI.SetActive(false);
+        Debug.Log("Obstacle Script Active");
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log("Triggered by: " + other.name);
         if (other.CompareTag("Player"))
         {
-            speedSlowedText.SetActive(true);
+            Debug.Log("Slowing down Player...");
+            speedSlowed.SetActive(true);
             playerMovement.BoostSpeed(slowMultiplier, slowDuration);
             Destroy(gameObject);
             StartCoroutine(HideSpeedText());
         }
         else if (other.CompareTag("AI"))
         {
+            Debug.Log("Slowing down AI...");
+            speedSlowedAI.SetActive(true);
             AIMovement.BoostSpeed(slowMultiplier, slowDuration);
             Destroy(gameObject);
         }
@@ -35,6 +41,7 @@ public class SlowDownObstacle : MonoBehaviour
     IEnumerator HideSpeedText()
     {
         yield return new WaitForSeconds(1f);
-        speedSlowedText.gameObject.SetActive(false);
+        speedSlowed.SetActive(false);
+        speedSlowedAI.SetActive(false);
     }
 }
