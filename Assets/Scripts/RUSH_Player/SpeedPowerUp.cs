@@ -29,7 +29,7 @@ public class SpeedPowerUp : MonoBehaviour
         }
         else if (other.CompareTag("AI"))
         {
-            speedIncreased.SetActive(true);
+            speedIncreasedAI.SetActive(true);
             AIMovement.BoostSpeed(speedMultiplier, boostDuration);
             Destroy(gameObject);
             StartCoroutine(HideSpeedText());
@@ -39,7 +39,7 @@ public class SpeedPowerUp : MonoBehaviour
     //co-routine to make the text go away!
     IEnumerator HideSpeedText()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         speedIncreased.SetActive(false);
         speedIncreasedAI.SetActive(false);
     }

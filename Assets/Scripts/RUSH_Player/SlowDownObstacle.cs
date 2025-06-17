@@ -41,7 +41,7 @@ public class SlowDownObstacle : MonoBehaviour
     //co-routine to make the text go away!
     IEnumerator HideSpeedText()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         speedSlowed.SetActive(false);
         speedSlowedAI.SetActive(false);
     }
