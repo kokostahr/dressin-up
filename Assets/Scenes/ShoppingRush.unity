@@ -9409,7 +9409,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.026717067}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -9419,7 +9419,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3.228978}
   m_EdgeRadius: 0
 --- !u!50 &807087662
 Rigidbody2D:
@@ -14988,10 +14988,10 @@ MonoBehaviour:
   - {fileID: 1236002175}
   obstaclePrefabs: []
   spawnInterval: 3
-  spawnZ: 2
+  spawnZ: 6
   laneDistance: 9
-  player: {fileID: 959334140}
-  timer: 0
+  player: {fileID: 1685983613}
+  timer: 3
 --- !u!114 &1452340705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17267,7 +17267,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.00000035762787}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17277,7 +17277,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 3.318034}
   m_EdgeRadius: 0
 --- !u!114 &1685983617
 MonoBehaviour:

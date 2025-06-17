@@ -40,8 +40,8 @@ public class ItemSpawner : MonoBehaviour
     {
         int lane = Random.Range(0, 3); // 3 lanes: 0,1,2
         float xPos = laneDistance * (lane - 1);
-        float dynamicZ = player.position.z + spawnZ; // spawns ahead of the player
-        Vector3 spawnPos = new Vector3(xPos, 0f, dynamicZ);
+        float dynamicY = player.position.y + spawnZ; // now spawns above the player
+        Vector3 spawnPos = new Vector3(xPos, dynamicY, 0f); // Y instead of Z!
 
         // Decide if it's clothes or obstacle
         bool spawnClothes = Random.value > 0.5f;
