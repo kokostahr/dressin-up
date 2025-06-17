@@ -1,32 +1,32 @@
 using System.Collections;
-using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class SpeedPowerUp : MonoBehaviour
+public class SlowDownObstacle : MonoBehaviour
 {
     public PlayerMovement playerMovement;
     public AIMovement AIMovement;
-    public float speedMultiplier = 2f;
-    public float boostDuration = 3f;
-    public GameObject speedIncreasedText;
+    public float slowMultiplier = 0.5f;
+    public float slowDuration = 2f;
+    public GameObject speedSlowedText;
 
     private void Start()
     {
-        speedIncreasedText.SetActive(false);
+        speedSlowedText.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            speedIncreasedText.SetActive(true);
-            playerMovement.BoostSpeed(speedMultiplier, boostDuration);
+            speedSlowedText.SetActive(true);
+            playerMovement.BoostSpeed(slowMultiplier, slowDuration);
             Destroy(gameObject);
             StartCoroutine(HideSpeedText());
         }
         else if (other.CompareTag("AI"))
         {
-            AIMovement.BoostSpeed(speedMultiplier, boostDuration);
+            AIMovement.BoostSpeed(slowMultiplier, slowDuration);
             Destroy(gameObject);
         }
     }
@@ -35,6 +35,6 @@ public class SpeedPowerUp : MonoBehaviour
     IEnumerator HideSpeedText()
     {
         yield return new WaitForSeconds(1f);
-        speedIncreasedText.gameObject.SetActive(false);
+        speedSlowedText.gameObject.SetActive(false);
     }
 }

@@ -31,7 +31,7 @@ public class AIMovement : MonoBehaviour
         decisionTimer -= Time.deltaTime;
         if (decisionTimer <= 0f)
         {
-            MakeRandomLaneDecision();
+            ChooseLaneBasedOnClothes();
             decisionTimer = decisionInterval;
         }
 
@@ -41,6 +41,40 @@ public class AIMovement : MonoBehaviour
 
         // Move forward
         transform.Translate(Vector3.up * forwardSpeed * speedMultiplier * Time.deltaTime);
+    }
+
+    void ChooseLaneBasedOnClothes()
+    {
+        GameObject[] clothes = GameObject.FindGameObjectsWithTag("Clothing");
+        GameObject closest = null;
+        float closestDist = Mathf.Infinity;
+
+        foreach (GameObject item in clothes)
+        {
+            float dist = Vector3.Distance(transform.position, item.transform.position);
+            if (item.transform.position.y > transform.position.y && dist < closestDist)
+            {
+                closest = item;
+                closestDist = dist;
+            }
+        }
+
+        if (closest != null)
+        {
+            float itemX = closest.transform.position.x;
+
+            if (itemX < -0.5f)
+                currentLane = 0;
+            else if (itemX > 0.5f)
+                currentLane = 2;
+            else
+                currentLane = 1;
+        }
+        else
+        {
+            // fallback random decision if nothing nearby
+            MakeRandomLaneDecision();
+        }
     }
 
     void MakeRandomLaneDecision()

@@ -107,6 +107,9 @@ public class RoundManager : MonoBehaviour
         //deactivate the winner bonus text at the beginning of the game
         playerRoundWinnerText.gameObject.SetActive(false);
         aiRoundWinnerText.gameObject.SetActive(false);
+
+        ///hide next rund button
+        nextRoundButton.gameObject.SetActive(false);
     }
 
     //Function that starts each round..very self explanatory
@@ -224,6 +227,7 @@ public class RoundManager : MonoBehaviour
         //Show the score panel that will display AI and Player scores
         themeText.gameObject.SetActive(false);
         scorePanel.SetActive (true);
+        nextRoundButton.gameObject.SetActive(true);
 
         //audiostuffff
         calmAudioSource.Play();
@@ -371,6 +375,8 @@ public class RoundManager : MonoBehaviour
         clothingManager.ResetPlayerClothes();
 
         scorePanel.SetActive (false); //Hiding the scorepanel again
+        nextRoundButton.gameObject.SetActive(false);
+
 
         //hide the theme popup again
         themePopupText.gameObject.SetActive(false);

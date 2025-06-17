@@ -17,6 +17,7 @@ public class ItemSpawner : MonoBehaviour
     {
         HideAll(obstaclePrefabs);
         HideAll(clothesPrefabs);
+        HideAll(speedPowerUpPrefab);
     }
 
     void HideAll(GameObject[] items)
