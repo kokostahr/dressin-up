@@ -61,6 +61,8 @@ public class ItemSpawner : MonoBehaviour
             return; // Nothing to spawn
         }
 
-        Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+        // Instantiate and make sure it's active!
+        GameObject spawnedItem = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
+        spawnedItem.SetActive(true);// important if original was deactivated
     }
 }
