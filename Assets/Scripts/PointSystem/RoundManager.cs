@@ -37,6 +37,7 @@ public class RoundManager : MonoBehaviour
     //Referencing the clothing manager to count the points
     public ClothingManager clothingManager;
     public ScoringManager scoringManager;
+    public ItemSpawner itemSpawner;
 
     //AI related logic for when I make an AI manager...just a place holder for now
     public int aiFinalScore = 0;
@@ -197,6 +198,8 @@ public class RoundManager : MonoBehaviour
         //stop the characters from moving
         playerMovement.StopMoving();
         aIMovement.StopMoving();
+        //stop the instantion of the spawning items
+        itemSpawner.StopSpawning();
 
         //need to calculate the proper points of the final items on screen when round ends
         ScoringManager.Instance.UpdatePlayerScore(currentTheme);
@@ -406,6 +409,8 @@ public class RoundManager : MonoBehaviour
         //make the characters move
         playerMovement.ResumeMoving();
         aIMovement.ResumeMoving ();
+        //start the items spawning again
+        itemSpawner.ResetSpawner();
     }
 
     //method to end the game

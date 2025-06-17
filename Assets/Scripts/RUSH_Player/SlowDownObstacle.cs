@@ -34,6 +34,7 @@ public class SlowDownObstacle : MonoBehaviour
             speedSlowedAI.SetActive(true);
             AIMovement.BoostSpeed(slowMultiplier, slowDuration);
             Destroy(gameObject);
+            StartCoroutine(HideSpeedText());
         }
     }
 

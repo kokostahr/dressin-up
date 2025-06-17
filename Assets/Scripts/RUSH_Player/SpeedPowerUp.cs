@@ -32,13 +32,14 @@ public class SpeedPowerUp : MonoBehaviour
             speedIncreased.SetActive(true);
             AIMovement.BoostSpeed(speedMultiplier, boostDuration);
             Destroy(gameObject);
+            StartCoroutine(HideSpeedText());
         }
     }
 
     //co-routine to make the text go away!
     IEnumerator HideSpeedText()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         speedIncreased.SetActive(false);
         speedIncreasedAI.SetActive(false);
     }

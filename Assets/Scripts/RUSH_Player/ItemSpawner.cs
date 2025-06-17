@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
@@ -12,6 +12,7 @@ public class ItemSpawner : MonoBehaviour
     public Transform player;
 
     public float timer = 0f;
+    private bool isSpawning = true;
 
     private void Start()
     {
@@ -30,6 +31,8 @@ public class ItemSpawner : MonoBehaviour
 
     void Update()
     {
+        if (!isSpawning) return;
+
         timer += Time.deltaTime;
         if (timer >= spawnInterval)
         {
@@ -45,22 +48,19 @@ public class ItemSpawner : MonoBehaviour
         float dynamicY = player.position.y + spawnZ; // now spawns above the player
         Vector3 spawnPos = new Vector3(xPos, dynamicY, 0f); // Y instead of Z!
 
-        // Decide if it's clothes or obstacle
-        //bool spawnClothes = Random.value > 0.5f;
-
         GameObject prefabToSpawn;
         // Add a third possibility: 10% chance to spawn powerup
         float roll = Random.value;
 
-        if (roll < 0.45f && clothesPrefabs.Length > 0)
+        if (roll < 0.5f && clothesPrefabs.Length > 0)//50%
         {
             prefabToSpawn = clothesPrefabs[Random.Range(0, clothesPrefabs.Length)];
         }
-        else if (roll < 0.9f && obstaclePrefabs.Length > 0)
+        else if (roll < 0.8f && obstaclePrefabs.Length > 0)//30%
         {
             prefabToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
         }
-        else if (speedPowerUpPrefab.Length > 0)
+        else if (speedPowerUpPrefab.Length > 0)//20
         {
             prefabToSpawn = speedPowerUpPrefab[Random.Range(0, speedPowerUpPrefab.Length)];
         }
@@ -72,5 +72,18 @@ public class ItemSpawner : MonoBehaviour
         // Instantiate and make sure it's active!
         GameObject spawnedItem = Instantiate(prefabToSpawn, spawnPos, Quaternion.identity);
         spawnedItem.SetActive(true);// important if original was deactivated
+    }
+
+    // ✋ STOP THE SPAWN MADNESS!
+    public void StopSpawning()
+    {
+        isSpawning = false;
+    }
+
+    // 🔄 RESET AND RESTART THE PARTY
+    public void ResetSpawner()
+    {
+        timer = 0f;
+        isSpawning = true;
     }
 }
