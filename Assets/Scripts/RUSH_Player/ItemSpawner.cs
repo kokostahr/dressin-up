@@ -4,6 +4,7 @@ public class ItemSpawner : MonoBehaviour
 {
     public GameObject[] clothesPrefabs;
     public GameObject[] obstaclePrefabs;
+    public GameObject[] speedPowerUpPrefab;
     public float spawnInterval = 3f; //every few seconds, clothes should popup
     public float spawnZ = 10f; //this is the distance infront of the player
     public float laneDistance = 2f;
@@ -47,18 +48,24 @@ public class ItemSpawner : MonoBehaviour
         bool spawnClothes = Random.value > 0.5f;
 
         GameObject prefabToSpawn;
+        // Add a third possibility: 10% chance to spawn powerup
+        float roll = Random.value;
 
-        if (spawnClothes && clothesPrefabs.Length > 0)
+        if (roll < 0.45f && clothesPrefabs.Length > 0)
         {
             prefabToSpawn = clothesPrefabs[Random.Range(0, clothesPrefabs.Length)];
         }
-        else if (obstaclePrefabs.Length > 0)
+        else if (roll < 0.9f && obstaclePrefabs.Length > 0)
         {
             prefabToSpawn = obstaclePrefabs[Random.Range(0, obstaclePrefabs.Length)];
         }
+        else if (speedPowerUpPrefab.Length > 0)
+        {
+            prefabToSpawn = speedPowerUpPrefab[Random.Range(0, speedPowerUpPrefab.Length)];
+        }
         else
         {
-            return; // Nothing to spawn
+            return;
         }
 
         // Instantiate and make sure it's active!

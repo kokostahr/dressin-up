@@ -8,16 +8,20 @@ public class PlayerMovement : MonoBehaviour
 
     public float forwardSpeed = 5f; //basic movement speed
     public float speedMultiplier = 1.5f; //speed increase!
+    private bool isMoving = true;
+    private Vector3 startingPosition;
 
     void Start()
     {
         //when the game starts, the player must start in the middle lane
         currentLane = Random.Range(0, 3);
+        startingPosition = transform.position;
         targetPosition = new Vector3(laneDistance * (currentLane - 1), transform.position.y, transform.position.z);
     }
 
     void Update()
     {
+        if (!isMoving) return;
         //Let's do the lane switching keyboard input
         if (Input.GetKeyDown(KeyCode.A) ||  Input.GetKeyDown(KeyCode.LeftArrow))
         {
@@ -55,5 +59,22 @@ public class PlayerMovement : MonoBehaviour
         speedMultiplier = multiplier;
         yield return new WaitForSeconds(duration);
         speedMultiplier = 1f;
+    }
+
+    public void StopMoving()
+    {
+        isMoving = false;
+    }
+
+    public void ResumeMoving()
+    {
+        isMoving = true;
+    }
+
+    public void ResetPosition()
+    {
+        transform.position = startingPosition;
+        currentLane = 1;
+        targetPosition = new Vector3(laneDistance * (currentLane - 1), startingPosition.y, startingPosition.z);
     }
 }

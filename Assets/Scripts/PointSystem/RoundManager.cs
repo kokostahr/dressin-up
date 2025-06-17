@@ -79,6 +79,10 @@ public class RoundManager : MonoBehaviour
     public TextMeshProUGUI aiRoundWinnerText;
     public int roundWinner = 15;
 
+    [Header("CHARACTERS MOVEMENTS")]
+    public PlayerMovement playerMovement;
+    public AIMovement aIMovement;
+
 
     private void Awake()
     {
@@ -187,6 +191,10 @@ public class RoundManager : MonoBehaviour
         clothingManager.playerLiveScoreText.gameObject.SetActive(false);
         clothingManager.aiLiveScoreText.gameObject.SetActive(false);
 
+        //stop the characters from moving
+        playerMovement.StopMoving();
+        aIMovement.StopMoving();
+
         //need to calculate the proper points of the final items on screen when round ends
         ScoringManager.Instance.UpdatePlayerScore(currentTheme);
         ScoringManager.Instance.UpdateAIScore(currentTheme);
@@ -222,10 +230,9 @@ public class RoundManager : MonoBehaviour
         fastAudioSource.Stop();
         isFastMusicPlaying = false;
 
-        //Need to hide all the clothes again
-        //aiOutfitChanger.AIHideAllRoundReset();
-        //playerOutfitChanger.PlayerHideAllRoundReset();
-
+        //reset the character's positions
+        playerMovement.ResetPosition();
+        aIMovement.ResetPosition();
     }
 
 
@@ -389,6 +396,10 @@ public class RoundManager : MonoBehaviour
 
         //Resetting the round countdown
         StartCoroutine (RoundCountdown());
+
+        //make the characters move
+        playerMovement.ResumeMoving();
+        aIMovement.ResumeMoving ();
     }
 
     //method to end the game
