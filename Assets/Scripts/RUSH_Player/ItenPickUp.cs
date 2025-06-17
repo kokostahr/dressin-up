@@ -1,6 +1,5 @@
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
-using UnityEngine.WSA;
+
 
 public class ItenPickUp : MonoBehaviour
 {
