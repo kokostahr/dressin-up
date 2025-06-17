@@ -1,4 +1,4 @@
-using System.Linq;
+﻿using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -34,81 +34,57 @@ public class ScoringManager : MonoBehaviour
   //Getting the updated scores for the player
     public int UpdatePlayerScore(string theme)
     {
-        int playerScore = clothingManager.CalculateOutfitScore(theme);
+        int baseScore = clothingManager.CalculateOutfitScore(theme);
+        int bonus = PlayerBonus(theme);
 
-        //Checking which items are currently equiped for the player
-        ClothingItemData[] equippedItems = clothingManager.playerCollectedItems.ToArray();
-
-        //Get the bonus points
-        int bonus = PlayerBonus(equippedItems, theme);
-
-        //combine the bonus points with the normal points
-        playerTotalScore = playerScore + bonus;
-
-
+        playerTotalScore = baseScore + bonus;
         return playerTotalScore;
     }
 
     //Getting the updated scores for the ai player
     public int UpdateAIScore(string theme)
     {
+        // Get the AI's total base score from their collected items
         int aiScore = clothingManager.CalculateAiOutfitScore(theme);
 
-        //Checking which items are currently eqquiped for the AI
-        ClothingItemData[] equippedItems = new ClothingItemData[3];
+        // Get the AI's bonus points based on their collected items
+        int bonus = AiBonusPoints(clothingManager.aiCollectedItems.ToArray(), theme);
 
-        if (clothingManager.aiOutfitChanger.currentShirt != null)
-        {
-            equippedItems[0] = clothingManager.aiOutfitChanger.currentShirt?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-            equippedItems[1] = clothingManager.aiOutfitChanger.currentPants?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-            equippedItems[2] = clothingManager.aiOutfitChanger.currentShoes?.GetComponent<ClothingItemHolder>()?.clothingItemData;
-        }
-
-        //Get the bonus points 
-        int bonus = AiBonusPoints(equippedItems, theme);
-
-        //combine the bonus to the actual score
         aiTotalScore = aiScore + bonus;
-
 
         return aiTotalScore;
     }
 
     //Setting up the bonus points for the player
-    public int PlayerBonus(ClothingItemData[] equippedItems, string theme)
+    public int PlayerBonus(string theme)
     {
-
-        //Defining what the bonus score is so that we can ADD IT to the player's final score at the end of a round
         int bonusScore = 0;
+        ClothingItemData[] equippedItems = clothingManager.playerCollectedItems.ToArray();
 
-        //Let's check if there's matching tags in the 3 final chosen pieces T^T
-        if (equippedItems[0] != null && equippedItems[1] != null && equippedItems[2] != null)
+        // Matching tags check
+        if (equippedItems.Length >= 3)
         {
-            foreach (string tag in equippedItems[0].itemTag)
+            for (int i = 0; i < equippedItems.Length - 2; i++)
             {
-                //if the tags match
-                if (equippedItems[1].itemTag.Contains(tag) && equippedItems[2].itemTag.Contains(tag))
+                foreach (string tag in equippedItems[i].itemTag)
                 {
-                    //give them some extra points
-                    bonusScore += 2;
-                    Debug.Log("PLAYER BONUS FOR MATCHING TAAAAGS" + tag);
+                    if (equippedItems[i + 1].itemTag.Contains(tag) && equippedItems[i + 2].itemTag.Contains(tag))
+                    {
+                        bonusScore += 2;
+                        Debug.Log("⭐ PLAYER MATCHING TAG BONUS: " + tag);
+                    }
                 }
-            }
-
-            foreach (ClothingItemData item in equippedItems)
-            {
-                //Call the getbonusforsingleitem to calculate 
-                bonusScore += GetBonusForSingleItem(item, theme);
             }
         }
 
-        //then add the bonus score to the player's total score
+        // Theme-specific bonuses
+        foreach (ClothingItemData item in equippedItems)
+        {
+            bonusScore += GetBonusForSingleItem(item, theme);
+        }
+
         lastPlayerBonus = bonusScore;
-        playerTotalScore += bonusScore;
-
         return bonusScore;
-
-        //add a text popup or sparkle here 
     }
 
     //method to calculaye the bonus score for each item, on its own
@@ -171,43 +147,36 @@ public class ScoringManager : MonoBehaviour
         }
 
         return bonus;
-    } 
+    }
 
-    public int AiBonusPoints(ClothingItemData[] equippedItems, string theme)
+    public int AiBonusPoints(ClothingItemData[] collectedItems, string theme)
     {
-        //Defining what the bonus score is so that we can ADD IT to the player's final score at the end of a round
         int bonusScore = 0;
 
-        //Let's check if there's matching tags in the 3 final chosen pieces T^T
-        if (equippedItems[0] != null && equippedItems[1] != null && equippedItems[2] != null)
+        // Matching tags check (at least 3 items needed)
+        if (collectedItems.Length >= 3)
         {
-            foreach (string tag in equippedItems[0].itemTag)
+            for (int i = 0; i < collectedItems.Length - 2; i++)
             {
-                //if the tags match
-                if (equippedItems[1].itemTag.Contains(tag) && equippedItems[2].itemTag.Contains(tag))
+                foreach (string tag in collectedItems[i].itemTag)
                 {
-                    //give them some extra points
-                    bonusScore += 2;
-                    Debug.Log("AI ROBOT BONUS FOR MATCHING TAAAAGS" + tag);
+                    if (collectedItems[i + 1].itemTag.Contains(tag) && collectedItems[i + 2].itemTag.Contains(tag))
+                    {
+                        bonusScore += 2;
+                        Debug.Log("🤖 AI MATCHING TAG BONUS: " + tag);
+                    }
                 }
-            }
-
-            foreach (ClothingItemData item in equippedItems)
-            {
-                //Call the getbonusforsingleitem to calculate 
-                bonusScore += GetBonusForSingleItem(item, theme);
             }
         }
 
-        //Code that will look at the tags an item has   
+        // Theme-specific bonuses per item
+        foreach (ClothingItemData item in collectedItems)
+        {
+            bonusScore += GetBonusForSingleItem(item, theme);
+        }
 
-        //then add the bonus score to the player's total score
         lastAIBonus = bonusScore;
-        aiTotalScore += bonusScore;
-
         return bonusScore;
-
-        //add a text popup or sparkle here 
     }
 }
 

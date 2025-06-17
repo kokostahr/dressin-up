@@ -8,7 +8,23 @@ public class ItemSpawner : MonoBehaviour
     public float spawnZ = 10f; //this is the distance infront of the player
     public float laneDistance = 2f;
 
+    public Transform player;
+
     public float timer = 0f;
+
+    private void Start()
+    {
+        HideAll(obstaclePrefabs);
+        HideAll(clothesPrefabs);
+    }
+
+    void HideAll(GameObject[] items)
+    {
+        foreach (GameObject item in items)
+        {
+            item.SetActive(false);
+        }
+    }
 
     void Update()
     {
@@ -24,7 +40,8 @@ public class ItemSpawner : MonoBehaviour
     {
         int lane = Random.Range(0, 3); // 3 lanes: 0,1,2
         float xPos = laneDistance * (lane - 1);
-        Vector3 spawnPos = new Vector3(xPos, 0f, spawnZ);
+        float dynamicZ = player.position.z + spawnZ; // spawns ahead of the player
+        Vector3 spawnPos = new Vector3(xPos, 0f, dynamicZ);
 
         // Decide if it's clothes or obstacle
         bool spawnClothes = Random.value > 0.5f;

@@ -14,17 +14,10 @@ public class ClothingManager : MonoBehaviour
     //Int to track player's score
     int playerScore = 0;
     int aiScore = 0;
-    //public int totalWinterPoints = 0;
     public int totalPoints = 0;
-    //variale to track the player's live score
-    //public int currentScore = 0;
-    //public Player_OutfitChange playerOutfitChanger;
     public List<ClothingItemData> playerCollectedItems = new List<ClothingItemData>();
-
-    [Header("AI RELATED SCORING")]
-    //Int to track the ai's score
-
-    public Ai_OutfitChanger aiOutfitChanger;
+    public List<ClothingItemData> aiCollectedItems = new List<ClothingItemData>();
+   // public Ai_OutfitChanger aiOutfitChanger;
 
     [Header("LIVE SCOREBOARD UI")]
     //ui to track the live score of the player and Ai
@@ -42,7 +35,6 @@ public class ClothingManager : MonoBehaviour
     {
         pointsPopupText.gameObject.SetActive(false);
     }
-
 
     public void SelectClothingItem(ClothingItemData selectedItem, string theme)
     {
@@ -135,43 +127,23 @@ public class ClothingManager : MonoBehaviour
     {
         aiScore = 0;
 
-        if (aiOutfitChanger.currentShirt != null)
+        // Loop through all the AI's collected clothing items and get their theme-based score
+        foreach (ClothingItemData item in aiCollectedItems)
         {
-            var data = aiOutfitChanger.currentShirt.GetComponent<ClothingItemHolder>();
-            if (data != null) 
-            {
-                //score += data.clothingItemData.winterPoints;
-                //modifying for two themes . another if statement that needs to be expanded
-                aiScore += GetThemePoints(theme, data.clothingItemData);
-            }
+            aiScore += GetThemePoints(theme, item);
         }
 
-        if (aiOutfitChanger.currentPants !=null)
-        {
-            var data = aiOutfitChanger.currentPants.GetComponent<ClothingItemHolder>();
-            if (data != null)
-            {
-                //score += data.clothingItemData.winterPoints;
-                //modyifying, yeah
-                aiScore += GetThemePoints(theme, data.clothingItemData);
-            }
-        }
-        
-        if (aiOutfitChanger.currentShoes!= null)
-        {
-            var data = aiOutfitChanger.currentShoes.GetComponent<ClothingItemHolder>();
-            if (data != null)
-            {
-                //score += data.clothingItemData.winterPoints;
-                //modifyin yeah yeah
-                aiScore += GetThemePoints(theme, data.clothingItemData);
-            }
-        }
-
-        ////Update the AI live score
+        // Update the live AI score UI
         aiLiveScoreText.text = "AI: " + aiScore.ToString() + " pts";
 
         return aiScore;
+    }
+
+    public void SelectClothingItemForAI(ClothingItemData selectedItem, string theme)
+    {
+        aiCollectedItems.Add(selectedItem);
+        int updatedScore = CalculateAiOutfitScore(theme);
+        UpdateAiScoreUI(updatedScore);
     }
 
     //Method that will handle the themes and their related points
